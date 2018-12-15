@@ -10,6 +10,10 @@ Fluxtion allows filtering of event dispatch so that only event handlers that mat
 * By event type and event value
 * By event type and unmatched against event value
 
+{% hint style="warning" %}
+Event filtering is statically generated at compile time and cannot be altered at runtime
+{% endhint %}
+
 ### Filtering by type
 
 Filtering by event type is demonstrated in the [Multiple handlers per class](multiple-handlers-per-class.md) example.
@@ -75,22 +79,8 @@ Fluxtion also supports the unmatched filter case or the default branch in a case
 ```java
 public class MyEventProcessor {
 
-    @EventHandler
-    public void handleEvent(MyEvent event) {
-    }
+//previous handlers omitted for clarity
 
-    @EventHandler
-    public void handleConfigEvent(ConfigEvent event) {
-    }
-
-    @EventHandler(filterString = "timeout")
-    public void handleTimeoutConfig(ConfigEvent event) {
-    }
-
-    @EventHandler(filterString = "maxConnection")
-    public void handleMaxConnectionsConfig(ConfigEvent event) {
-    }
-    
     @EventHandler(FilterType.unmatched)
     public void unHandledConfig(ConfigEvent event) {
     }
@@ -127,5 +117,104 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
   }
   
 }
+```
+
+### Filtering by class literal
+
+Strings as filter values can lead to fragile api's especially when refactoring. To combat this a class literal can be supplied as a filter value in the EventHandler, Fluxtion converts the class literal to a String and filters by String in the generated SEP, as shown in the example below:
+
+```java
+public class MyEventProcessor {
+
+//previous handlers omitted for clarity
+    
+    @EventHandler(filterStringFromClass = Date.class)
+    public void dateConfig(ConfigEvent event) {
+    }
+}
+```
+
+Notice the class literal used in line 23, producing the following generated SEP:
+
+```java
+  public void handleEvent(ConfigEvent typedEvent) {
+    switch (typedEvent.filterString()) {
+      case ("java.util.Date"):
+        myEventProcessor_1.dateConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+      case ("maxConnection"):
+        myEventProcessor_1.handleMaxConnectionsConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+      case ("timeout"):
+        myEventProcessor_1.handleTimeoutConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+    }
+    //Default, no filter methods
+    myEventProcessor_1.unHandledConfig(typedEvent);
+    myEventProcessor_1.handleConfigEvent(typedEvent);
+    //event stack unwind callbacks
+    afterEvent();
+  }
+```
+
+### Filter variable
+
+The value of the filter in the eventhandler method can be provided from an instance variable in the eventhandler node. This instance variable is read once at compile time for the generation phase. A string match between the 
+
+```java
+public class MyEventProcessor {
+
+    private final String configFilter;
+
+    public MyEventProcessor(String configFilter) {
+        this.configFilter = configFilter;
+    }
+    
+//previous handlers omitted for clarity
+    
+    @EventHandler(filterVariable = "configFilter")
+    public void handleMyVariableConfig(ConfigEvent event) {
+    }
+}
+```
+
+Produces the resulting SEP if the instance variable configFilter is set to "cfg.ac;":
+
+```java
+  public void handleEvent(ConfigEvent typedEvent) {
+    switch (typedEvent.filterString()) {
+      case ("cfg.acl"):
+        myEventProcessor_1.handleMyVariableConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+      case ("java.util.Date"):
+        myEventProcessor_1.dateConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+      case ("maxConnection"):
+        myEventProcessor_1.handleMaxConnectionsConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+      case ("timeout"):
+        myEventProcessor_1.handleTimeoutConfig(typedEvent);
+        myEventProcessor_1.handleConfigEvent(typedEvent);
+        afterEvent();
+        return;
+    }
+    //Default, no filter methods
+    myEventProcessor_1.unHandledConfig(typedEvent);
+    myEventProcessor_1.handleConfigEvent(typedEvent);
+    //event stack unwind callbacks
+    afterEvent();
+  }
 ```
 
