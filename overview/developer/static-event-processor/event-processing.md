@@ -57,7 +57,7 @@ There are several annotations Fluxtion defines to mark methods as being in the e
 * `@eventHandler` – marks a method as a candidate event handler.
 * `@onEvent` – marks a method as a candidate node in an execution graph.
 
-Event annotations and implied capabilities are covered in detail in the[ event processing primitives](../../child-2.md) section. 
+Event annotations and implied capabilities are covered in detail in the[ event processing primitives](../../child-2/) section. 
 
 ### Event waves and data:
 

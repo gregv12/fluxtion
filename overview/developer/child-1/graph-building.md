@@ -24,7 +24,7 @@ Keeping the SEP and ESC into separate process spaces creates the following benef
 
 ## Node selection
 
-There are a many strategies Fluxtion provides to create the set of nodes that are in the execution graph. The  user must provide some information as it is not possible to infer the set of nodes purely from undecorated classes. The detail of the node selection strategies are covered in the [event processing primitives](../../child-2.md) section, available options include:
+There are a many strategies Fluxtion provides to create the set of nodes that are in the execution graph. The  user must provide some information as it is not possible to infer the set of nodes purely from undecorated classes. The detail of the node selection strategies are covered in the [event processing primitives](../../child-2/) section, available options include:
 
 * Imperative form in code
 * Data driven with factories
