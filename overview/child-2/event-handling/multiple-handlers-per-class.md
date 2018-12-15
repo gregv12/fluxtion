@@ -1,6 +1,8 @@
 # Multiple handlers per class
 
-Multiple event handler methods in a single class are supported if the types of events are different. Another method is annotated and the generator re-run. Using an _EventHandler interface_ would only allow one event type per instance, annotations allow a plurality of event handler methods in a class. Example below:
+Multiple event handler methods in a single class are supported if the types of events are different. Another method is annotated and the generator re-run. Using an _EventHandler interface_ would only allow one event type per instance, annotations allow a plurality of event handler methods in a class. 
+
+Example below, MyEventProcessor handles MyEvent and ConfigEvent
 
 ```java
 public class MyEventProcessor {
@@ -61,21 +63,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
     //event stack unwind callbacks
     afterEvent();
   }
-
-  @Override
-  public void afterEvent() {}
-
-  @Override
-  public void init() {}
-
-  @Override
-  public void tearDown() {}
-
-  @Override
-  public void batchPause() {}
-
-  @Override
-  public void batchEnd() {}
+//content removed
 }
 ```
 

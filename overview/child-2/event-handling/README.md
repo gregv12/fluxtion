@@ -8,7 +8,7 @@ description: Use of @EventHandler annotation
 
 Mark a method to receive an [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java) when posted to the encapsulating SEP. The method must accept a single argument that is of type Event and be marked with [@EventHandler](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) annotation. There are no requirements on method naming, only the method signature and annotation are analysed by Fluxtion. 
 
-Example below:
+Example below, MyEventProcessor handles MyEvent:
 
 ```java
 public class MyEventProcessor {
