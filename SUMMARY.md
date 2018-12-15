@@ -14,6 +14,7 @@
   * [Event processing primitives](overview/child-2/README.md)
     * [Event handling](overview/child-2/event-handling/README.md)
       * [Multiple handlers per class](overview/child-2/event-handling/multiple-handlers-per-class.md)
+      * [Event filtering](overview/child-2/event-handling/event-filtering.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
   * [Auditing](overview/auditing.md)
   * [Generation outputs](overview/generation.md)
