@@ -36,9 +36,9 @@ For the diagram above we can categorise the elements as follows:
 
 ### Events:
 
-The entry point into a SEP is the `onEvent(Event e)` method inherited from [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java), which accepts any instance that implements the [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java) interface. An application either defines or re-uses events that implement the Event interface. 
+The entry point into a SEP is the `onEvent(Event e)` method defined in [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java), which accepts any instance that extends the abstract class [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java). An application either defines or re-uses events that extend Event. 
 
-An event provides an entry point to inject new state into the SEP.
+An event provides an entry point to inject new state into the SEP and being a processing loop.
 
 {% hint style="info" %}
 Posting an event to the SEP, is **pushing data** into the execution graph
