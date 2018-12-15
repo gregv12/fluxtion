@@ -1,3 +1,7 @@
+---
+description: Use of multiple @EventHandler annotations to push data into a SEP
+---
+
 # Multiple handlers per class
 
 Multiple event handler methods in a single class are supported if the types of events are different. Another method is annotated and the generator re-run. Using an _EventHandler interface_ would only allow one event type per instance, annotations allow a plurality of event handler methods in a class. 

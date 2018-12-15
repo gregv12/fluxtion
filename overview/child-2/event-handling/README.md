@@ -1,5 +1,5 @@
 ---
-description: Use of @EventHandler annotation
+description: Use of @EventHandler annotation to push data into a SEP
 ---
 
 # Event handling
