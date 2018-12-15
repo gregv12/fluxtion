@@ -4,6 +4,8 @@ description: Optional filtering on incoming events to target specific event hand
 
 # Event filtering
 
+The goal is to support rules at the EventHandler to filter the event instances dispatched by the SEP to an event handler method. 
+
 Fluxtion allows filtering of event dispatch so that only event handlers that match certain criteria will receive the dispatched event. The filtering rules that Fluxtion supports are:
 
 * By event type 
