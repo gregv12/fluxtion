@@ -20,7 +20,7 @@ Filtering by event type is demonstrated in the [Multiple handlers per class](mul
 
 ### Filtering by type and value
 
-The EventHandler annotation allows optional arguments for setting match filters. An incoming event can specify a filter value as either a String or an integer. The event handler filter value is fixed at compile time. If the filter value of the incoming event matches that of the event handler then a dispatch will occur. The base class Event provides member variables for filter string and filter int.
+The [EventHandler](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) annotation allows optional arguments for setting match filters. An incoming event can specify a filter value as either a String or an integer at runtime, whereas the event handler filter value is fixed at compile time. If the filter value of the incoming event matches that of the event handler then a dispatch will occur. The base class [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java) provides member variables for filter string and filter int.
 
 The following example demonstrates String filtering for a configuration event:
 
