@@ -12,11 +12,11 @@ This section does not cover [graph construction](../graph-building-primitives.md
 
 Annotations provide a significant avenue for providing meta-data to the Fluxtion ESC, the relevant annotations covered in the this section are:
 
-* `@AfterEvent`:  Marks a method to be called a class when all event processing has completed. 
-* `@EventHandler`: Marks a method as an event handler, and an entry point to an execution path.
-* `@FilterId`: Marks a field as a default filter for all event handlers in that class.
+* `@AfterEvent`:  Marks a method to be called in a class when all event processing has completed. 
+* `@EventHandler`: Marks a method as an event handler, an entry point to an execution path.
+* `@FilterId`: Marks a field as the default filter for all event handlers in this class.
 * `@Initialise`: An initialisation method that is invoked by the SEP before event processing.
-* `@NoEventReference`: Marks a parent node as a reference only, the child node will receive no event updates from the parent marked.
+* `@NoEventReference`: Marks a parent node as a reference only, the child node will be excluded from the execution path of NoEventReference node.
 * `@OnBatchEnd`: Marks a method to be invoked by the SEP when a batch ends.
 * `@OnBatchPause`: Marks a method to be invoked by the SEP when a batch is paused and more messages are expected.
 * `@OnEvent`: Marks a method to be called when all of its dependent nodes on the execution path have processed the event.
