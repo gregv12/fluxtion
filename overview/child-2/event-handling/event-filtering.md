@@ -186,7 +186,7 @@ public class MyEventProcessor {
 }
 ```
 
-Produces the resulting SEP if the instance variable configFilter is set to "cfg.ac;":
+Produces the resulting SEP if the instance variable configFilter is set to "cfg.acl":
 
 ```java
   public void handleEvent(ConfigEvent typedEvent) {
