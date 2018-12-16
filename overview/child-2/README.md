@@ -19,7 +19,7 @@ Annotations provide a significant avenue for providing meta-data to the Fluxtion
 * `@NoEventReference`: Marks a parent node as a reference only, the child node will be excluded from the execution path of NoEventReference node.
 * `@OnBatchEnd`: Marks a method to be invoked by the SEP when a batch ends.
 * `@OnBatchPause`: Marks a method to be invoked by the SEP when a batch is paused and more messages are expected.
-* `@OnEvent`: Marks a method to be called when all of its dependent nodes on the execution path have processed the event.
+* `@OnEvent`: Marks a method to be included in the execution graph. Will be called when all of its dependent nodes on the execution path have processed the event.
 * `@OnEventComplete`: The inverse of OnEvent behaviour, similar to AfterEvent but only if the node is on the execution path.
 * `@OnParentUpdate`: Marks a method to receive the Identity of the parent node\(s\) that have updated.
 * `@TearDown`: A finalisation method that is invoked by the SEP after all event processing.
