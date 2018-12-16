@@ -15,6 +15,8 @@
     * [Event handling](overview/child-2/event-handling/README.md)
       * [Multiple handlers per class](overview/child-2/event-handling/multiple-handlers-per-class.md)
       * [Event filtering](overview/child-2/event-handling/event-filtering.md)
+    * [Event pipeline](overview/child-2/event-pipeline.md)
+    * [Event graph](overview/child-2/event-graph.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
   * [Auditing](overview/auditing.md)
   * [Generation outputs](overview/generation.md)
