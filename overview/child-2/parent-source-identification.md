@@ -26,7 +26,7 @@ The following rules apply when using [`@OnParentUpdate`](https://github.com/v12t
 * For array fields use a scalar value, this will be the element in the array that has updated.
 * For array fields the marked method may be invoked multiple times in a cycle.
 
-The following example demonstrates execution path identification
+The following example demonstrates execution path identification for a child node of type ParentIdentifier.
 
 ```java
 public class ParentIdentifier {
@@ -90,7 +90,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
   private final ParentIdentifier parentIdentifier_7 =
       new ParentIdentifier(dataEventHandler_1, dataEventHandler_3, myEventHandler_5);
 
-    //Code omitted for clarity
+    //code omitted for clarity
 
   public void handleEvent(DataEvent typedEvent) {
     //Default, no filter methods
