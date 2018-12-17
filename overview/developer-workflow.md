@@ -1,3 +1,7 @@
+---
+description: Description of developer use of Fluxtion in day to day development
+---
+
 # Developer workflow
 
 Creating a Static Event processor involves three distinct phases for a developer:

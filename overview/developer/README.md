@@ -1,3 +1,7 @@
+---
+description: Fundamental concepts of Fluxtion explained
+---
+
 # Core concepts
 
 The pages in this section cover the core concepts of the Fluxtion universe. You will learn about the core runtime component that an application interacts with, a Static Event Processor\(SEP\), how it is created and how to use it to process application event streams. 
