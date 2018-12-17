@@ -6,9 +6,13 @@ description: Creation of multiple event paths
 
 The goal is to create many unique execution paths where a node is invoked only if it is on the active execution path.
 
-The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java) annotation marks a method to be included in the execution graph as per the [event pipeline](event-pipeline.md) description. In this case we want to create a graph and not a pipeline, the execution graph will contain multiple execution paths. The uniqueness of an execution paths  is the compound value of event type and filter.
+The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java) annotation marks a method to be included in the execution graph as per the [event pipeline](event-pipeline.md) description. In this case we want to create a graph containing multiple execution paths. The uniqueness of an execution paths  is the compound value of event type and filter.
 
-For Fluxtion there is no difference between a graph and a pipeline, the use of [processing inference](../developer/child-1/graph-building.md#processing-inference) determines the structure of the graph. Similarly for the programmer there is no change in the annotations used, only the creation of a rich object model is required. Once a rich object graph is provided Fluxtion will generate a SEP with multiple execution paths.
+For Fluxtion ESC there is no difference between a graph and a pipeline, the use of [processing inference](../developer/child-1/graph-building.md#processing-inference) determines whether the structure is a graph or a pipeline. Similarly for the programmer there is no change in the annotations used, only the creation of a rich object model is required. Once an object graph is provided Fluxtion will generate a SEP with multiple execution paths.
+
+{% hint style="info" %}
+Graphs and pipelines use the same annotations.
+{% endhint %}
 
 The example below creates a processing graph, using the builder below:
 
@@ -27,7 +31,7 @@ public class Builder extends SEPConfig {
 }
 ```
 
-The generated SEP creates a complex dispatch method that implements multiple unique execution paths:
+The generated SEP creates multiple dispatch methods each implementing a unique execution path.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
@@ -64,7 +68,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 ```
 
-The partnering png generated Fluxtion ESC is shown below:
+The accompanying png generated Fluxtion ESC is shown below.
 
 ![a diagram show multiple execution paths in a SEP](../../.gitbook/assets/sampleprocessor%20%281%29.png)
 
