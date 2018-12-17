@@ -22,6 +22,8 @@ public class MyEventProcessor {
 }
 ```
 
+#### Generated SEP
+
 Fluxtion ESC will generate the following SEP:
 
 ```java
