@@ -18,6 +18,7 @@
     * [Event pipeline](overview/child-2/event-pipeline.md)
     * [Event graph](overview/child-2/event-graph.md)
     * [Parent source identification](overview/child-2/parent-source-identification.md)
+    * [Dirty node monitoring](overview/child-2/dirty-node-monitoring.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
   * [Auditing](overview/auditing.md)
   * [Generation outputs](overview/generation.md)
