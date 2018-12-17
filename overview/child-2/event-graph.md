@@ -4,7 +4,7 @@ The goal is to create many unique execution paths where a node is invoked only i
 
 The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java) annotation marks a method to be included in the execution graph as per the [event pipeline](event-pipeline.md) description. In this case we want to create a graph and not a pipeline, the execution graph will contain multiple execution paths. The uniqueness of an execution paths  is the compound value of event type and filter.
 
-For Fluxtion there is no difference between a graph and a pipeline, the use of [processing inference](../developer/child-1/graph-building.md#processing-inference) determines the structure of the graph. Similarly for the programmer there is no change, only the creation of a rich object model is required.
+For Fluxtion there is no difference between a graph and a pipeline, the use of [processing inference](../developer/child-1/graph-building.md#processing-inference) determines the structure of the graph. Similarly for the programmer there is no change in the annotations used, only the creation of a rich object model is required. Once a rich object graph is provided Fluxtion will generate a SEP with multiple execution paths.
 
 The example below creates a processing graph, using the builder below:
 
@@ -43,6 +43,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
     dataEventHandler_1.handleEvent(typedEvent);
     combinerNode_9.update();
     pipelineNode_3.update();
+    childNode_5.recalculate();
     //event stack unwind callbacks
     afterEvent();
   }
