@@ -2,11 +2,15 @@
 
 The goal is to create an execution path where a node is invoked after a parent node has processed an event.
 
-The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java)  annotation marks a method to be included in the execution graph. The method will be invoked when all of its dependent nodes on the execution path have processed the event. Event processing includes `@OnEvent` and `@EventHandler` methods.
+The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java)  annotation marks a method to be included in the execution graph. The method will be invoked when all of its dependent nodes on the execution path have processed the event. Event processing includes @OnEvent and @EventHandler ``methods.
+
+{% hint style="info" %}
+Only methods marked with **@OnEvent** will be included in the execution graph
+{% endhint %}
 
 A no argument method is required with an optional boolean return. The boolean return indicates whether this node is "dirty" and changed its state. 
 
-Example below defines PipelineNode dependent upon a DataEventHandler, that processes DataEvent's.
+The example below defines PipelineNode dependent upon a DataEventHandler, that processes DataEvent's.
 
 ```java
 public class PipelineNode {
@@ -23,7 +27,7 @@ public class PipelineNode {
 }
 ```
 
-The update method will be invoked by the SEP in topological order after the DataHandler has processed an incoming event. We define the graph using this builder class imperatively, further discussion on builders is in the [graph building](../graph-building-primitives.md) section.
+The update method will be invoked by the SEP in topological order after the DataHandler has processed an incoming event. We define the graph imperatively using a builder class, further discussion on builders is in the [graph building](../graph-building-primitives.md) section.
 
 ```java
 public class Builder extends SEPConfig {
@@ -42,6 +46,12 @@ public class Builder extends SEPConfig {
 The generated SEP, implements a dispatch method invoking the execution path in topological order
 
 ```java
+public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
+
+  //Node declarations
+  private final DataEventHandler dataEventHandler_1 = new DataEventHandler();
+  private final PipelineNode pipelineNode_3 = new PipelineNode(dataEventHandler_1);
+  
   public SampleProcessor() {}
 
 //omitted code for clarity
