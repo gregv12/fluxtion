@@ -2,13 +2,13 @@
 
 The goal is to create an execution path where a node is invoked after a parent node has processed an event.
 
-The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java)  annotation marks a method to be included in the execution graph. The method will be invoked when all of its dependent nodes on the execution path have processed the event. Event processing includes @OnEvent and @EventHandler ``methods.
+The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java)  annotation marks a method to be included in the execution graph. The method will be invoked when all of its dependent nodes on the execution path have processed the event. Event processing includes @OnEvent and @EventHandler methods.
 
 {% hint style="info" %}
 Only methods marked with **@OnEvent** will be included in the execution graph
 {% endhint %}
 
-A no argument method is required with an optional boolean return. The boolean return indicates whether this node is "dirty" and changed its state. 
+A valid OnEvent method has no arguments with an optional boolean return type. The boolean return indicates whether this node is "dirty" and changed its state, change notifications are discussed later.
 
 The example below defines PipelineNode dependent upon a DataEventHandler, that processes DataEvent's.
 
