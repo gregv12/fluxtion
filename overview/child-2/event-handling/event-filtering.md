@@ -43,6 +43,8 @@ public class MyEventProcessor {
 }
 ```
 
+#### Generated SEP
+
 The following SEP is produced. Note that  `myEventProcessor_1.handleConfgEvent` will receive all ConfigEvent's as it has no filter applied:
 
 ```java
@@ -88,6 +90,8 @@ public class MyEventProcessor {
     }
 }
 ```
+
+#### Generated SEP
 
 The following SEP is produced demonstrating the unmatched filter or default case:
 
@@ -135,6 +139,8 @@ public class MyEventProcessor {
     }
 }
 ```
+
+#### Generated SEP
 
 Notice the class literal used in line 23, producing the following generated SEP:
 
@@ -185,6 +191,8 @@ public class MyEventProcessor {
     }
 }
 ```
+
+#### Generated SEP
 
 Produces the resulting SEP if the instance variable configFilter is set to "cfg.acl":
 

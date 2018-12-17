@@ -29,7 +29,9 @@ public class MyEventProcessor {
 }
 ```
 
- Fluxtion ESC will generate the following SEP:
+####  Generated SEP 
+
+Fluxtion ESC will generate the following SEP:
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {

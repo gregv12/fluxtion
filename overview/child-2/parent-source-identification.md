@@ -26,9 +26,96 @@ The following rules apply when using [`@OnParentUpdate`](https://github.com/v12t
 * For array fields use a scalar value, this will be the element in the array that has updated.
 * For array fields the marked method may be invoked multiple times in a cycle.
 
+The following example demonstrates execution path identification
 
+```java
+public class ParentIdentifier {
+    private final DataEventHandler datahandler_1;
+    private final DataEventHandler datahandler_2;
+    private final MyEventHandler myHandler;
 
+    public ParentIdentifier(DataEventHandler datahandler_1, DataEventHandler datahandler_2, MyEventHandler myHandler) {
+        this.datahandler_1 = datahandler_1;
+        this.datahandler_2 = datahandler_2;
+        this.myHandler = myHandler;
+    }
+    
+    @OnParentUpdate("datahandler_1")
+    public void dataHandler_1_changed(DataEventHandler handler){
+        
+    }
+    
+    @OnParentUpdate("datahandler_2")
+    public void dataHandler_2_changed(DataEventHandler handler){
+        
+    }
+    
+    @OnParentUpdate
+    public void myEventHandler_changed(MyEventHandler handler){
+        
+    }
+    
+    @OnEvent
+    public void process(){
+        
+    }
+}
+```
 
+The builder for the Fluxtion ESC to use:
 
+```java
+public class Builder extends SEPConfig {
 
+    @Override
+    public void buildConfig() {
+        DataEventHandler datahandler_1 = addNode(new DataEventHandler());
+        DataEventHandler datahandler_2 = addNode(new DataEventHandler());
+        MyEventHandler myHandler = addNode(new MyEventHandler());
+        ParentIdentifier identifier = addNode(new ParentIdentifier(datahandler_1, datahandler_2, myHandler));
+    }
+
+}
+```
+
+#### Generated SEP
+
+```java
+public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
+
+  //Node declarations
+  private final DataEventHandler dataEventHandler_1 = new DataEventHandler();
+  private final DataEventHandler dataEventHandler_3 = new DataEventHandler();
+  private final MyEventHandler myEventHandler_5 = new MyEventHandler();
+  private final ParentIdentifier parentIdentifier_7 =
+      new ParentIdentifier(dataEventHandler_1, dataEventHandler_3, myEventHandler_5);
+
+    //Code omitted for clarity
+
+  public void handleEvent(DataEvent typedEvent) {
+    //Default, no filter methods
+    dataEventHandler_1.handleEvent(typedEvent);
+    parentIdentifier_7.dataHandler_1_changed(dataEventHandler_1);
+    dataEventHandler_3.handleEvent(typedEvent);
+    parentIdentifier_7.dataHandler_2_changed(dataEventHandler_3);
+    parentIdentifier_7.process();
+    //event stack unwind callbacks
+    afterEvent();
+  }
+
+  public void handleEvent(MyEvent typedEvent) {
+    //Default, no filter methods
+    myEventHandler_5.handleEvent(typedEvent);
+    parentIdentifier_7.myEventHandler_changed(myEventHandler_5);
+    parentIdentifier_7.process();
+    //event stack unwind callbacks
+    afterEvent();
+  }
+}
+
+```
+
+The accompanying png 
+
+![SEP with parent identification](../../.gitbook/assets/sampleprocessor%20%282%29.png)
 
