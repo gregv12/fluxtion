@@ -1,3 +1,7 @@
+---
+description: Creation of multiple event paths
+---
+
 # Event graph
 
 The goal is to create many unique execution paths where a node is invoked only if it is on the active execution path.

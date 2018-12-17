@@ -1,3 +1,7 @@
+---
+description: Creation of a single event path
+---
+
 # Event pipeline
 
 The goal is to create an execution path where a node is invoked after a parent node has processed an event.
