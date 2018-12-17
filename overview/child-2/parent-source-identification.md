@@ -19,7 +19,7 @@ The following rules apply when using [`@OnParentUpdate`](https://github.com/v12t
 * The method will be invoked if the parent is on the active execution path.
 * The method will be invoked after the parent's OnEvent method has executed.
 * The method will be invoked before the OnEvent method in this class.
-* Multiple tracking methods can exist in one class.
+* Multiple tracking methods can exist in one class, to track multiple parents.
 * For multiple parents of the same type, set the value of the annotation to the field name of the parent.
 * For array fields use a scalar value, this will be the element in the array that has updated.
 * For array fields the marked method may be invoked multiple times in a cycle.
