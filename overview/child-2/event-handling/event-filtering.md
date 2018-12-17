@@ -43,7 +43,7 @@ public class MyEventProcessor {
 }
 ```
 
-The following SEP is produced. Note that `handleConfgEvent` will receive all ConfigEvent's as it has no filter applied:
+The following SEP is produced. Note that  `myEventProcessor_1.handleConfgEvent` will receive all ConfigEvent's as it has no filter applied:
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
