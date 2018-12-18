@@ -11,20 +11,20 @@ Graph building occurs at compile time, the ESC is not required at runtime, it is
 Some applications may choose to embed the ESC, but there is no requirement for this. To build a graph with  the ESC it need two pieces of information:
 
 * The set of nodes are to be included in the compilation analysis.
-* What dictates the order of nodes, so life-cycle methods are called in a predictable manner.
+* The order of nodes, so callback methods are called in a predictable manner.
 
-The first of these, node selection is provided by the developer. This is similar to any dependency injection container, for example Spring may use a spring.xml to select beans for management. The second is automatically derived by the ESC using a process called [processing inference](graph-building.md#processing-inference).
+The first of these, the node set is provided by the developer. This is similar to any dependency injection container, for example Spring may use a spring.xml to select beans for management. The order of the nodes is automatically derived by the ESC using a process called [processing inference](graph-building.md#processing-inference).
 
-Keeping the SEP and ESC into separate process spaces creates the following benefits:
+Separating the SEP and ESC into their individual processes creates the following benefits:
 
-* Construction logic can be validated separately to application processing logic.
+* Construction logic can be tested separately to application processing logic.
 * Sensitive construction ip may be hidden and only the SEP is distributed.
 * Conversely sensitive node ip may be separated from the constructor of the graph, as nodes may be provided as obfuscated libraries.
-* Source and target languages can be separated.
+* Source and target languages can be different types.
 
 ## Node selection
 
-There are a many strategies Fluxtion provides to create the set of nodes that are in the execution graph. The  user must provide some information as it is not possible to infer the set of nodes purely from undecorated classes. The detail of the node selection strategies are covered in the [graph building primitives](../../graph-building-primitives.md) section, available options include:
+There are a many strategies Fluxtion provides to declare the set of nodes that are in the execution graph. The  user must provide some information as it is not possible to infer the set of nodes purely from undecorated classes. The detail of the node selection strategies are covered in the [graph building primitives](../../graph-building-primitives.md) section, available options include:
 
 * Imperative form in code
 * Data driven with factories

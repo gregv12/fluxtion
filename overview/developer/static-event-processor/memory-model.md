@@ -4,7 +4,7 @@
 
 On their own nodes are not enough for meaningful processing, how does each node receive new data to affect a state change? We have seen in [event processing](event-processing.md) that only the first event handler receives new data as an event, subsequent nodes on the execution path receive event notifications only. 
 
-The concept to understand is the memory model that Fluxtion uses, each node is stateful. A child can ask its parent for data it exposes. As niodes are invoked in execution path order, all parents will have a chance to update their state before being queried by dependent nodes.
+The concept to understand is the memory model that Fluxtion employs, each node is stateful. A child can ask its parent for data it exposes. As nodes are invoked in execution path order, all parents will have a chance to update their state before being queried by dependent nodes.
 
 The generated SEP ensures that before any event processing can occur all object references are set between nodes as described in the execution graph. Because all references are valid, a child can ask its parent for any data it requires during execution, for example a summing node can ask its parent what the current value is. Normal rules of object encapsulation apply so a node can decide how it exposes data, and what mutability is appropriate. The key point to understand is: 
 
