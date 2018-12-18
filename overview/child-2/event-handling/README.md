@@ -10,6 +10,8 @@ The goal is to invoke a method on a user created node when an [Event](https://gi
 
 The method must accept a single argument that is of type Event and be marked with [@EventHandler](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) annotation. There are no requirements on method naming, only the method signature and annotation are analysed by Fluxtion. 
 
+Fluxtion employs pattern type matching analysis to ensure the correct method dispatch occurs.
+
 Example below, MyEventProcessor handles MyEvent:
 
 ```java
@@ -24,7 +26,7 @@ public class MyEventProcessor {
 
 #### Generated SEP
 
-Fluxtion ESC will generate the following SEP:
+Fluxtion ESC will generate the following SEP. The interface method onEvent discovers the runtime type and dipatches the event to a type specific handler. The execution path is invoked in the handleEvent method.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
