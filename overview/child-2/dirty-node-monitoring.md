@@ -19,7 +19,7 @@ Dirty filtering support can be toggled on or off using the **supportDirtyFilteri
 
 #### Example
 
-We create a node, DirtyNode, that reports its dirty status with the return of its OnEvent method. Three DirtyNode's are created and each DirtyNode listens to one of two event handlers. The three DirtyNodes are aggregated in a class, DirtyNodeAggregator. The OnEvent method of `DirtyNodeAggregator.publishDirty()`, will be protected by guard conditions that check at least one parent is dirty before being invoked.
+We create a node, DirtyNode, that reports its dirty status with the return of its OnEvent method. Three DirtyNode's are created and each DirtyNode listens to one of two event handlers. The three DirtyNodes are aggregated in a class, DirtyNodeAggregator. The OnEvent method `publishDirty()`, will be protected by guard conditions that check at least one parent is dirty before being invoked.
 
 The DirtyNode
 
