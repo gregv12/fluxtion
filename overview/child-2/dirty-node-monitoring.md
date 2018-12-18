@@ -9,9 +9,9 @@ The goal is to only let the execution path proceed if a node marks itself as bei
 Sometimes it is useful to only let the event wave progress if the current node marks itself as being dirty. For example  a level monitor will swallow the event wave unless the level is breached. An OnEvent method with a boolean return type is monitored for dirty status by Fluxtion with the following rules:
 
 * A true value marks the node as dirty and the event wave propagates.
-* A negative value swallows the event wave and no child OnEvent methods are invoked.
-* No declared return from OnEvent is presumed as a persistent value of true, always propagate events .
-* If a child has multiple parents an or rule is applied, so any parent change propagates the event wave
+* A false value swallows the event wave and no child OnEvent methods are invoked.
+* A void return from OnEvent is presumed as a persistent value of true which will always propagate events .
+* If a child has multiple parents any parent change propagates the event wave i.e. an "_or rule_" is applied.
 
 {% hint style="info" %}
 Dirty filtering support can be toggled on or off using the supportDirtyFiltering property in the SEPConfig builder.
@@ -19,7 +19,7 @@ Dirty filtering support can be toggled on or off using the supportDirtyFiltering
 
 #### Example
 
-We create a node, DirtyNode, that reports its dirty status with the return of its OnEvent method. Three DirtyNode's are created and each DirtyNode listens to one of two event handlers. The three DirtyNodes are aggregated in a class, DirtyNodeAggregator. The OnEvent method of DirtyNodeAggregator, publishDirty\(\), will be protected by guard conditions that check at least one parent is dirty before being invoked.
+We create a node, DirtyNode, that reports its dirty status with the return of its OnEvent method. Three DirtyNode's are created and each DirtyNode listens to one of two event handlers. The three DirtyNodes are aggregated in a class, DirtyNodeAggregator. The OnEvent method of `DirtyNodeAggregator.publishDirty()`, will be protected by guard conditions that check at least one parent is dirty before being invoked.
 
 The DirtyNode
 
