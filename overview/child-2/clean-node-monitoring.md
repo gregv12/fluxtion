@@ -44,6 +44,7 @@ We create an event handler that issues a change notification flag. We connect th
       <td style="text-align:left">
         <p>Combines clean and dirty listeners into one class:</p>
         <p>changeUpdate() invoked when the parent indicates a change</p>
+        <p>noChangeUpdate() invoked when parent indicates no change</p>
       </td>
     </tr>
   </tbody>
