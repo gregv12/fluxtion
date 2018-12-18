@@ -8,7 +8,7 @@ As well as tools, humans can draw inferences from meta-data outputs that are gen
 
 ## Processing description outputs
 
-At the same time as the ESC generates a SEP, a set of artifacts are produced that are consistent and reconcile with the code. These non-code outputs can be used to aid understanding of the logical processing. The outputs are:
+At the same time as the ESC generates a SEP, a set of artifacts are produced that are consistent and reconciled with the code. These non-code outputs can be used to aid understanding of the logical processing. The outputs are:
 
 ### GraphML
 
@@ -20,9 +20,11 @@ a markup description of the execution graph encoded in the SEP. The markup  deta
 * The variable name of the node generated in the code
 * The event types feeding into an event handler
 
+Fluxtion provides a visual analyser tool that can load the graphML and provide interactive analysis capabilities.
+
 ### Png of static event processor
 
-An image is generated from the graphml that represents the execution graph the SEP implements.
+An image is generated from the graphML that represents the execution graph the SEP implements.
 
 ![A png image representing a word count SEP](../../.gitbook/assets/wordfrequencyprocessor.png)
 
