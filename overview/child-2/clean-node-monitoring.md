@@ -4,9 +4,20 @@ description: Be notified when a parent does not notify of change
 
 # Clean node monitoring
 
-The goal is to provide if-else functionality for dirty change listeners.
+The goal is to only let the execution path propagate if a node does not mark itself as being dirty. This is the inverse of [dirty node monitoring](dirty-node-monitoring.md).
 
-Sometimes we want to provide an either or style functionality on change listeners. Register a listener to a node that fires when the parent node indicates it is clean \(or not "dirty"\). This the opposite behaviour to [dirty node monitoring](dirty-node-monitoring.md). Take the example of the breach indicator we may want behaviours when the limit is breached or when it is not.
+Sometimes we want to know if a node did not issue a dirty notification after processing an update. Taking the example of the breach indicator we may want to trigger an execution path branch when the limit is not breached. 
+
+An OnEvent method with a boolean return type is monitored as a dirty status flag by Fluxtion with the following rules:
+
+* A true value marks the node as dirty Fluxtion swallows the event wave and no child OnEvent methods are invoked.
+* A false value marks the node as clean and the event wave propagates to child nodes.
+
+The child node indicates it wants to be notified on clean status by adding the dirty = true attribute to its OnEvent annotation: 
+
+```java
+@OnEvent(dirty = false)
+```
 
 #### Example
 
@@ -36,7 +47,7 @@ We create an event handler that issues a change notification flag. We connect th
       </td>
     </tr>
   </tbody>
-</table>The change listeners:
+</table>The nodes CleanListener and DirtyCleanListener use the dirty flag = false on the OnEvent annotation to indicate they are interested in receiving clean notifications.
 
 ```java
 public class CleanListener {
