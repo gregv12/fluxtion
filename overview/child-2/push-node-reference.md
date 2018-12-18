@@ -6,7 +6,7 @@ description: Enable a node to invert the execution path and push data to a paren
 
 The goal is to invert the execution path order of two nodes. This allows a child node to push data to a parent node before the parent node OnEvent method is invoked.
 
-Sometimes we want to push data to a shared node for reading by a sibling node. A problem can occur if the read node is not dependent upon the write node, as reader and writer are siblings their order in the execution path is not guaranteed. This unpredictable behaviour is undesirable and difficult to understand. 
+Sometimes we want to push data to a shared node for reading by a sibling node. A problem can occur if the read node is not dependent upon the write node. As reader and writer are siblings their order in the execution path is not guaranteed, it is possible for the reader is notified first. This unpredictable behaviour is undesirable and difficult to understand and explain. 
 
 One solution is to force the reader to artificially create a dependency upon the writer. We want to move this error prone operation into the framework if possible, as a reader could easily miss this nuanced requirement. 
 
