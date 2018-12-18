@@ -52,7 +52,11 @@ public class DirtyCleanCombiner {
 
 #### Generated SEP
 
-The two methods of interest in the SEP are the init and tearddown methods.
+The two methods of interest in the SEP are the init and tearDown methods.
+
+{% hint style="warning" %}
+Note the generated SEP does not call the lifecycle methods init and tearDown that is the repsonsibility of the application code using the SEP.
+{% endhint %}
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
