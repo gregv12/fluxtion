@@ -21,6 +21,7 @@
     * [Dirty node monitoring](overview/child-2/dirty-node-monitoring.md)
     * [Clean node monitoring](overview/child-2/clean-node-monitoring.md)
     * [Push node reference](overview/child-2/push-node-reference.md)
+    * [Event propagation control](overview/child-2/event-propagation-control.md)
     * [Lifecycle integration](overview/child-2/lifecycle-integration.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
   * [Auditing](overview/auditing.md)
