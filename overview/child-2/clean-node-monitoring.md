@@ -4,7 +4,7 @@ description: Be notified when a parent does not notify of change
 
 # Clean node monitoring
 
-The goal to provide either/or functionality for change listeners
+The goal is to provide if-else functionality for dirty change listeners.
 
 Sometimes we want to provide an either or style functionality on change listeners. Register a listener to a node that fires when the parent node indicates it is clean \(or not "dirty"\). This the opposite behaviour to [dirty node monitoring](dirty-node-monitoring.md). Take the example of the breach indicator we may want behaviours when the limit is breached or when it is not.
 
