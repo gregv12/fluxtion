@@ -26,7 +26,12 @@ Similarly a child node may refer to a cache node but updates to the cache node w
 
 ## Annotation support
 
+Fluxtion provides two annotations that control the notification publication.
 
+| Annotation | Behaviour |
+| :--- | :--- |
+| [@NoEventReference](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/NoEventReference.java) | Removes this class as a subscriber to the marked nodes event subscriber list. |
+| [@EventHandler \(propagate= false\)](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java) | Propagate enables publication of events to child nodes. |
 
 
 
