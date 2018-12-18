@@ -4,7 +4,7 @@ description: propagate events for dirty nodes only
 
 # Dirty node monitoring
 
-The goal is to only let the execution path proceed if a node marks itself as being dirty.
+The goal is to only let the execution path propagate if a node marks itself as being dirty.
 
 Sometimes it is useful to only let the event wave progress if the current node marks itself as being dirty. For example  a level monitor will swallow the event wave unless the level is breached. An OnEvent method with a boolean return type is monitored as a dirty status flag by Fluxtion with the following rules:
 
