@@ -6,7 +6,9 @@ description: propagate events for dirty nodes only
 
 The goal is to only let the execution path propagate if a node marks itself as being dirty.
 
-Sometimes it is useful to only let the event wave progress if the current node marks itself as being dirty. For example  a level monitor will swallow the event wave unless the level is breached. An OnEvent method with a boolean return type is monitored as a dirty status flag by Fluxtion with the following rules:
+Sometimes it is useful to only let the event wave progress if the current node marks itself as being dirty. The intention is to remove the burden from the node developer to check state of parent nodes for a valid change. We want the framework to handle the conditional execution of branches by simply arresting the event notification wave on that branch. For example a level monitor will swallow the event wave unless the level is breached, any child nodes would only receive OnEvent notifications when the level is breached. 
+
+An OnEvent method with a boolean return type is monitored as a dirty status flag by Fluxtion with the following rules:
 
 * A true value marks the node as dirty and the event wave propagates.
 * A false value swallows the event wave and no child OnEvent methods are invoked.
