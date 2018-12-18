@@ -10,11 +10,11 @@ Sometimes it is useful to only let the event wave progress if the current node m
 
 * A true value marks the node as dirty and the event wave propagates.
 * A false value swallows the event wave and no child OnEvent methods are invoked.
-* A void return from OnEvent is presumed as a persistent value of true which will always propagate events .
+* A void return from OnEvent is presumed as a persistent value of true which will always propagate events.
 * If a child has multiple parents any parent change propagates the event wave i.e. an "_or rule_" is applied.
 
 {% hint style="info" %}
-Dirty filtering support can be toggled on or off using the supportDirtyFiltering property in the SEPConfig builder.
+Dirty filtering support can be toggled on or off using the **supportDirtyFiltering** property in the SEPConfig builder.
 {% endhint %}
 
 #### Example
