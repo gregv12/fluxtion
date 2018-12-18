@@ -76,7 +76,7 @@ public class DirtyCleanListener {
 }
 ```
 
-Generated SEP
+#### Generated SEP
 
 The dispatch method inverts the return type from the parent node when the child is listening for "clean" parents. As we expect there are four callback methods in the dispatch.
 
