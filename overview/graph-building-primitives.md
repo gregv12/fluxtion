@@ -4,7 +4,11 @@ description: Explanation of the core design time components for graph bhilding
 
 # Graph building primitives
 
+## Introduction
 
+Previously we have seen how to configure even processing in the generated SEP. This section will concentrate on the available methods to construct the graph model that the Fluxtion event stream compiler will analyse. 
+
+## Annotations
 
 Annotations provide a significant avenue for providing meta-data to the Fluxtion ESC, the relevant annotations covered in the this section are:
 
