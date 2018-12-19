@@ -23,6 +23,7 @@
     * [Push node reference](overview/child-2/push-node-reference.md)
     * [Event propagation control](overview/child-2/event-propagation-control.md)
     * [Lifecycle integration](overview/child-2/lifecycle-integration.md)
+    * [Batch processing](overview/child-2/batch-processing.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
   * [Auditing](overview/auditing.md)
   * [Generation outputs](overview/generation.md)
