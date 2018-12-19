@@ -22,6 +22,7 @@
     * [Clean node monitoring](overview/child-2/clean-node-monitoring.md)
     * [Push node reference](overview/child-2/push-node-reference.md)
     * [Event propagation control](overview/child-2/event-propagation-control.md)
+    * [Post event processing](overview/child-2/post-event-processing.md)
     * [Lifecycle integration](overview/child-2/lifecycle-integration.md)
     * [Batch processing](overview/child-2/batch-processing.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
