@@ -61,7 +61,7 @@ public class BatchNode {
 
 ### The generated SEP
 
-As described the node batch methods are invoked in the SEP BatchHandler interface methods. 
+As described the node batch methods are invoked in the SEP BatchHandler interface methods. The child node does not declare any batch methods as is not included in batch callbacks.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
