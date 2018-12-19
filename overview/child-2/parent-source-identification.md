@@ -41,16 +41,24 @@ public class ParentIdentifier {
     }
     
     @OnParentUpdate("datahandler_1")
-    public void dataHandler_1_changed(DataEventHandler handler){}
+    public void dataHandler_1_changed(DataEventHandler handler){
+        
+    }
     
     @OnParentUpdate("datahandler_2")
-    public void dataHandler_2_changed(DataEventHandler handler){}
+    public void dataHandler_2_changed(DataEventHandler handler){
+        
+    }
     
     @OnParentUpdate
-    public void myEventHandler_changed(MyEventHandler handler){}
+    public void myEventHandler_changed(MyEventHandler handler){
+        
+    }
     
     @OnEvent
-    public void process(){}
+    public void process(){
+        
+    }
 }
 ```
 
