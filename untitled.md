@@ -12,7 +12,6 @@ The example will use maven as the build system, the full example is located on g
 
 ```bash
 greg@bg21:~/tmp/fluxtion-quickstart$ mvn install -P fluxtion
-
 ```
 
 ![The steps to integrate fluxtion static event processor\(SEP\) into a system using the imperative form](.gitbook/assets/fluxtion_build.png)
