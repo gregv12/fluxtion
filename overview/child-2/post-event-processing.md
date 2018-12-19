@@ -12,6 +12,6 @@ Nodes are effectively memory caches that store intermediate and permanent result
 
 | Annotation | Behaviour |
 | :--- | :--- |
-| @AfterEvent | Marks a method to be called when  event processing has completed. This is for any event regardless if the containing instance is on the execution path. These methods will always be executed after an event cycle. |
-| @OnEventComplete | Marks a method to be called when event processing has completed. Only for node instances that are on the active execution path will be invoked.  |
+| [@AfterEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/AfterEvent.java) | Marks a method to be called when  event processing has completed. This is for any event regardless if the containing instance is on the execution path. These methods will always be executed after an event cycle. |
+| [@OnEventComplete](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEventComplete.java) | Marks a method to be called when event processing has completed. Only for node instances that are on the active execution path will be invoked.  |
 
