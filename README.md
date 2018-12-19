@@ -18,7 +18,9 @@ As a stretch goal we would like to be the [fastest single threaded java stream p
 
 ## What are we solving
 
-Fluxtion is focused on optimising the implementation of stream processing graphs. Other stream processors support marshalling, distributed processing, event distribution, gui's and a multitude of other features. Fluxtion presumes there is an event queue that will feed it, and concentrates solely on delivering correct and optimal execution of application logic. The burden of creating complicated calculation graphs is delegated to Fluxtion empowering developers to tackle high value projects without risk.
+Fluxtion is focused on optimising the implementation of stream processing graphs. Other stream processors support marshalling, distributed processing, event distribution, gui's and a multitude of other features. Fluxtion presumes there is an event queue that will feed it, and concentrates solely on delivering correct and optimal execution of application logic. 
+
+Writing complex behavioural conditional logic is hard and error prone for the developer. The burden of creating complicated calculation graphs is delegated to Fluxtion empowering developers to tackle high value projects without risk. We want to make business logic cheaper to deliver, more reliable and easier to maintain.
 
 Want to upgrade your application logic without rewriting your infrastructure? Fluxtion is the perfect solution for you.
 
