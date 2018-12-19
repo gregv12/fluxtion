@@ -18,14 +18,11 @@ Example below, MyEventProcessor handles MyEvent and ConfigEvent
 public class MyEventProcessor {
     
     @EventHandler
-    public void handleEvent(MyEvent event){
-        
-    }
+    public void handleEvent(MyEvent event){}
     
     @EventHandler
-    public void handleConfigEvent(ConfigEvent event){
-        
-    }
+    public void handleConfigEvent(ConfigEvent event){}
+    
 }
 ```
 
