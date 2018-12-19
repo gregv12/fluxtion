@@ -17,6 +17,10 @@ Nodes are effectively memory caches that store intermediate and permanent result
 
 Event post processing methods are invoked in reverse topological order. The SEP will automatically invoke post processing methods after an event cycle.
 
+{% hint style="info" %}
+OnEventComplete methods will execute before AfterEvent methods
+{% endhint %}
+
 ## Example
 
 The example demonstrates both post processing annotations. 
