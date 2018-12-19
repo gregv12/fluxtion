@@ -40,7 +40,7 @@ Use the generated SEP in your code/tests by sending Event's to the `onEvent(Even
 
 ## Detailed instructions
 
-### Step 1
+### Step 1 - create classes
 
 Create a standard maven pom file and add maven dependencies to Fluxtion runtime api and compile time builder, replace the \[CURRENT\_VERSION} on lines 4 and 9 with the latest release of Fluxtion. The cloned project has the complete [pom.xml](https://github.com/v12technology/fluxtion-quickstart/blob/master/pom.xml).
 
@@ -142,7 +142,7 @@ The `@EventHandler` annotation attached to a single argument method, marks the m
 
 Some of the methods are marked with a filter value `@EventHandler(filterId = '\t')` signifying the methods are only invoked when the Event and the filter value of the event match.
 
-### Step 2
+### Step 2- build graph
 
 The Builder class extends the base class [SEPConfig ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java)and provides meta-data to the Fluxtion generator.
 
@@ -159,7 +159,7 @@ public static class Builder extends SEPConfig {
 
 In this case we are adding a single node with public scoped variable "result" with `addPublicNode(new WordCounter(), "result")`. A public variable will allow us to "pull" data from the SEP using the reference. This file is used by Fluxtion at build time to generate the SEP.
 
-### Step 3
+### Step 3 - mvn build SEP
 
 Now the main application classes are coded we need to generate Static Event Processor that will act as the stream processor. A maven plugin configuration in the [pom.xml](https://github.com/v12technology/fluxtion-quickstart/blob/master/pom.xml) invokes Fluxtion compiler with the correct parameters in the configuration section to drive the SEP generation.
 
@@ -289,7 +289,7 @@ There are two levels of filtering occuring in the solutions:
 * By type: only if the type matches `CharEvent` will the SEP dispatch to specific `handleEvent` method
 * By value: if the value of the char matches one of the preset filters then that leg is executed, or a default un-matched branch if no match is found.
 
-### Step 4
+### Step 4 - integrate SEP
 
 The generated SEP is the same as using any java source file in your development process, just code as normal. The SEP implements the well know interface [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java). The application instantiates the SEP \(WcProcessor\) and sends events for processing by invoking `EventHandler.onEvent(Event e)` with a new event.
 
