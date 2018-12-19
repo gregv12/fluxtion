@@ -4,7 +4,7 @@ description: Use of @EventHandler annotation to push data into a SEP
 
 # Event handling
 
-## Single handler per class
+## Single event handler per class
 
 The goal is to invoke a method on a user created node when an [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java) is posted to the encapsulating SEP. 
 

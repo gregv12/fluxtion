@@ -31,7 +31,7 @@ public class MyEventProcessor {
 
 ####  Generated SEP 
 
-Fluxtion ESC will generate the following SEP:
+Fluxtion ESC will generate the SEP below. The interface method `onEvent` implements a pattern based switch using the class name as the pattern. `onEvent` delegates to a type specific dispatcher, in the overloaded `handleEvent` methods. The overloaded methods are generated at compile time and are early bound for correct dispatch resolution  by the JVM.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
