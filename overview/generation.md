@@ -1,2 +1,2 @@
-# Generation outputs
+# Generation output control
 

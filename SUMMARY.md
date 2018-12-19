@@ -27,7 +27,7 @@
     * [Lifecycle integration](overview/child-2/lifecycle-integration.md)
   * [Graph building primitives](overview/graph-building-primitives.md)
   * [Auditing](overview/auditing.md)
-  * [Generation outputs](overview/generation.md)
+  * [Generation output control](overview/generation.md)
 * [Tools](tools/README.md)
   * [Fluxtion compiler](tools/fluxtion-tool.md)
   * [Maven plugin](tools/maven-plugin.md)
