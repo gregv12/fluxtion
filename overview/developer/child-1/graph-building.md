@@ -35,7 +35,7 @@ There are a many strategies Fluxtion provides to declare the set of nodes that a
 
 Any and old methods can be combined to make the construction as extensible as possible.
 
-## Processing Inference:
+## Processing Inference
 
 Using the configuration supplied Fluxtion infers the processing intent of the developer to model the execution graph and paths. 
 
