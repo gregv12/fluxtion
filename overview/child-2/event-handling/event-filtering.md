@@ -30,16 +30,13 @@ The following example demonstrates String filtering for a configuration event:
 public class MyEventProcessor {
     
     @EventHandler
-    public void handleConfigEvent(ConfigEvent event){    
-    }
+    public void handleConfigEvent(ConfigEvent event){}
     
     @EventHandler(filterString = "timeout")
-    public void handleTimeoutConfig(ConfigEvent event){
-    }
+    public void handleTimeoutConfig(ConfigEvent event){}
     
     @EventHandler(filterString = "maxConnection")
-    public void handleMaxConnectionsConfig(ConfigEvent event){
-    }
+    public void handleMaxConnectionsConfig(ConfigEvent event){}
 }
 ```
 
@@ -86,8 +83,7 @@ public class MyEventProcessor {
 //previous handlers omitted for clarity
 
     @EventHandler(FilterType.unmatched)
-    public void unHandledConfig(ConfigEvent event) {
-    }
+    public void unHandledConfig(ConfigEvent event) {}
 }
 ```
 
@@ -135,8 +131,7 @@ public class MyEventProcessor {
 //previous handlers omitted for clarity
     
     @EventHandler(filterStringFromClass = Date.class)
-    public void dateConfig(ConfigEvent event) {
-    }
+    public void dateConfig(ConfigEvent event) {}
 }
 ```
 
@@ -187,8 +182,7 @@ public class MyEventProcessor {
 //previous handlers omitted for clarity
     
     @EventHandler(filterVariable = "configFilter")
-    public void handleMyVariableConfig(ConfigEvent event) {
-    }
+    public void handleMyVariableConfig(ConfigEvent event) {}
 }
 ```
 

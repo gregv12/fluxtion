@@ -23,15 +23,13 @@ Node classes:
 public class CleanListener {
 //omitted code for clarity
     @Initialise
-    public void init() {
-    }
+    public void init() {}
 }
 
 public class DirtyListener {
 //omitted code for clarity   
     @TearDown
-    public void tearDown() {
-    }
+    public void tearDown() {}
 }
 
 public class DirtyCleanCombiner {
@@ -40,14 +38,11 @@ public class DirtyCleanCombiner {
     private final Object parent2;
         
     @Initialise
-    public void init(){     
-    }
+    public void init(){}
     
     @TearDown
-    public void tearDown(){
-    }    
+    public void tearDown(){}    
 }
-
 ```
 
 #### Generated SEP

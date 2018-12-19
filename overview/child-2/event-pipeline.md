@@ -26,8 +26,7 @@ public class PipelineNode {
     }
     
     @OnEvent
-    public void update(){
-    }
+    public void update(){}
 }
 ```
 

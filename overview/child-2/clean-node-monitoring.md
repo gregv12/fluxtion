@@ -56,10 +56,7 @@ public class CleanListener {
     private final Object parent;
     
     @OnEvent(dirty = false)
-    public void noChangeUpdate() {
-
-    }
-
+    public void noChangeUpdate() {}
 }
 
 public class DirtyListener {
@@ -67,9 +64,7 @@ public class DirtyListener {
     private final Object parent;
 
     @OnEvent
-    public void changeUpdate() {
-
-    } 
+    public void changeUpdate() {} 
 }
 
 public class DirtyCleanListener {
@@ -77,14 +72,10 @@ public class DirtyCleanListener {
     private final Object parent;
 
     @OnEvent
-    public void changeUpdate() {
-
-    } 
+    public void changeUpdate() {} 
     
     @OnEvent(dirty = false)
-    public void noChangeUpdate() {
-
-    }
+    public void noChangeUpdate() {}
 }
 ```
 

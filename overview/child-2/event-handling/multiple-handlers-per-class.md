@@ -35,9 +35,6 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
   //Node declarations
   private final MyEventProcessor myEventProcessor_1 = new MyEventProcessor();
-  //Dirty flags
-
-  //Filter constants
 
   public SampleProcessor() {}
 
