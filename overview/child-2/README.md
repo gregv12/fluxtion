@@ -12,7 +12,7 @@ Each page will cover a single concept and possibly an accompanying annotation, w
 
 This section does not cover [graph construction](../graph-building-primitives.md), invoking [Fluxtion generator](../../tools/fluxtion-tool.md) or [auditing](../auditing.md) the SEP at runtime.
 
-## Event dispatch
+## Event dispatch rules
 
 The primitives are used by the ESC to generate a rule based predictable dispatcher. The dispatch rules the ESC obeys are:
 
@@ -27,8 +27,6 @@ The primitives are used by the ESC to generate a rule based predictable dispatch
 | Sibling ordering | The execution path order of siblings is unspecified |
 | Multiplexing instances | A single class can hold multiple nodes. An instance can appear multiple times on an execution path |
 | Active execution path | Only one execution path is actively dispatching.  |
-
-
 
 ## Annotations
 
