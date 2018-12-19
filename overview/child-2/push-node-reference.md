@@ -146,7 +146,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 The image shows the `CacheReader` and `CacheWriter` are siblings with no explicit priority order. Also note because the Cache has no parent nodes it is not included in any Execution paths, therefore the `reconcileCache()` method is never called.
 
-![Example SEP with push reference annotation removed](../../.gitbook/assets/sampleprocessor%20%284%29.png)
+![Example SEP with push reference annotation removed](../../.gitbook/assets/sampleprocessor%20%285%29.png)
 
 
 
