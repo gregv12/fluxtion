@@ -6,9 +6,11 @@ description: Imperative construction of an execution graph
 
 ## Introduction
 
-The goal is to construct a graph describing it imperatively in code.
+The goal is to construct a graph described imperatively in code.
 
-Fluxtion provides a builder class, [SEPConfig ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java)that can be extended by the user to implement imperative description logic. The Fluxtion event stream compiler consults the SEPConfig sub-class to build an execution graph. Specifying the SEPConfig file to use by Fluxtion is covered in the [tool section](../../tools/fluxtion-tool.md). with the following rules:
+Fluxtion provides a builder class, [SEPConfig ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java)that can be extended by the user to implement imperative description logic. The Fluxtion event stream compiler consults the SEPConfig sub-class to build an execution graph. Specifying the SEPConfig file to use by Fluxtion is covered in the [tool section](../../tools/fluxtion-tool.md). 
+
+Analysis is performed with the following rules:
 
 * Fluxtion instantiates the builder class at build time.
 * Application classes are loaded at compile time for analysis.
