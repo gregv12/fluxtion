@@ -10,7 +10,7 @@ This section covers the primitives the developer can use in their code to guide 
 
 Each page will cover a single concept and possibly an accompanying annotation, where appropriate diagrams and pseudo code are employed to help illustrate the concept.
 
-This section does not cover [graph construction](../graph-building-primitives.md), invoking [Fluxtion generator](../../tools/fluxtion-tool.md) or [auditing](../auditing.md) the SEP at runtime.
+This section does not cover [graph construction](../graph-building-primitives/), invoking [Fluxtion generator](../../tools/fluxtion-tool.md) or [auditing](../auditing.md) the SEP at runtime.
 
 ## Event dispatch rules
 

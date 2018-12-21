@@ -24,7 +24,7 @@ Separating the SEP and ESC into their individual processes creates the following
 
 ## Node selection
 
-There are a many strategies Fluxtion provides to declare the set of nodes that are in the execution graph. The  user must provide some information as it is not possible to infer the set of nodes purely from undecorated classes. The detail of the node selection strategies are covered in the [graph building primitives](../../graph-building-primitives.md) section, available options include:
+There are a many strategies Fluxtion provides to declare the set of nodes that are in the execution graph. The  user must provide some information as it is not possible to infer the set of nodes purely from undecorated classes. The detail of the node selection strategies are covered in the [graph building primitives](../../graph-building-primitives/) section, available options include:
 
 * Imperative form in code
 * Data driven with factories

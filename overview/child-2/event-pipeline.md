@@ -30,7 +30,7 @@ public class PipelineNode {
 }
 ```
 
-The update method will be invoked by the SEP in topological order after the DataHandler has processed an incoming event. We define the graph imperatively using a builder class, further discussion on builders is in the [graph building](../graph-building-primitives.md) section.
+The update method will be invoked by the SEP in topological order after the DataHandler has processed an incoming event. We define the graph imperatively using a builder class, further discussion on builders is in the [graph building](../graph-building-primitives/) section.
 
 ```java
 public class Builder extends SEPConfig {
