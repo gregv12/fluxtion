@@ -12,7 +12,7 @@ Previously we have seen how to configure even processing in the generated SEP. T
 
 ### Imperative
 
-Use of a [builder class](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java) and imperative code to define the nodes that make up the execution graph.
+Use of a [builder class](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java) and imperative code to define the nodes that make up the execution graph, described [here](imperative.md).
 
 ### Data driven
 
