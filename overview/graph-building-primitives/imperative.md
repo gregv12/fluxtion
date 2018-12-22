@@ -29,25 +29,6 @@ The data structures from SEPConfig that are read by Fluxtion compiler are:
 
 SEPConfig provides other members that can control the code generation process, but the data structures above are the ones used to include the instances on the final graph. Further discussion of the SEPConfig is in the [tools section](../../tools/fluxtion-tool.md).
 
-## Example
-
-The following example demonstrates adding two nodes for inclusion in the generated SEP:
-
-```java
-public class Builder extends SEPConfig{
-
-    @Override
-    public void buildConfig() {
-        MyEventHandler handler = addNode(new MyEventHandler());
-        SubNode subNode = addPublicNode(new SubNode(handler), "subNode");
-    }
-}
-```
-
-### **Notes**:
-
-Each node must be individually added to the graph using addNode or addPublicNode. Using addPublicNode we can create a public variable of type SubNode declared with the name "subNode" in the final SEP. The add methods return a reference to the node added.
-
 ## Construction rules
 
 To generate the final code Fluxtion employs the following rules for reference setting in the SEP.
@@ -56,6 +37,53 @@ To generate the final code Fluxtion employs the following rules for reference se
 * private final members will be considered as constructor parameters.
 * A constructor must exist that matches exactly the number and type of private final members.
 * If there are multiple args of the same type, then the parameter name will be used to match arg to member. Use [-parameters](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html) switch in javac to generate parameter names at compile time.
+
+## Example
+
+The following example demonstrates adding three nodes for inclusion in the generated SEP. A number  of reference setting are used:
+
+* constructor and final fields
+* bean pattern
+* public variable
+
+```java
+public class Builder extends SEPConfig{
+
+    @Override
+    public void buildConfig() {
+        MyEventHandler handler = addNode(new MyEventHandler());
+        SubNode subNode = addPublicNode(new SubNode(handler), "subNode");
+        PropertySubNode propNode = new PropertySubNode();
+        propNode.setMySubNode(subNode);
+        propNode.someParent = handler;
+        addNode(propNode, "propNode");
+    }
+}
+```
+
+### **Notes**
+
+Each node must be individually added to the graph using addNode or addPublicNode. Using addPublicNode we can create a public variable of type SubNode declared with the name "subNode" in the final SEP. The add methods return a reference to the node added.
+
+### Generated SEP
+
+```java
+public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
+
+  //Node declarations
+  private final MyEventHandler myEventHandler_1 = new MyEventHandler();
+  public final SubNode subNode = new SubNode(myEventHandler_1);
+  public final PropertySubNode propNode = new PropertySubNode();
+
+  public SampleProcessor() {
+    propNode.setMySubNode(subNode);
+    propNode.someParent = myEventHandler_1;
+  }
+//code omitted for clarity
+}
+```
+
+A number of reference setting strategies are used in the generated SEP including: constructor based, bean pattern and public variable. The constructor is used in node declarations, while the other methods are used in the constructor of the SEP.
 
 
 
