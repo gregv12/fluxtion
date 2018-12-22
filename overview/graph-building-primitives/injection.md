@@ -10,7 +10,7 @@ The goal is to combine imperative and factories instance creation to produce a S
 
 ## Injecting
 
-Use the `@inject` annotation to inject a node instance into another node. The injected instance will be automatically included in the execution graph. If a NodeFactory cannot be located for the type then the default constructor will be used to instantiate the node. If a default constructor cannot be found then a constructor bypass strategy is employed.
+Use the `@inject` annotation to inject a node instance into another node. The injected instance will be automatically included in the execution graph. If a NodeFactory cannot be located for the target type of the injection then the default constructor will be used to instantiate the node. If a default constructor cannot be found then a constructor bypass strategy is employed. An injection annotation follows the form:
 
 ```java
 @Inject
@@ -35,7 +35,7 @@ The value of a config element can be looked up from a variable in the current cl
 
 ## Example
 
-The following example injects a FilteredDataHandler into a child class \(InjectingDataProcessor\). Static and variable properties are set using the @Config and @ConfigVariable annotations. Constructor bypass is used to invoke a default constructor.
+The following example injects a FilteredDataHandler into a child class \(InjectingDataProcessor\). Static and variable properties are set using the @Config and @ConfigVariable annotations. Constructor bypass is used to invoke a default constructor during graph building.
 
 ### Node classes
 
@@ -84,7 +84,7 @@ public class InjectingDataProcessor {
 
 ### Generated SEP
 
-Note the injected instance, also has properties injectes, and one of the these is used to control the filter value of the event handler me, `dataEvent(DataEvent event)`
+Note the injected instance, also has properties injected, and one of the these is used to control the filter value of the event handler me, `dataEvent(DataEvent event)`
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
