@@ -85,5 +85,9 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 A number of reference setting strategies are used in the generated SEP including: constructor based, bean pattern and public variable. The constructor is used in node declarations, while the other methods are used in the constructor of the SEP.
 
+### Generated png
+
+![](../../.gitbook/assets/sampleprocessor%20%2811%29.png)
+
 
 
