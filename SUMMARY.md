@@ -27,6 +27,7 @@
     * [Lifecycle integration](overview/child-2/lifecycle-integration.md)
   * [Graph building primitives](overview/graph-building-primitives/README.md)
     * [Imperative](overview/graph-building-primitives/imperative.md)
+    * [Data driven](overview/graph-building-primitives/data-driven.md)
   * [Auditing](overview/auditing.md)
   * [Generation output control](overview/generation.md)
 * [Tools](tools/README.md)
