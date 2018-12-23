@@ -97,6 +97,7 @@ A sample section plugin declaration in a project using Fluxtion:
 The plugin acts as a pass through to the [Fluxtion compiler](fluxtion-tool.md) supplying configuration to the tool as well. The configuration available for the fluxtion maven plugin can be printed to the console:
 
 ```text
+d:\dvh\updated-reference-core>mvn help:describe -Dplugin=com.fluxtion:fluxtion-maven-plugin -Ddetail > mvn_plugin.out
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------------------------------------------------------------
@@ -266,6 +267,7 @@ fluxtion:generate
 running the build will invoke maven as part of the standard build cycle in the compile phase:
 
 ```text
+d:\dvh\updated-reference-core>mvn compile
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------------------------------------------------------------
