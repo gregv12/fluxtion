@@ -40,10 +40,10 @@ To generate the final code Fluxtion employs the following rules for reference se
 
 ## Tool usage
 
-The Fluxtion compiler processes the SEPConfig and the user classpath to generate the SEP.  A user invokes the executable jar [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) with a set of parameters to run a generation cycle. The compiler tool is covered in detail [here ](../../tools/fluxtion-tool.md)or used via the [maven plugin](../../tools/maven-plugin.md). The maven plugin is easier for the developer to integrate into the development process.
+The Fluxtion compiler processes the SEPConfig and the user classpath to generate the SEP.  A user invokes the executable jar [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) with a set of parameters to run a generation cycle. The compiler tool is covered in detail [here ](../../tools/fluxtion-tool.md)or used via the[ maven plugin here](../../tools/maven-plugin.md). The maven plugin is easier for the developer to integrate into the development process.
 
 {% hint style="info" %}
-The fluxtion maven plugin prints to console the command line needed to run the fluxtion.jar directly from the command line without maven.
+The fluxtion maven plugin prints to console the command line needed to run the fluxtion.jar directly. 
 {% endhint %}
 
 The command to run the compiler takes the following form:
@@ -104,8 +104,6 @@ java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/
 12:46:55.081 [main] INFO  c.f.generator.exporter.PngGenerator - png image generated:d:\example\updated-reference-core\src\main\resources\com\fluxtion\example\core\building\injection\generated\SampleProcessor.png
 12:46:55.378 [main] INFO  net.openhft.compiler.CachedCompiler - Updated com.fluxtion.example.core.building.injection.generated.SampleProcessor in d:\example\updated-reference-core\target\classes
 ```
-
-
 
 ### Generated SEP
 
