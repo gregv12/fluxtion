@@ -90,7 +90,7 @@ public class Builder extends SEPConfig{
 
 ### **Notes**
 
-Each node must be individually added to the graph using addNode or addPublicNode. Using addPublicNode we can create a public variable of type SubNode declared with the name "subNode" in the final SEP. The add methods return a reference to the node added.
+Each node must be individually added to the graph using addNode or addPublicNode. Using addPublicNode creates a public variable of type SubNode declared with the name "subNode" in the final SEP. The add methods return a reference to the node added.
 
 ### Running Fluxtion command 
 
