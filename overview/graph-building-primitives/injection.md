@@ -39,6 +39,10 @@ The value of a config element can be looked up from a variable in the current cl
 @ConfigVariable(field = "filterName", key = "filter")
 ```
 
+{% hint style="info" %}
+Mix injection and imperative strategies freely, declare multiple nodes in SEPConfig and multiple injections in any node.
+{% endhint %}
+
 ## Example
 
 The following example injects a FilteredDataHandler into a child class \(InjectingDataProcessor\). Static and variable properties are set using the @Config and @ConfigVariable annotations. Constructor bypass is used to invoke a default constructor during graph building.
@@ -160,4 +164,8 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 }
 
 ```
+
+###  Generated png
+
+![Generated SEP demonstrating injected nodes](../../.gitbook/assets/sampleprocessor%20%287%29.png)
 
