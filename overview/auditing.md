@@ -81,7 +81,7 @@ public class Builder extends SEPConfig {
 
 ### Generated SEP
 
-The generated SEP shows each stage of event processing from node registration to individual node invocations is tracked by the auditor
+The generated SEP shows each stage of event processing from node registration to individual node invocations are tracked by the auditor
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
