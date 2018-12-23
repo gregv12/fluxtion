@@ -122,7 +122,7 @@ java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/
 
 ### Generated SEP
 
-Note the injected instance, also has properties injected, and one of the these is used to control the filter value of the event handler me, `dataEvent(DataEvent event)`
+Note the injected instance, also has properties injected, and one of the these is used to control the filter value of the event handler method, `dataEvent(DataEvent event)`. On line 29 the value of of the injection config variable has been realized in the generated SEP.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
