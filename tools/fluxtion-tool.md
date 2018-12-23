@@ -16,6 +16,21 @@ The tool steps a user should follow to execute the fluxtion event stream compile
 * Create meta-data describing the[ construction of the execution graph](../overview/graph-building-primitives/).
 * Invoke the [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) on the command line with a set of parameters
 
+## Classpath
+
+Whichever construction strategy is used for compilation Fluxtion must have access to the classpath that includes user classes and Fluxtion libraries. The compiler loads all classes for analysis and instantiates nodes to add to the graph. 
+
+Some of the classes that Fluxtion libraries provide are only required at compile time as they are used to construct the graph for analysis, but once the SEP is generated these classes are not required. A set of the Fluxtion classes are required at both generation time and application runtime. Fluxtion splits it libraries with the following naming convention:
+
+| library name | build time | runtime | description |
+| :--- | :--- | :--- | :--- |
+| api | yes | yes | provides runtime classes such as events, or lifecycle interfaces |
+| builder | yes | - | classes used by client code in graph construction such as SEPConfig |
+
+A user may choose to remove the builder classes from the deployment of an application and there should be no effect on the generated SEP.
+
+## CLI
+
 Executing the help command with Fluxtion will print to console the usage reference:
 
 ```text
