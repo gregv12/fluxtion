@@ -8,7 +8,7 @@ description: Invoking Fluxtion compiler from maven
 
 Invoking Fluxtion as a standalone tool can have various difficulties attached to it. Wrapping the use of Fluxtion as a maven plugin has the following advantages:
 
-* Fluxtion generation becomes part of standard build process.
+* Fluxtion generation becomes part of the standard build process.
 * No need to construct complex command line arguments.
 * Input and output files reside in standard locations.
 * Automation reduces developer effort and sources of error.
@@ -17,17 +17,17 @@ Invoking Fluxtion as a standalone tool can have various difficulties attached to
 
 The tool steps a user should follow to execute the fluxtion event stream compiler via maven are :
 
-* Create a maven project declaring Fluxtion libraries as dependencies
+* Create a maven project declaring Fluxtion libraries as dependencies.
 * Write application classes representing nodes and events to fulfill [event processing](https://fluxtion.gitbook.io/docs/overview/child-2) requirement.
 * Create meta-data describing the [construction of the execution graph](https://fluxtion.gitbook.io/docs/overview/graph-building-primitives).
 * Add the fluxtion maven plugin to the build plugins, setting configuration.
-* Run mvn install.
+* Run a mvn build.
 
 The maven plugin is released to maven central and should be available without setting repositories.
 
 ### Fluxtion dependencies
 
-Fluxtion has two libraries the user needs to declare in dependency section, they are described [here](fluxtion-tool.md#classpath). As described the classpath section the builder is not required in the final application. To remove the builder from the runtime set of dependencies specify the provided scope. An example valid dependency section:
+Fluxtion has two libraries the user needs to declare in the dependency section, the libraries are described [here](fluxtion-tool.md#classpath). The builder library is not required in the final application, to remove the builder from the runtime set of dependencies specify the scope as provided. An example valid dependency section:
 
 ```markup
     <dependencies>
