@@ -33,13 +33,25 @@ To load a graphml navigate to the generated graphml file and drop onto the main 
 
 ### Filtering
 
-Graphs can becpme complex and difficult to read, visualiser allows filtering based on connected nodes. Click a node this will blur any non-connected nodes:
+Graphs can become complex and difficult to read, visualiser allows filtering based on connected nodes or via string match. 
 
+* For connected node filtering click a node this will blur any non-connected nodes
+* 
 ![execution graph for selected nodes](../.gitbook/assets/blurred_nodes.png)
 
 To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/sjow only filtered. 
 
 ![](../.gitbook/assets/filtered_only.png)
+
+### Reload/remove filter
+
+To reload the graphml file use keyboard shortcut 'r' \(reload\) or menu: Graph/reload from file
+
+### Zooming
+
+The active image can be zoomed in out with the toolbar items or keyboard shortcut 'i' \(zoom in\) 'o' \(zoom out\)
+
+![Zoomed in view](../.gitbook/assets/zoom_in.png)
 
   
 
