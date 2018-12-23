@@ -14,7 +14,7 @@ Analyses the application components and user supplied configuration to generate 
 
 #### Static event processor
 
-A Static Event Processor \(SEP\) processes a stream of application events at runtime. Developers integrate the SEP into application code. 
+A Static Event Processor \(SEP\) processes a stream of application events at runtime. Developers integrate the SEP into application code. The SEP is the output of the event stream compiler processing.
 
 
 
