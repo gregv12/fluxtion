@@ -40,7 +40,7 @@ To generate the final code Fluxtion employs the following rules for reference se
 
 ## Tool usage
 
-The Fluxtion compiler processes the SEPConfig and the user classpath to generate the SEP.  A user invokes the executable jar [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) with a set of parameters to run a generation cycle. The compiler tool is covered in detail [here ](../../tools/fluxtion-tool.md)or the [maven plugin](../../tools/maven-plugin.md). The maven plugin is easier for the developer to integrate into the development process.
+The Fluxtion compiler processes the SEPConfig and the user classpath to generate the SEP.  A user invokes the executable jar [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) with a set of parameters to run a generation cycle. The compiler tool is covered in detail [here ](../../tools/fluxtion-tool.md)or used via the [maven plugin](../../tools/maven-plugin.md). The maven plugin is easier for the developer to integrate into the development process.
 
 {% hint style="info" %}
 The fluxtion maven plugin prints to console the command line needed to run the fluxtion.jar directly from the command line without maven.
@@ -54,30 +54,24 @@ java -jar fluxtion.jar
 -outClass [SEP simple class name] 
 -outPackage [SEP package] 
 -outDirectory [OUTPUT_DIR for SEP]
--buildDirectory [CLASSES_DIR add to classpth]
 -outResDirectory [OUTPUT_DIR for resources]
+-buildDirectory [CLASSES_DIR add to classpth]
 -buildClasses [compile generated SEP] 
 -formatSource [format SEP source] 
 -supportDirtyFiltering [true/false - conditonal execution control] 
 -generateDebugPrep [true/false - debugging version of SEP]  
 -generateDescription [true/false - generate png/graphML]  
--assignPrivate [true/false - use reflection to assign no private non transient members]  
+-assignPrivate [true/false - use reflection to assign private non transient members]  
 -cp [CLASSPATH jars]
-```
-
-For the example below the command line to invoke Fluxtion ESC will be similar to:
-
-```bash
-java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/java -buildDirectory d:\example\updated-reference-core/target/classes -outResDirectory d:\example\updated-reference-core/src/main/resources -outPackage com.fluxtion.example.core.building.injection.generated -configClass com.fluxtion.example.core.building.injection.Builder -outClass SampleProcessor -buildClasses true -formatSource true -supportDirtyFiltering true -generateDebugPrep false -generateDescription true -assignPrivate false -cp d:\example\updated-reference-core\target\classes;C:\Users\dhv\.m2\repository\com\fluxtion\fluxtion-api\1.5.4-SNAPSHOT\fluxtion-api-1.5.4-SNAPSHOT.jar;C:\Users\dhv\.m2\repository\it\unimi\dsi\fastutil\7.0.7\fastutil-7.0.7.jar;C:\Users\dhv\.m2\repository\net\vidageek\mirror\1.6.1\mirror-1.6.1.jar;C:\Users\dhv\.m2\repository\com\fluxtion\fluxtion-builder\1.5.4-SNAPSHOT\fluxtion-builder-1.5.4-SNAPSHOT.jar
 ```
 
 ## Example
 
-The following example demonstrates adding three nodes for inclusion in the generated SEP. A number  of reference setting are used:
+The following example demonstrates adding three nodes for inclusion in the generated SEP. A variety of approaches is used to set references between nodes, including:
 
-* constructor and final fields
-* bean pattern
-* public variable
+* constructor referring to final fields - line 6
+* bean pattern getter/setter - line 8
+* public variable - line 9
 
 ```java
 public class Builder extends SEPConfig{
@@ -97,6 +91,21 @@ public class Builder extends SEPConfig{
 ### **Notes**
 
 Each node must be individually added to the graph using addNode or addPublicNode. Using addPublicNode we can create a public variable of type SubNode declared with the name "subNode" in the final SEP. The add methods return a reference to the node added.
+
+### Running Fluxtion command 
+
+For this example the command line to invoke Fluxtion ESC will be similar to the one shown below. 
+
+```bash
+java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/java -buildDirectory d:\example\updated-reference-core/target/classes -outResDirectory d:\example\updated-reference-core/src/main/resources -outPackage com.fluxtion.example.core.building.injection.generated -configClass com.fluxtion.example.core.building.injection.Builder -outClass SampleProcessor -buildClasses true -formatSource true -supportDirtyFiltering true -generateDebugPrep false -generateDescription true -assignPrivate false -cp d:\example\updated-reference-core\target\classes;C:\Users\dhv\.m2\repository\com\fluxtion\fluxtion-api\1.5.4-SNAPSHOT\fluxtion-api-1.5.4-SNAPSHOT.jar;C:\Users\dhv\.m2\repository\it\unimi\dsi\fastutil\7.0.7\fastutil-7.0.7.jar;C:\Users\dhv\.m2\repository\net\vidageek\mirror\1.6.1\mirror-1.6.1.jar;C:\Users\dhv\.m2\repository\com\fluxtion\fluxtion-builder\1.5.4-SNAPSHOT\fluxtion-builder-1.5.4-SNAPSHOT.jar
+
+12:46:54.197 [main] INFO  org.reflections.Reflections - Reflections took 281 ms to scan 6 urls, producing 605 keys and 2965 values
+12:46:54.291 [main] INFO  c.f.g.m.TopologicallySortedDependecyGraph - missing default construtor - attempting construction bypass
+12:46:55.081 [main] INFO  c.f.generator.exporter.PngGenerator - png image generated:d:\example\updated-reference-core\src\main\resources\com\fluxtion\example\core\building\injection\generated\SampleProcessor.png
+12:46:55.378 [main] INFO  net.openhft.compiler.CachedCompiler - Updated com.fluxtion.example.core.building.injection.generated.SampleProcessor in d:\example\updated-reference-core\target\classes
+```
+
+
 
 ### Generated SEP
 
