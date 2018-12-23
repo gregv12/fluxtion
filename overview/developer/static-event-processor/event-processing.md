@@ -1,6 +1,6 @@
 # Event processing
 
-### Graph processing primer
+## Graph processing primer
 
 In a stream processor events are received and processed with predictable results. A set of dependent behaviours can be modelled as a **directed acyclic graph**. Each behaviour is a node or vertex on the graph, in our case these behaviours are functions encapsulated in object instances. The references between instances that encapsulate nodes are the edges of the graph. 
 
@@ -50,7 +50,7 @@ Nodes in the execution graph are invoked if they lie on the active execution pat
 
 For a node to be in the SEP the containing object instances must be marked for inclusion. Methodologies for including instances in the graph are described in[ graph building](../child-1/graph-building.md) section.
 
-### Marking event methods
+## Marking event methods
 
 There are several annotations Fluxtion defines to mark methods as being in the execution graph, two key annotations are:
 
@@ -59,7 +59,7 @@ There are several annotations Fluxtion defines to mark methods as being in the e
 
 Event annotations and implied capabilities are covered in detail in the[ event processing primitives](../../child-2/) section. 
 
-### Event waves and data
+## Event waves and data
 
 As described previously a SEP invokes an ordered list of event notifications along the active execution path, beginning with the event handler node. Fluxtion does not send data from node to node. The event handler receives the new event as an argument, dependent nodes are notified with a no argument method a change has occurred in one of the nodes dependencies. This is analogous to throwing a rock in a pond, it is the ripples that travel along the water and not the rock, the rock is the event and the ripple the event notification.
 
