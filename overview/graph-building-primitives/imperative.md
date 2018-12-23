@@ -27,7 +27,7 @@ The data structures from SEPConfig that are read by Fluxtion compiler are:
 | publicNodes | &lt;T&gt; T addPublicNode\(T node, String name\) | Map nodes with variable name. Public final scope  |
 | auditorMap | &lt;T&gt; T addAuditor\(T listener, String name\) | Auditor to include with variable name. Public scope |
 
-SEPConfig provides other members that can control the code generation process, but the data structures above are the ones used to include the instances on the final graph. Further discussion of the SEPConfig is in the [tools section](../../tools/fluxtion-tool.md).
+SEPConfig provides other members that can control the code generation process, but the data structures above are the ones used to include the instances within the final graph. Further detailed discussion of the SEPConfig is in the [tools section](../../tools/fluxtion-tool.md).
 
 ## Construction rules
 
@@ -67,7 +67,7 @@ java -jar fluxtion.jar
 
 ## Example
 
-The following example demonstrates adding three nodes for inclusion in the generated SEP. A variety of approaches is used to set references between nodes, including:
+The following example demonstrates adding three nodes for inclusion in the generated SEP. A variety of approaches are used for setting references between nodes, including:
 
 * constructor referring to final fields - line 6
 * bean pattern getter/setter - line 8
