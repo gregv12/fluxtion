@@ -205,5 +205,5 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 ### Generated png
 
-
+![](../.gitbook/assets/sampleprocessor%20%2810%29.png)
 
