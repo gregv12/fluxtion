@@ -38,6 +38,39 @@ To generate the final code Fluxtion employs the following rules for reference se
 * A constructor must exist that matches exactly the number and type of private final members.
 * If there are multiple args of the same type, then the parameter name will be used to match arg to member. Use [-parameters](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html) switch in javac to generate parameter names at compile time.
 
+## Tool usage
+
+The Fluxtion compiler processes the SEPConfig and the user classpath to generate the SEP.  A user invokes the executable jar [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) with a set of parameters to run a generation cycle. The compiler tool is covered in detail [here ](../../tools/fluxtion-tool.md)or the [maven plugin](../../tools/maven-plugin.md). The maven plugin is easier for the developer to integrate into the development process.
+
+{% hint style="info" %}
+The fluxtion maven plugin prints to console the command line needed to run the fluxtion.jar directly from the command line without maven.
+{% endhint %}
+
+The command to run the compiler takes the following form:
+
+```text
+java -jar fluxtion.jar 
+-configClass [SEPConfig class]
+-outClass [SEP simple class name] 
+-outPackage [SEP package] 
+-outDirectory [OUTPUT_DIR for SEP]
+-buildDirectory [CLASSES_DIR add to classpth]
+-outResDirectory [OUTPUT_DIR for resources]
+-buildClasses [compile generated SEP] 
+-formatSource [format SEP source] 
+-supportDirtyFiltering [true/false - conditonal execution control] 
+-generateDebugPrep [true/false - debugging version of SEP]  
+-generateDescription [true/false - generate png/graphML]  
+-assignPrivate [true/false - use reflection to assign no private non transient members]  
+-cp [CLASSPATH jars]
+```
+
+For the example below the command line to invoke Fluxtion ESC will be similar to:
+
+```bash
+java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/java -buildDirectory d:\example\updated-reference-core/target/classes -outResDirectory d:\example\updated-reference-core/src/main/resources -outPackage com.fluxtion.example.core.building.injection.generated -configClass com.fluxtion.example.core.building.injection.Builder -outClass SampleProcessor -buildClasses true -formatSource true -supportDirtyFiltering true -generateDebugPrep false -generateDescription true -assignPrivate false -cp d:\example\updated-reference-core\target\classes;C:\Users\dhv\.m2\repository\com\fluxtion\fluxtion-api\1.5.4-SNAPSHOT\fluxtion-api-1.5.4-SNAPSHOT.jar;C:\Users\dhv\.m2\repository\it\unimi\dsi\fastutil\7.0.7\fastutil-7.0.7.jar;C:\Users\dhv\.m2\repository\net\vidageek\mirror\1.6.1\mirror-1.6.1.jar;C:\Users\dhv\.m2\repository\com\fluxtion\fluxtion-builder\1.5.4-SNAPSHOT\fluxtion-builder-1.5.4-SNAPSHOT.jar
+```
+
 ## Example
 
 The following example demonstrates adding three nodes for inclusion in the generated SEP. A number  of reference setting are used:
