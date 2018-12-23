@@ -34,7 +34,7 @@ For the diagram above we can categorise the elements as follows:
   * Event A: Node 1, Node 2, Node 3 Node 4, Node 11
   * Event B: Node 10, Node 11
 
-### Events:
+### Events
 
 The entry point into a SEP is the `onEvent(Event e)` method defined in [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java), which accepts any instance that extends the abstract class [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java). An application either defines or re-uses events that extend Event. 
 
@@ -44,13 +44,13 @@ An event provides an entry point to inject new state into the SEP and being a pr
 Posting an event to the SEP, is **pushing data** into the execution graph
 {% endhint %}
 
-### Nodes:
+### Nodes
 
 Nodes in the execution graph are invoked if they lie on the active execution path. A node is any function in a java class marked with a specific Fluxtion annotation. The node class does not have to implement an interface or extend a base class, a so-called pojo \(plain old java object\) is sufficient. 
 
 For a node to be in the SEP the containing object instances must be marked for inclusion. Methodologies for including instances in the graph are described in[ graph building](../child-1/graph-building.md) section.
 
-### Marking event methods:
+### Marking event methods
 
 There are several annotations Fluxtion defines to mark methods as being in the execution graph, two key annotations are:
 
@@ -59,7 +59,7 @@ There are several annotations Fluxtion defines to mark methods as being in the e
 
 Event annotations and implied capabilities are covered in detail in the[ event processing primitives](../../child-2/) section. 
 
-### Event waves and data:
+### Event waves and data
 
 As described previously a SEP invokes an ordered list of event notifications along the active execution path, beginning with the event handler node. Fluxtion does not send data from node to node. The event handler receives the new event as an argument, dependent nodes are notified with a no argument method a change has occurred in one of the nodes dependencies. This is analogous to throwing a rock in a pond, it is the ripples that travel along the water and not the rock, the rock is the event and the ripple the event notification.
 
