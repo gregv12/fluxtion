@@ -113,3 +113,5 @@ java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/
 Constructing parameters can be complicated. The Fluxtion maven plugin will print to console the equivalent command line to invoke Fluxtion generator directly.
 {% endhint %}
 
+ 
+
