@@ -6,7 +6,7 @@ description: Use injection annotations to create a graph
 
 ## Introduction
 
-The goal is to combine imperative and factories instance creation to produce a SEP.
+The goal is to combine imperative and factories instance creation to produce a SEP. A SEPConfig class is written by the user, but in contrast to [imperative declaration](imperative.md) only one node needs to be added, all other nodes will be added to the graph using injection.
 
 ## Injecting
 
@@ -17,15 +17,21 @@ Use the `@inject` annotation to inject a node instance into another node. The in
 public <Type> injectedInstance;
 ```
 
-### Static properties
+### Properties
 
-It is also possible to set properties of the injected instance, the properties can be static. An example setting a value of 150 in the field limit of the injected instance
+It is also possible to set properties of the injected instance, the properties can be static or variable based as described below. The properties are passed to the injected factory in a map. If no factory is registered for the instance then the properties are injected directly into the member field.
+
+For field injection primitive types and Strings are supported.
+
+#### Static properties
+
+This example shows setting a value of 150 in the field limit of an injected instance. There is no factory registered so the field will be set to the ca
 
 ```java
    @Config(key = "limit", value = "150")
 ```
 
-### Variable properties
+#### Variable properties
 
 The value of a config element can be looked up from a variable in the current class. An example setting the field filter in the inject class from the variable filterName in this class.
 
@@ -79,6 +85,21 @@ public class InjectingDataProcessor {
         this.filterName = filterName;
     }
 
+}
+```
+
+### SEPConfig
+
+The SEPConfig file adds a single node to the graph, InjectingDataProcessor. All config is passed from the 
+
+```java
+public class Builder extends SEPConfig{
+
+    @Override
+    public void buildConfig() {
+        addNode(new InjectingDataProcessor("myfilter_string"));
+    }
+    
 }
 ```
 
