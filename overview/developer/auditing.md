@@ -20,7 +20,7 @@ a markup description of the execution graph encoded in the SEP. The markup  deta
 * The variable name of the node generated in the code
 * The event types feeding into an event handler
 
-Fluxtion provides a visual analyser tool that can load the graphML and provide interactive analysis capabilities.
+Fluxtion provides a [visual analyse](../../tools/visual-analyser.md)r tool that can load the graphML and provide interactive analysis capabilities.
 
 ### Png of static event processor
 
