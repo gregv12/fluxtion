@@ -313,7 +313,9 @@ d:\dvh\updated-reference-core>mvn compile
 [INFO] ------------------------------------------------------------------------
 ```
 
+#### **Note**
 
+line 17 is the command needed to run the Flxutiion generator for this project configuration using the [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) directly without maven.
 
 
 
