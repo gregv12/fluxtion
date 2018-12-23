@@ -1,5 +1,5 @@
 ---
-description: Usage of the Fluxtion compiler
+description: Usage of the Fluxtion compiler described
 ---
 
 # Fluxtion compiler
@@ -16,11 +16,15 @@ The tool steps a user should follow to execute the fluxtion event stream compile
 * Create meta-data describing the[ construction of the execution graph](../overview/graph-building-primitives/).
 * Invoke the [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) on the command line with a set of parameters
 
+{% hint style="info" %}
+Constructing parameters for the first time can be complicated. The Fluxtion maven plugin will print to console the equivalent command line to invoke Fluxtion generator directly.
+{% endhint %}
+
 ## Classpath
 
-Whichever construction strategy is used for compilation Fluxtion must have access to the classpath that includes user classes and Fluxtion libraries. The compiler loads all classes for analysis and instantiates nodes to add to the graph. 
+Whichever construction strategy is used for compilation Fluxtion must have access to the classpath that includes user classes and Fluxtion libraries. The compiler loads all classes for analysis and instantiates nodes for adding to the graph. 
 
-Some of the classes that Fluxtion libraries provide are only required at compile time as they are used to construct the graph for analysis, but once the SEP is generated these classes are not required. A set of the Fluxtion classes are required at both generation time and application runtime. Fluxtion splits it libraries with the following naming convention:
+Some of the classes that Fluxtion libraries provide are only required at compile time as they are used to construct the graph for analysis, but once the SEP is generated these classes are not required. A set of the Fluxtion classes are required at both generation time and application runtime. Fluxtion splits its classes into libraries with the following naming convention:
 
 | library name | build time | runtime | description |
 | :--- | :--- | :--- | :--- |
@@ -108,10 +112,6 @@ java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/
 12:46:55.081 [main] INFO  c.f.generator.exporter.PngGenerator - png image generated:d:\example\updated-reference-core\src\main\resources\com\fluxtion\example\core\building\injection\generated\SampleProcessor.png
 12:46:55.378 [main] INFO  net.openhft.compiler.CachedCompiler - Updated com.fluxtion.example.core.building.injection.generated.SampleProcessor in d:\example\updated-reference-core\target\classes
 ```
-
-{% hint style="info" %}
-Constructing parameters can be complicated. The Fluxtion maven plugin will print to console the equivalent command line to invoke Fluxtion generator directly.
-{% endhint %}
 
  
 
