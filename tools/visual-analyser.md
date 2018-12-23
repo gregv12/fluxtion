@@ -36,7 +36,8 @@ To load a graphml navigate to the generated graphml file and drop onto the main 
 Graphs can become complex and difficult to read, visualiser allows filtering based on connected nodes or via string match. 
 
 * For connected node filtering click a node this will blur any non-connected nodes
-* 
+* Type in text box, selects any node that matches text and removes any disconnected nodes for the selection.
+
 ![execution graph for selected nodes](../.gitbook/assets/blurred_nodes.png)
 
 To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/sjow only filtered. 
@@ -53,6 +54,26 @@ The active image can be zoomed in out with the toolbar items or keyboard shortcu
 
 ![Zoomed in view](../.gitbook/assets/zoom_in.png)
 
-  
+![Zoom out view for complex graph](../.gitbook/assets/zoom_out.png)
 
+### Keyboard shortcuts
+
+Visualiser supports the following keyboard shortcuts:
+
+| shortcut | description |
+| :--- | :--- |
+| i | zoom in |
+| o | zoom out |
+| r | reload from graphml file |
+| f | filter view based on currently selected nodes |
+
+### Mouse actions
+
+Visualiser supports the following mouse actions on nodes
+
+| shortcut | description |
+| :--- | :--- |
+| mouse click | select connected nodes |
+| shift click | add to connected nodes |
+| double click  | show only directly connected parent or child nodes |
 
