@@ -17,7 +17,7 @@ The tool steps a user should follow to execute the fluxtion event stream compile
 * Invoke the [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) on the command line with a set of parameters
 
 {% hint style="info" %}
-Constructing parameters for the first time can be complicated. The Fluxtion maven plugin will print to console the equivalent command line to invoke Fluxtion generator directly.
+Constructing parameters for the first time can be complicated. The Fluxtion [maven plugin](maven-plugin.md) will print to console the equivalent command line to invoke Fluxtion generator directly.
 {% endhint %}
 
 ## Classpath
