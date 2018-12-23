@@ -35,7 +35,6 @@
   * [Fluxtion compiler](tools/fluxtion-tool.md)
   * [Maven plugin](tools/maven-plugin.md)
   * [Visual analyser](tools/visual-analyser.md)
-  * [Boms](tools/boms.md)
 * [Examples](examples/README.md)
   * [Tutorial](examples/tutorial.md)
   * [Reference](examples/reference.md)
