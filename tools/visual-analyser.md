@@ -23,5 +23,24 @@ Fluxtion provides a graph visualiser as part of its tool suite. The goal of the 
 
 ## Executing visualiser
 
-The visualiser is distributed as an [executable jar](https://github.com/v12technology/fluxtion-visualiser/blob/master/dist/fluxtion-visualiser.jar) located in its dist directory.
+The visualiser is distributed as an [executable jar](https://github.com/v12technology/fluxtion-visualiser/blob/master/dist/fluxtion-visualiser.jar) located in its dist directory and can be run by double clicking on the jar or with java -jar  from the command line. 
+
+### Loading graphml
+
+To load a graphml navigate to the generated graphml file and drop onto the main window of the application, see [video clip on youtube](https://www.youtube.com/watch?v=rZrooItHlUM).
+
+![freshly loaded graphml](../.gitbook/assets/viauliser_2.png)
+
+### Filtering
+
+Graphs can becpme complex and difficult to read, visualiser allows filtering based on connected nodes. Click a node this will blur any non-connected nodes:
+
+![execution graph for selected nodes](../.gitbook/assets/blurred_nodes.png)
+
+To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/sjow only filtered. 
+
+![](../.gitbook/assets/filtered_only.png)
+
+  
+
 
