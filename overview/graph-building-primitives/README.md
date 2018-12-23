@@ -1,5 +1,5 @@
 ---
-description: Explanation of the core design time components for graph bhilding
+description: Explanation of the core design time components for graph building
 ---
 
 # Graph building primitives
