@@ -2,7 +2,7 @@
 description: Be notified when a parent does not notify of change
 ---
 
-# Clean node monitoring
+# Clean node conditional branching
 
 The goal is to only let the execution path propagate if a node does not mark itself as being dirty. This is the inverse of [dirty node monitoring](dirty-node-monitoring.md).
 

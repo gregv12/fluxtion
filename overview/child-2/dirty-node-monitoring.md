@@ -2,7 +2,7 @@
 description: propagate events for dirty nodes only
 ---
 
-# Dirty node monitoring
+# Dirty node conditional branching
 
 The goal is to only let the execution path propagate if a node marks itself as being dirty.
 
