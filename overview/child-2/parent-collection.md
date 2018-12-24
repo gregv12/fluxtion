@@ -22,11 +22,13 @@ If multiple collections of the same type are tracked, the value on the @OnParent
 
 ## Example
 
-We present an example where a node has two collections of parent nodes. One collection is a list the other an array. We use the @OnParentUpdate method with a value to monitor both collections for updates in separate method callbacks.
+We present an example where a node has two collections of parent nodes. One collection is a list the other an array. We use the `@OnParentUpdate` method with a value to monitor both collections for updates in separate method callbacks.
+
+The example is available [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/collections).
 
 ### Aggregating class
 
-The because the class types of the collections intersect we direct the handlers array to the parentUpdated \(\)method using the value of the annotation to match the source collection variable name, see line 11.
+The because the class types of the collections intersect we direct the handlers array to the `parentUpdated()` method using the value of the annotation to match the source collection variable name, see line 11.
 
 ```java
 public class Aggregator {
