@@ -9,7 +9,7 @@ In Fluxtion terms we call this instance graph an **execution graph**. There are 
 * The first node on an execution path is an event handler.
 * An execution path is formed of nodes that have the first event handler as a parent.
 * Functions are nodes on the execution path.
-* An event handler is a node that accepts an incoming event for processing.
+* An event handler is a node that accepts an incoming event as an argument for processing.
 * Functions will always be invoked in execution path order.
 * Execution path order is topologically sorted such that all parent nodes are invoked before child nodes.
 * A child node will be given a valid reference to each parent dependency before any event processing occurs.
@@ -36,9 +36,9 @@ For the diagram above we can categorise the elements as follows:
 
 ### Events
 
-The entry point into a SEP is the `onEvent(Event e)` method defined in [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java), which accepts any instance that extends the abstract class [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java). An application either defines or re-uses events that extend Event. 
+The entry point into a SEP is the `onEvent(Event e)` method defined in [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java), which accepts any instance that extends the abstract class [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java). An application either defines or re-uses events that extend Event base class. 
 
-An event provides an entry point to inject new state into the SEP and being a processing loop.
+An event provides an entry point to inject new state into the SEP and begin a processing loop.
 
 {% hint style="info" %}
 Posting an event to the SEP, is **pushing data** into the execution graph
@@ -46,7 +46,7 @@ Posting an event to the SEP, is **pushing data** into the execution graph
 
 ### Nodes
 
-Nodes in the execution graph are invoked if they lie on the active execution path. A node is any function in a java class marked with a specific Fluxtion annotation. The node class does not have to implement an interface or extend a base class, a so-called pojo \(plain old java object\) is sufficient. 
+Nodes in the execution graph are invoked if they lie on the active execution path. A node is any function in a java class marked with a specific Fluxtion annotation. The enclosing node class does not have to implement an interface or extend a base class, a so-called pojo \(plain old java object\) is sufficient. 
 
 For a node to be in the SEP the containing object instances must be marked for inclusion. Methodologies for including instances in the graph are described in[ graph building](../child-1/graph-building.md) section.
 
