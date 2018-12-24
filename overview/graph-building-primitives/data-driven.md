@@ -32,9 +32,9 @@ A single call to `NodeRegistry.findOrCreateNode` within createNode method can re
 
 Nodes can be created in the createNode method and registered in the graph without delegating to a factory. Use the supplied  NodeRegistry argument and invoke  registerNode, with a newly created instance.
 
-## Factory discovery
+### Configuration data
 
-Fluxtion can either search the class path for factories or factories can be explicitly registered with the tool. The Fluxtion tool accepts a yml file to configure factory building, the yml file lists the root factories and the initial config map to give to each factory.
+The Fluxtion tool accepts a yml file to configure factory building, the yml file lists the root factories and the initial config map to give to each factory.
 
 Sample yml file
 
@@ -47,6 +47,10 @@ config:
 ```
 
 The rootNodeMappings is the fully qualified class name of the instance that will be the root of the execution graph. Multiple root nodes can be added as a list. The configuration map supplied to the NodeRegistry is derived from the config element in the yaml document.
+
+## Factory discovery
+
+Fluxtion searches the class path for factories and registers them for use by in the NodeRegistry. As long as the user created NodeRegistry is on the classpath it will be available at design time. 
 
 ## Example
 
