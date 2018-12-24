@@ -22,6 +22,10 @@ public class MyEventProcessor {
 }
 ```
 
+## Example
+
+The example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/singlehandler).
+
 #### Generated SEP
 
 Fluxtion ESC will generate the following SEP. The interface method onEvent discovers the runtime type and dipatches the event to a type specific handler. The execution path is invoked in the handleEvent method.
@@ -53,6 +57,22 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
     afterEvent();
   }
   //content removed
+}
+```
+
+### Graph builder
+
+The SEPConfig class that constructs the graph is below. Use of SEPConfig is described in [imperative graph building](../../graph-building-primitives/imperative.md). 
+
+```java
+public class Builder extends SEPConfig {
+
+    @Override
+    public void buildConfig() {
+        MyEventProcessor  handler = new MyEventProcessor();
+        addNode(handler);
+    }
+
 }
 ```
 
