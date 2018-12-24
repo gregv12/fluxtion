@@ -6,19 +6,19 @@ description: Use of collections to store references to parent nodes
 
 ## Introduction
 
-The goal is to store a set of parent references and interact with them meaningfully.
+The goal is to store a set of parent node references and interact with them meaningfully.
 
-Sometimes we want to manage a set of parents as a collection and not as scalar values. Fluxtion supports collections and arrays of parents. Any graph node that is a member of a collection will be assigned in the generated SEP at construction time.
+Sometimes we want to manage a set of nodes as a collection and not as scalar values. Fluxtion supports collections and arrays of parent nodes. Any graph node that is a member of a collection in a managed node will be assigned in the generated SEP at construction time.
 
-The @OnEvent method of the aggregating class will be invoked after all parents on the execution path have been updated.
+The `@OnEvent` method of the aggregating class will be invoked after all parents on the execution path have been updated.
 
 ### Parent change identification
 
-Sometimes it is useful to know which element of a collection has updated. The same logic that Fluxtion supports for identifying scalar [parent changes](parent-source-identification.md) works for collections. Use the `@OnParentUpdate` annotation to make a callback method for notification, the method should accept a single argument that represents the element in the collection that has updated. 
+Sometimes it is useful to know which element of a collection has updated. The same logic that Fluxtion supports for identifying scalar [parent changes](parent-source-identification.md) works for collections. Use the `@OnParentUpdate` annotation to make a callback method for notification, the method should accept a single argument. The argument is a reference to the element in the collection that has updated. 
 
 Because the notification is connected to a collection, multiple invocations of the `@OnParentUpdate` may occur in a single event cycle, once for each element updated.
 
-If multiple collections of the same type are tracked, the value on the @OnParentUpdate annotation can be used to route identifications from a collection to a specific method.
+If multiple collections of the same type are tracked, the value on the @OnParentUpdate annotation can be used to route identifications from a collection to a specific method monitoring method.
 
 ## Example
 
@@ -28,7 +28,7 @@ The example is available [here](https://github.com/v12technology/fluxtion/tree/d
 
 ### Aggregating class
 
-The because the class types of the collections intersect we direct the handlers array to the `parentUpdated()` method using the value of the annotation to match the source collection variable name, see line 11.
+Because the class types of the collections intersect we direct the handlers array to a specific method. The routing logic uses the value of the `parentUpdated()` annotation to match the source collection variable name to a handler, see line 11. In this case the Object array\(line 3\) updates will be directed to the `parentUpdated` method on line 12.
 
 ```java
 public class Aggregator {
@@ -75,7 +75,7 @@ public class Builder extends SEPConfig {
 
 ### Generated SEP
 
-The SEP creates and assigns the collections before any event processing. All parent update monitoring methods are invoked as expected and the Aggregator onEvent method is invoked after all parents have been visited.
+The SEP creates and assigns the collections before any event processing. All parent update monitoring methods are routed as expected and the `Aggregator.onEvent()` method is invoked after all parents on the active execution path have been visited.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
