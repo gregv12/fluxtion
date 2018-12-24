@@ -6,11 +6,11 @@ description: Usage of the Fluxtion compiler described
 
 ## Introduction
 
-At the heart of Fluxtion lies the Fluxtion generator. The generator is available for clients to use as a command line utility. An [executable jar](https://github.com/v12technology/fluxtion/tree/master/generator/dist) version of the generator is located in the dist directory of the generator project. Clients can download this tool and use in their own projects
+At the heart of Fluxtion lies the Fluxtion generator. An [executable jar](https://github.com/v12technology/fluxtion/tree/master/generator/dist) version of the generator is located in the dist directory of the generator project, that clients can download and use in their own projects
 
 ## Executing Fluxtion event stream compiler
 
-The tool steps a user should follow to execute the fluxtion event stream compiler are:
+The steps a user should follow to execute the fluxtion event stream compiler are:
 
 * Write application classes representing nodes and events to fulfill [event processing](../overview/child-2/) requirement.
 * Create meta-data describing the[ construction of the execution graph](../overview/graph-building-primitives/).
