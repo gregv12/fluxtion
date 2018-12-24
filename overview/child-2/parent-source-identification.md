@@ -30,7 +30,7 @@ The following rules apply when using [`@OnParentUpdate`](https://github.com/v12t
 
 ## Example
 
-The following example demonstrates execution path identification for a child node of type ParentIdentifier. The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/parent).
+The following example demonstrates execution path identification for a child node of type ParentIdentifier. The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/parent).
 
 ```java
 public class ParentIdentifier {

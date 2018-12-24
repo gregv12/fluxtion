@@ -50,7 +50,7 @@ public class Builder extends SEPConfig {
 
 ## Example
 
-The pipeline example is [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/pipeline).
+The pipeline example is [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/pipeline).
 
 #### Generated SEP
 

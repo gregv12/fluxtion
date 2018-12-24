@@ -35,7 +35,7 @@ public class Builder extends SEPConfig {
 
 ## Example
 
-The code for the graph example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/graph).
+The code for the graph example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/graph).
 
 #### Generated SEP
 
