@@ -127,7 +127,7 @@ A number of reference setting strategies are used in the generated SEP including
 
 ### Generated png
 
-![](../../.gitbook/assets/sampleprocessor%20%2813%29.png)
+![](../../.gitbook/assets/sampleprocessor%20%2814%29.png)
 
 
 
