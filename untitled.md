@@ -6,6 +6,8 @@ description: >-
 
 # Quick start
 
+## Introduction
+
 This quick-start example demonstrates implementing a simple Unix wc like utility with Fluxtion. The user creates a set of application classes that perform the actual calculations, the application classes will be orchestrated by the generated Static Event Processor\(SEP\). Each byte will be read from a file and sent to the [SEP ](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/generated/WcProcessor.java)as a [CharEvent](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/CharEvent.java). At the end of the file the char, word and line counts will be printed to console.
 
 The example will use maven as the build system, the full example is located on github [here](https://github.com/v12technology/fluxtion-quickstart). Clone the repository and then follow the example steps. 
