@@ -6,7 +6,7 @@ description: User supplied strategies for naming nodes and filters
 
 ## Introduction
 
-the goal is to use a custom supplied strategy to customise node names and filters in the generated SEP.
+The goal is to use a custom supplied strategy to customise node names and filters in the generated SEP. A custom naming strategy can add semantic value to member names that make supporting the generated SEP easier, than the default auto-generated names.
 
 ## Node naming
 
@@ -122,6 +122,8 @@ public class Builder extends SEPConfig{
 ### Generated SEP
 
 The generated SEP now has nodes whose names are more human readable due to the naming strategy, see lines 4-6. Filter comments are customised in line with the filter strategy, lines 27, 32 and 37.
+
+The SEP is much easier to map mentally making support a simpler task.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
