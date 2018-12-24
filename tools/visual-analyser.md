@@ -38,9 +38,13 @@ Graphs can become complex and difficult to read, visualiser allows filtering bas
 * For connected node filtering click a node this will blur any non-connected nodes
 * Type in text box, selects any node that matches text and removes any disconnected nodes for the selection.
 
+#### Highlight execution paths
+
 ![execution graph for selected nodes](../.gitbook/assets/blurred_nodes.png)
 
-To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/sjow only filtered. 
+#### Filter disconnected nodes
+
+To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/show only filtered. 
 
 ![](../.gitbook/assets/filtered_only.png)
 
@@ -52,7 +56,11 @@ To reload the graphml file use keyboard shortcut 'r' \(reload\) or menu: Graph/r
 
 The active image can be zoomed in out with the toolbar items or keyboard shortcut 'i' \(zoom in\) 'o' \(zoom out\)
 
+#### zoom in - shortcut key 'i'
+
 ![Zoomed in view](../.gitbook/assets/zoom_in.png)
+
+#### zoom in - shortcut key 'o'
 
 ![Zoom out view for complex graph](../.gitbook/assets/zoom_out.png)
 
