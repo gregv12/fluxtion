@@ -27,6 +27,8 @@ Fluxtion event processors can be exceedingly fast, event waiting between network
 
 The example shows two nodes that declare `batchPause` and `batchEnd` methods using the annotations defined. Batch invocations are in reverse topological order.
 
+The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/batch).
+
 ### The node classes
 
 ```java

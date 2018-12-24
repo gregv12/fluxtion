@@ -23,7 +23,7 @@ OnEventComplete methods will execute before AfterEvent methods
 
 ## Example
 
-The example demonstrates both post processing annotations. 
+The example demonstrates both post processing annotations. The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/postevent).
 
 ### The node classes:
 

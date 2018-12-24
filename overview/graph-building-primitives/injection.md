@@ -45,7 +45,7 @@ Mix injection and imperative strategies freely, declare multiple nodes in SEPCon
 
 ## Example
 
-The following example injects a FilteredDataHandler into a child class \(InjectingDataProcessor\). Static and variable properties are set using the @Config and @ConfigVariable annotations. Constructor bypass is used to invoke a default constructor during graph building.
+The following [example ](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/building/injection)injects a FilteredDataHandler into a child class \(InjectingDataProcessor\). Static and variable properties are set using the @Config and @ConfigVariable annotations. Constructor bypass is used to invoke a default constructor during graph building.
 
 ### Node classes
 

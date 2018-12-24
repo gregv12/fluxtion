@@ -4,6 +4,8 @@ description: Initialise and teardown nodes
 
 # Lifecycle integration
 
+## Introduction
+
 The goal is to provide a facility for nodes in the SEP to receive initialise and teardown notifications.
 
 Nodes may want to carry out one-off initialisation before processing events, or release resources if the SEP has completed processing and will receive no more events. Fluxtion provides two annotations that a node can a mark a method with to join the lifecycle callback set.
@@ -13,9 +15,11 @@ Nodes may want to carry out one-off initialisation before processing events, or 
 | [@Initialise](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/Initialise.java) | Invoked before any events are processed. Initialisation methods are invoked in topological order. |
 | [@TearDown](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/TearDown.java) | Invoked after all events have been processed by the SEP. Teardown methods are invoked in reverse topological order. |
 
-#### Example
+## Example
 
 In this example we annotate several classes in a graph with various @Initialise and @TeardDown annotations. The generated SEP implements the lifecycle method callbacks in the init and teardown methods defined in the [Lifecycle](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/Lifecycle.java) interface.
+
+The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/lifecycle).
 
 Node classes:
 

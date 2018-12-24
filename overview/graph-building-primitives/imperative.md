@@ -67,7 +67,7 @@ java -jar fluxtion.jar
 
 ## Example
 
-The following example demonstrates adding three nodes for inclusion in the generated SEP. A variety of approaches are used for setting references between nodes, including:
+The following [example ](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/building/imperative)demonstrates adding three nodes for inclusion in the generated SEP. A variety of approaches are used for setting references between nodes, including:
 
 * constructor referring to final fields - line 6
 * bean pattern getter/setter - line 8
