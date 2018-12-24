@@ -37,8 +37,8 @@
   * [Maven plugin](tools/maven-plugin.md)
   * [Visual analyser](tools/visual-analyser.md)
 * [Examples](examples/README.md)
-  * [Tutorial](examples/tutorial.md)
   * [Reference](examples/reference.md)
+  * [Tutorial](examples/tutorial.md)
   * [Use cases](examples/use-cases.md)
 * [FAQ](faq.md)
 
