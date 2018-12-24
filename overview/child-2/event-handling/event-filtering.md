@@ -4,6 +4,8 @@ description: Optional filtering on incoming events to target specific event hand
 
 # Event filtering
 
+## Filtering
+
 The goal is to support rules at the EventHandler to filter the event instances dispatched by the SEP to an event handler method. 
 
 Fluxtion allows filtering of event dispatch so that only event handlers that match certain criteria will receive the dispatched event. The filtering rules that Fluxtion supports are:
@@ -221,4 +223,8 @@ Produces the resulting SEP if the instance variable configFilter is set to "cfg.
     afterEvent();
   }
 ```
+
+## Example
+
+The example code is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/filtering).
 

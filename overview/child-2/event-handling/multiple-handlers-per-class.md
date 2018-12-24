@@ -4,6 +4,8 @@ description: Use of multiple @EventHandler annotations to push data into a SEP
 
 # Multiple handlers per class
 
+## Multiple handlers
+
 The goal is to have individual methods in a single class handle separate events.
 
 Multiple event handler methods in a single class are supported if the Events are of different types. Another [event handler method](./) is added to the node and annotated before re-running the generator. 
@@ -26,7 +28,11 @@ public class MyEventProcessor {
 }
 ```
 
-####  Generated SEP 
+## Example
+
+The example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/multihandler).
+
+#### Generated SEP 
 
 Fluxtion ESC will generate the SEP below. The interface method `onEvent` implements a pattern based switch using the class name as the pattern. `onEvent` delegates to a type specific dispatcher, in the overloaded `handleEvent` methods. The overloaded methods are generated at compile time and are early bound for correct dispatch resolution  by the JVM.
 

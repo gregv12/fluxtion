@@ -4,6 +4,8 @@ description: Creation of multiple event paths
 
 # Event graph
 
+## Introduction
+
 The goal is to create many unique execution paths where a node is invoked only if it is on the active execution path.
 
 The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java) annotation marks a method to be included in the execution graph as per the [event pipeline](event-pipeline.md) description. In this case we want to create a graph containing multiple execution paths. The uniqueness of an execution path is defined as the compound value of event type and filter value.
@@ -30,6 +32,10 @@ public class Builder extends SEPConfig {
 
 }
 ```
+
+## Example
+
+The code for the graph example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/graph).
 
 #### Generated SEP
 

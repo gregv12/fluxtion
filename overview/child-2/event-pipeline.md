@@ -1,8 +1,10 @@
 ---
-description: Creation of a single event path
+description: Creation of a single execution path with multiple nodes
 ---
 
 # Event pipeline
+
+## Pipeline
 
 The goal is to create an execution path where a node is invoked after a parent node has processed an event.
 
@@ -45,6 +47,10 @@ public class Builder extends SEPConfig {
 
 }
 ```
+
+## Example
+
+The pipeline example is [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/pipeline).
 
 #### Generated SEP
 
