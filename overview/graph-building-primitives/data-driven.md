@@ -150,5 +150,5 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 #### Generated png
 
-![Sample SEP built using factories and yaml config](../../.gitbook/assets/sampleprocessor%20%2813%29.png)
+![Sample SEP built using factories and yaml config](../../.gitbook/assets/sampleprocessor%20%2814%29.png)
 

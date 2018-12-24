@@ -18,6 +18,7 @@
     * [Event pipeline](overview/child-2/event-pipeline.md)
     * [Event graph](overview/child-2/event-graph.md)
     * [Parent source identification](overview/child-2/parent-source-identification.md)
+    * [Parent collection](overview/child-2/parent-collection.md)
     * [Dirty node conditional branching](overview/child-2/dirty-node-monitoring.md)
     * [Clean node conditional branching](overview/child-2/clean-node-monitoring.md)
     * [Push node reference](overview/child-2/push-node-reference.md)
