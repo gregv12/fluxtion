@@ -30,7 +30,7 @@ In the Auditor callbacks the name of the node in code and the method invoked are
 
 ## Example
 
-The example below demonstrates an auditor that tracks all node processing.
+The example below demonstrates an auditor that tracks all node processing. The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/audit).
 
 ### Auditor
 

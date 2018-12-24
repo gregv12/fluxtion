@@ -56,7 +56,7 @@ public interface FilterDescriptionProducer {
 
 ## Example
 
-The following example implements node and filter naming strategies. 
+The following example implements node and filter naming strategies. The example code is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/outstyle/naming).
 
 Several data handlers are added to the graph in a SEPConfig. Each handler has a filter string, this value will be used to generate the node names in the SEP and the comments on the filters will be customised as well with this strategy:
 
