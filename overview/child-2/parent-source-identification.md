@@ -4,6 +4,8 @@ description: Identify which execution path is active
 
 # Parent source identification
 
+## Introduction
+
 The goal is to identify which parent of a node is in the active execution path.
 
 A Node on multiple execution paths may want to know which is the active execution path. The OnEvent method does not discriminate which parent has updated, only that all parents have processed the event if they are on the execution path. Using OnEvent on its own would require all parents to maintain a status flag that a child could query. This approach is error prone, fragile and adds work to all node developers. A better solution is to reliably build event source notification into the framework. 
@@ -26,7 +28,9 @@ The following rules apply when using [`@OnParentUpdate`](https://github.com/v12t
 * For array fields use a scalar value, this will be the element in the array that has updated.
 * For array fields the marked method may be invoked multiple times in a cycle.
 
-The following example demonstrates execution path identification for a child node of type ParentIdentifier.
+## Example
+
+The following example demonstrates execution path identification for a child node of type ParentIdentifier. The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/parent).
 
 ```java
 public class ParentIdentifier {

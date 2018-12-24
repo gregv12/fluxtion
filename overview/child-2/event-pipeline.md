@@ -4,7 +4,7 @@ description: Creation of a single execution path with multiple nodes
 
 # Event pipeline
 
-## Pipeline
+## Introduction
 
 The goal is to create an execution path where a node is invoked after a parent node has processed an event.
 

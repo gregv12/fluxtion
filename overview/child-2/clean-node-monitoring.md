@@ -4,6 +4,8 @@ description: Be notified when a parent does not notify of change
 
 # Clean node conditional branching
 
+## Introduction
+
 The goal is to only let the execution path propagate if a node does not mark itself as being dirty. This is the inverse of [dirty node monitoring](dirty-node-monitoring.md).
 
 Sometimes we want to know if a node did not issue a dirty notification after processing an update. Taking the example of the breach indicator we may want to trigger an execution path branch when the limit is not breached. 
@@ -19,7 +21,7 @@ The child node indicates it wants to be notified on clean status by adding the d
 @OnEvent(dirty = false)
 ```
 
-#### Example
+## Example
 
 We create an event handler that issues a change notification flag. We connect three listener to this each with different behaviours depending upon the dirty flag status of the parent. The listeners are:
 
@@ -49,6 +51,8 @@ We create an event handler that issues a change notification flag. We connect th
     </tr>
   </tbody>
 </table>The nodes CleanListener and DirtyCleanListener use the dirty flag = false on the OnEvent annotation to indicate they are interested in receiving clean notifications.
+
+the code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/clean).
 
 ```java
 public class CleanListener {

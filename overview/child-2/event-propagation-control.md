@@ -42,6 +42,8 @@ The example provides a combination of NoEventReference and EventHandler\(propaga
 | `PropagateControlledNode`  | Ignore events from DataEventHandler, and receive all events published by PropagateControlledhandler |
 | `PropagateControlledhandler` | will swallow ConfigEvents and broadcast MyEvent's. |
 
+The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/propagation).
+
 The node classes
 
 ```java

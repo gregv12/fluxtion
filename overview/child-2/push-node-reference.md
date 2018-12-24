@@ -20,6 +20,8 @@ If the writer specifies the parent node as a push reference then no reader will 
 
 In this example we create a cache as a shared node, with a cache reader and cache writer. The reader and writer are siblings with no explicit dependency. We use the `@PushReference` annotation in the writer to mark the cache as a push destination.
 
+the code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/push).
+
 The node classes
 
 ```java

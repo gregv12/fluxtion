@@ -4,6 +4,8 @@ description: propagate events for dirty nodes only
 
 # Dirty node conditional branching
 
+## Introduction
+
 The goal is to only let the execution path propagate if a node marks itself as being dirty.
 
 Sometimes it is useful to only let the event wave progress if the current node marks itself as being dirty. The intention is to remove the burden from the node developer to check state of parent nodes for a valid change. 
@@ -23,9 +25,11 @@ An OnEvent method with a boolean return type is monitored as a dirty status flag
 Dirty filtering support can be globally toggled on or off using the **supportDirtyFiltering** property in the SEPConfig builder.
 {% endhint %}
 
-#### Example
+## Example
 
 We create a node, DirtyNode, that reports its dirty status with the return of its OnEvent method. Three DirtyNode's are created and each DirtyNode listens to one of two event handlers. The three DirtyNodes are aggregated in a class, DirtyNodeAggregator. The OnEvent method `publishDirty()`, will be protected by guard conditions that check at least one parent is dirty before being invoked.
+
+The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/dirty).
 
 The DirtyNode
 
