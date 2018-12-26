@@ -29,7 +29,7 @@
     * [Imperative](overview/graph-building-primitives/imperative.md)
     * [Data driven](overview/graph-building-primitives/data-driven.md)
     * [Injection](overview/graph-building-primitives/injection.md)
-  * [Dependency container](overview/dependency-container/README.md)
+  * [Dependency injection](overview/dependency-container/README.md)
     * [Scalar property injection](overview/dependency-container/scalar-property-injection.md)
     * [Vector property injection](overview/dependency-container/vector-property-injection.md)
     * [Reflection property injection](overview/dependency-container/reflection-property-injection.md)

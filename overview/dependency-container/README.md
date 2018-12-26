@@ -2,7 +2,7 @@
 description: SEP managing lifecycle and injecting properties to managed nodes
 ---
 
-# Dependency container
+# Dependency injection
 
 ## Introduction
 
