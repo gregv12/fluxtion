@@ -1,0 +1,2 @@
+# Scalar property injection
+
