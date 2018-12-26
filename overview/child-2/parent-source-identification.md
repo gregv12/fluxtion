@@ -76,6 +76,12 @@ public class Builder extends SEPConfig {
 
 #### Generated SEP
 
+#### Note 
+
+* Regardless of the execution path `pathIdentifier_7.process()` is always called.
+* For DataEvent, `pathIdentifier_7.dataHandler_XX_changed` are called
+* For MyEvent, `pathIdentifier_7.myEventHandler_changed` is called.
+
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
