@@ -6,7 +6,7 @@ description: Injecting scalar properties into a managed node
 
 ## Introduction <a id="introduction"></a>
 
-Fluxtion generator will inject vector properties into the SEP at runtime. The properties are read at generation time and the generated SEP will have the values hard-coded in the generated file. Using property injection client code can inject either default values or constant values into the SEP.
+Fluxtion generator will inject vector properties into the SEP at runtime. The properties are read during generation and the SEP will have the vector values hard-coded in the generated file. Using property injection client code can inject either default values or constant values into the SEP.
 
 ### Property type support <a id="property-type-support"></a>
 
@@ -49,21 +49,23 @@ The following access patterns for property injection are supported:
     <tr>
       <td style="text-align:left">Final fields</td>
       <td style="text-align:left">A constructor must be available that matches exactly the final fields.
-        If one exists Flxution will generate the constructor call, with a locally
+        If one exists Fluxtion will generate the constructor call, with a locally
         generated array or List.</td>
     </tr>
     <tr>
       <td style="text-align:left">public fields</td>
       <td style="text-align:left">
         <p>Public fields are values are written in the generated SEP. The field must</p>
-        <p>non-transient, public scope and mutable. Fluxtion will assign a locallly
+        <p>non-transient, public scope and mutable. Fluxtion will assign a locally
           generated array or List</p>
       </td>
     </tr>
   </tbody>
 </table>## Example
 
-The [example ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection/propertyvector)demonstrates contstructor, public fields and bean pattern injection for arrays and Lists. The code generated depends upon the context of the injection.
+The example demonstrates contstructor, public fields and bean pattern injection for arrays and Lists. The code generated depends upon the context of the injection.
+
+The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection/propertyvector).
 
 ### Node class
 
@@ -167,7 +169,7 @@ public class Builder extends SEPConfig {
 }
 ```
 
-Generated SEP
+### Generated SEP
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
