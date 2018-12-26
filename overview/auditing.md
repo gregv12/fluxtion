@@ -8,7 +8,7 @@ description: injection of audit into event processing
 
 The goal is to inject an external auditor into the event processing cycle so all event and node invocations can be monitored by the auditor. 
 
-When the SEP is generated there is an option to add an [Auditor](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/audit/Auditor.java). The auditor will be invoked by the SEP automatically as the execution path progresses.
+When the SEP is generated there is an option to add an [Auditor](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/audit/Auditor.java). The auditor will be invoked by the SEP automatically as the execution path progresses. An auditor receives callback about events, lifecycle and node invocations. The auditor can use this information for a variety of purposes such as monitoring performance of processing or tracing execution paths for later review.
 
 ## Audit capabilities
 
