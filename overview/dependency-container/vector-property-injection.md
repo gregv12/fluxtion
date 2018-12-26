@@ -22,3 +22,12 @@ The supported types that can be injected into a SEP member are:
 * String
 * Enum
 
+Collection support
+
+The following collections are supported for injection:
+
+* Arrays
+* java.util.List 
+
+
+
