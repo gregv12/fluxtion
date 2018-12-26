@@ -6,7 +6,7 @@ description: SEP managing lifecycle and injecting properties to managed nodes
 
 ## Introduction
 
-The generated SEP acts as dependency injection container for managed beans, this section discusses those capabilities. The SEP container provides the following features:
+The generated SEP acts as dependency injection container for managed beans, this section discusses those capabilities. A generated SEP provides the following features:
 
 * Managed node references
   * Instantiating managed nodes in topological order.
