@@ -6,7 +6,7 @@ description: Injecting scalar properties into a managed node
 
 ## Introduction
 
-Fluxtion generator will inject scalar properties into the SEP at runtime. The properties are read at generation time and the generated SEP will have the values hard-coded in the generated file. Using property injection client code can inject either default values or constant values into the SEP. 
+Fluxtion generator will inject scalar properties into the SEP at runtime. The properties are read during generation and the SEP will have the values hard-coded into the generated file. Using property injection client code can inject either default values or constant values into the SEP. 
 
 ### Property type support
 
@@ -56,11 +56,17 @@ The following access patterns for property injection are supported:
   </tbody>
 </table>Constructor/field matching will use the logic described [here](../graph-building-primitives/imperative.md#construction-rules).
 
+{% hint style="warning" %}
+Derived final fields are not supported, the class must have a constructor referencing all the final fields.
+{% endhint %}
+
 ## Example
 
-The [example ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection/propertyscalar)demonstrates all the capabilities of scalar property injection: final fields with constructors, public properties, bean properties and transient properties. The generated SEP contains the values set in the builder.
+The example demonstrates all the capabilities of scalar property injection: final fields with constructors, public properties, bean properties and transient properties. The generated SEP contains the values set in the builder.
 
-Node class
+The example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection/propertyscalar)
+
+### Node class
 
 ```java
 public class PropertyHandler {
