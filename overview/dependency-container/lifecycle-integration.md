@@ -19,7 +19,7 @@ Nodes may want to carry out one-off initialisation before processing events, or 
 
 In this example we annotate several classes in a graph with various @Initialise and @TeardDown annotations. The generated SEP implements the lifecycle method callbacks in the init and teardown methods defined in the [Lifecycle](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/Lifecycle.java) interface.
 
-The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/lifecycle).
+The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection/lifecycle).
 
 Node classes:
 
