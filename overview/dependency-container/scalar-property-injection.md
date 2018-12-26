@@ -242,7 +242,12 @@ public class Builder extends SEPConfig{
 
 ### Generated SEP
 
-The generated SEP contains the member values as read at generation time. Complex constructors, bean pattern and public fields are all supported. Note transient field values are not written in the SEP.
+The generated SEP contains the member values as read at generation time. Complex constructors, bean pattern and public fields are all supported. 
+
+#### Note
+
+* Transient field values are not written in the SEP.
+* All values set before constructor exits
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
