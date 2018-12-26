@@ -22,6 +22,10 @@ The supported types that can be injected into a SEP member are:
 * String
 * Enum
 
+{% hint style="info" %}
+Unsupported types can be written in an [@Initialise](lifecycle-integration.md) method, derived from an injected property.
+{% endhint %}
+
 ### Injection mechanism
 
 The following access patterns for property injection are supported:
