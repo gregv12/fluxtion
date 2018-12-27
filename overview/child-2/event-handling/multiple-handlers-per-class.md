@@ -14,7 +14,13 @@ Multiple event handler methods in a single class are supported if the Events are
 Using an _EventHandler interface_ would only allow one event type per instance, annotations allow a plurality of event handler methods in a class. 
 {% endhint %}
 
-Example below, MyEventProcessor handles MyEvent and ConfigEvent
+## Example
+
+In this xxample MyEventProcessor handles MyEvent and ConfigEvent's. Two single argument methods are annotated with @EventHandler, the argument type is the event type to dispatch by the generated SEP.
+
+The example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/multihandler).
+
+### Node class
 
 ```java
 public class MyEventProcessor {
@@ -28,13 +34,26 @@ public class MyEventProcessor {
 }
 ```
 
-## Example
+### SEPConfig builder
 
-The example is located [here](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/multihandler).
+The graph is created using imperative construction in the Builder file. The Builder is loaded by Fluxtion ESC at compile time to generate the SEP.
 
-#### Generated SEP 
+```java
+public class Builder extends SEPConfig {
 
-Fluxtion ESC will generate the SEP below. The interface method `onEvent` implements a pattern based switch using the class name as the pattern. `onEvent` delegates to a type specific dispatcher, in the overloaded `handleEvent` methods. The overloaded methods are generated at compile time and are early bound for correct dispatch resolution  by the JVM.
+    @Override
+    public void buildConfig() {
+        MyEventProcessor  handler = new MyEventProcessor();
+        addNode(handler);
+    }
+}
+```
+
+### Generated SEP 
+
+Fluxtion ESC will generate the SEP below. The interface method `onEvent` implements a pattern based switch using the class name as the pattern. `onEvent` delegates to a type specific dispatcher, in the overloaded `handleEvent` methods. 
+
+The overloaded methods are generated at compile time and are early bound for correct dispatch resolution  by the JVM.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
