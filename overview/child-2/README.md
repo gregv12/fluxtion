@@ -44,8 +44,8 @@ Annotations provide a significant avenue for providing meta-data to the Fluxtion
 | `@OnEvent` | Marks a method to be included in the execution graph. Will be called when all of its dependent nodes on the execution path have processed the event. |
 | `@OnEventComplete` | The inverse of OnEvent behaviour, similar to AfterEvent but only if the node is on the execution path. |
 | `@OnParentUpdate` | Marks a method to receive the Identity of the parent node\(s\) that have updated. |
-| `@TearDown` | A finalisation method that is invoked by the SEP after all event processing. |
 | `@PushReference` | Inverts the execution path order so the child is before the parent in the event notification wave |
+| `@TearDown` | A finalisation method that is invoked by the SEP after all event processing. |
 
 
 
