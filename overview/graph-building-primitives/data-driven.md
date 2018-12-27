@@ -71,7 +71,7 @@ public class FactoryNode {
 }
 ```
 
-#### Factory
+### Factory
 
 ```java
 public class Factory extends SEPConfig implements NodeFactory<FactoryNode>  {
@@ -89,7 +89,7 @@ public class Factory extends SEPConfig implements NodeFactory<FactoryNode>  {
 }
 ```
 
-#### Yaml config
+### Yaml config
 
 ```yaml
 rootNodeMappings: 
@@ -148,7 +148,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 ```
 
-#### Generated png
+### Generated png
 
 ![Sample SEP built using factories and yaml config](../../.gitbook/assets/sampleprocessor%20%2814%29.png)
 
