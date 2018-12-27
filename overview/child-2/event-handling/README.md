@@ -8,7 +8,7 @@ description: Use of @EventHandler annotation to push data into a SEP
 
 The goal is to invoke a method on a user created node when an [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java) is posted to the encapsulating SEP. 
 
-The method must accept a single argument that is of type Event and be marked with [@EventHandler](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) annotation. There are no requirements on method naming, only the method signature and annotation are analysed by Fluxtion. 
+The method must accept a single argument that is of type [Event ](https://github.com/v12technology/fluxtion/blob/develop/api/src/main/java/com/fluxtion/runtime/event/Event.java)and be marked with [@EventHandler](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) annotation. There are no requirements on method naming, only the method signature and annotation are analysed by Fluxtion. 
 
 Fluxtion employs pattern type matching analysis to ensure the correct method dispatch occurs.
 
@@ -18,7 +18,7 @@ The example is located [here](https://github.com/v12technology/fluxtion/tree/dev
 
 ### Node class
 
-In this example  [MyEventProcessor ](https://github.com/v12technology/fluxtion/blob/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/singlehandler/MyEventProcessor.java)handles[ MyEvent.  ](https://github.com/v12technology/fluxtion/blob/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/shared/MyEvent.java)The method is marked with the annotation [`@EventHandler`](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) to identify it as an event handler method to Fluxtion compiler at generation time.
+In this example  [MyEventProcessor ](https://github.com/v12technology/fluxtion/blob/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/singlehandler/MyEventProcessor.java)handles[ MyEvent.  ](https://github.com/v12technology/fluxtion/blob/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/shared/MyEvent.java)The method is marked with the annotation [`@EventHandler`](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/EventHandler.java) to identify it as an event handler method to the Fluxtion compiler at generation time.
 
 ```java
 public class MyEventProcessor {
@@ -30,7 +30,7 @@ public class MyEventProcessor {
 
 ### Generated SEP
 
-Fluxtion ESC will generate the following SEP. The interface method onEvent discovers the runtime type and dipatches the event to a type specific handler. The execution path is invoked in the handleEvent method.
+Fluxtion ESC will generate the following SEP. The interface method onEvent discovers the runtime type \(line 11\) and dipatches the event to a type specific handleEvent method \(line 20\). The execution path is invoked in the handleEvent method.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
@@ -64,7 +64,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 ### Graph builder
 
-The SEPConfig class that constructs the graph is below. Use of SEPConfig is described in [imperative graph building](../../graph-building-primitives/imperative.md). 
+The SEPConfig class that constructs the graph imperatively is shown below. Use of SEPConfig is described in [imperative graph building](../../graph-building-primitives/imperative.md). 
 
 ```java
 public class Builder extends SEPConfig {
