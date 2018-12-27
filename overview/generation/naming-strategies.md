@@ -1,16 +1,16 @@
 ---
-description: User supplied strategies for naming nodes and filters
+description: User supplied strategies for naming SEP nodes and filters
 ---
 
 # Naming strategies
 
 ## Introduction
 
-The goal is to use a custom supplied strategy to customise node names and filters in the generated SEP. A custom naming strategy can add semantic value to member names that make supporting the generated SEP easier, than the default auto-generated names.
+The goal is to use a custom supplied strategy to customise node names and filters in the generated SEP. A custom naming strategy can add semantic value to member names that makes supporting the generated SEP easier. The default auto-generated names can be cryptic and confusing due to their similiarity..
 
 ## Node naming
 
-A developer can customise the node variable names declared within the final SEP by supplying Fluxtion with an instance of the [NodeNameProducer ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/generation/NodeNameProducer.java)interface. This can greatly help debugging and understanding the SEP code as contextually sensitive identifiers can be used within the SEP in place of the default cryptic auto-generated names. The interface is simple:
+A developer can customise the node variable names declared within the final SEP by supplying Fluxtion with an instance of the [NodeNameProducer ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/generation/NodeNameProducer.java)interface. This can greatly help debugging and understanding the SEP code as contextually sensitive identifiers can be used within the SEP in place of the default cryptic auto-generated names. The interface is simple, Fluxtion compiler supplies the instance at generation time and the user returns a String name for the node. A null return delegates to the default auto-naming strategy.
 
 ```java
 public interface NodeNameProducer {
@@ -26,7 +26,7 @@ public interface NodeNameProducer {
 
 ## Filter naming
 
- A developer can customise the filter names and comments declared within the final SEP by supplying Fluxtion with an instance of the [FilterDescriptionProducer ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/generation/FilterDescription.java)interface. This can greatly help debugging and understanding the SEP code as contextually sensitive identifiers can be used within the SEP in place of the default cryptic auto-generated names. The interface is simple:
+ A developer can customise the filter names and comments declared within the final SEP by supplying Fluxtion with an instance of the [FilterDescriptionProducer ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/generation/FilterDescription.java)interface. This can greatly help debugging and understanding the SEP code as contextually sensitive identifiers can be used within the SEP in place of the default cryptic auto-generated names. The interface is simple as shown below. The developer returns a [FilterDescription ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/generation/FilterDescription.java)which also allows comments to be present at filter sites.
 
 ```java
 public interface FilterDescriptionProducer {
