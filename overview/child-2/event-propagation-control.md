@@ -44,7 +44,7 @@ The example provides a combination of NoEventReference and EventHandler\(propaga
 
 The code for the example is located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events/propagation).
 
-The node classes
+### The node classes
 
 ```java
 public class PropagateControlledhandler {
