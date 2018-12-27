@@ -26,6 +26,8 @@ The update method will be invoked by the SEP in topological order after the Data
 
 ### Node class
 
+The PipelineNode class declares a dependency to its parent, DataEventHandler \(handler\). The [@OnEvent](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/annotations/OnEvent.java) annotation requires this method to be invoked after handler has complete processing the incoming event. See [here](../developer/static-event-processor/event-processing.md#topological-order) for discussion on node ordering.
+
 ```java
 public class PipelineNode {
 
@@ -41,6 +43,8 @@ public class PipelineNode {
 ```
 
 ### SEPConfig builder
+
+A pipeline is defined with two nodes, the PipelineNode is a child of the DataEventHandler node. 
 
 ```java
 public class Builder extends SEPConfig {
@@ -58,7 +62,7 @@ public class Builder extends SEPConfig {
 
 ### Generated SEP
 
-The generated SEP, implements a dispatch method invoking the execution path in topological order
+The generated SEP, implements a dispatch method invoking the execution path in topological order. As expected dataEventHandler\_1 processes the event before pipelineNode\_3 is notified of the event wave.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
