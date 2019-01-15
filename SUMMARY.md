@@ -4,6 +4,7 @@
 * [Quick start](untitled.md)
 * [User documentation](overview/README.md)
   * [Developer workflow](overview/developer-workflow.md)
+  * [Building, classpath and execution](overview/building-classpath-and-execution.md)
   * [Core concepts](overview/developer/README.md)
     * [Static event processor](overview/developer/static-event-processor/README.md)
       * [Event processing](overview/developer/static-event-processor/event-processing.md)
