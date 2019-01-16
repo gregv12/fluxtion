@@ -22,7 +22,7 @@ As a stretch goal we would like to be the [fastest single threaded java stream p
 
 Fluxtion automates the process of developing event processing algorithms. Writing complex behavioural conditional logic is hard and error prone. Streaming applications that handle multiple events and require intricate execution logic soon overwhelm the developer with complexity. The burden of creating complicated calculation graphs is delegated to Fluxtion empowering developers to tackle high value projects without risk. We want to make business logic cheaper to deliver, more reliable and easier to maintain.
 
-Fluxtion is focused on optimising the implementation of stream processing graphs. A generated Fluxtion event processor is fed a stream of application events, processes them and delivers the desired results. Possible uses include: monitoring trading in realtime for market manipulation, optimised scoring ML model, CSV parser processing  byte stream, Iot montioring and conditional execution.
+Fluxtion is focused on optimising the implementation of stream processing graphs. A generated Fluxtion event processor is fed a stream of application events, processes them and delivers the desired results. Possible uses include: realtime market manipulation monitoring, optimised scoring ML model, CSV parser processing a byte stream, ETL, data-prep, Iot montioring with conditional execution.
 
 Want to upgrade your application logic without rewriting your infrastructure? Fluxtion is the perfect solution for you.
 
