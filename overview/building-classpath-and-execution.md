@@ -26,7 +26,7 @@ Separating Fluxtion dependencies into run and build time allows a SEP to run on 
 
 ## Classpath
 
-To generate a solution Fluxtion must have access to the classpath that includes user classes, Fluxtion libraries and meta-data. 
+To generate a solution Fluxtion must have access to a classpath that includes user classes, Fluxtion libraries and meta-data. 
 
 Some of the classes that Fluxtion libraries provide are only required at compile time as they are used to construct the graph for analysis, but once the SEP is generated these classes are no longer required. A set of the Fluxtion classes are required at both generation time and application runtime. Fluxtion splits its classes into libraries with the following naming convention:
 
