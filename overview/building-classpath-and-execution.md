@@ -6,7 +6,7 @@ description: Description of build and run time environments
 
 ## Introduction
 
-Fluxtion is a code generator that increases developer efficiency, reduces bugs and makes maintenance easier. Our primary focus is processing a stream of application events resulting in execution of application logic. In this section we cover the plumbing aspects of Fluxtion in a Java environment:
+Fluxtion is a code generator that increases developer efficiency, reduces bugs and simplifies maintenance. Our primary focus is processing a stream of application events resulting in execution of application logic. In this section we cover the plumbing aspects of Fluxtion in a Java environment:
 
 * Build time vs run time
 * Classpaths
