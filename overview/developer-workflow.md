@@ -48,12 +48,12 @@ The steps a developer should follow to execute the Fluxtion event stream compile
 ### Programmatic generation
 
 {% hint style="warning" %}
-EXPERIMENTAL FEATURE, multiple classloaders are used by FLuxtion, testing is required
+EXPERIMENTAL FEATURE, multiple classloaders are used by Fluxtion, testing is required
 {% endhint %}
 
 Building a SEP using the tools provided \(mvn plugin or cli\) maybe inconvenient as this requires more upfront development effort. Fluxtion provides a library for building a SEP [programmatically ](https://github.com/v12technology/fluxtion/blob/master/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java)in the current process. The library generates code and classes as the out of process solutions. The SEP artifacts generated in process are transient and will not persist between startups, unless the generated sources are copied into the source base and compiled.
 
-#### Maven classpaths
+#### Maven classpath
 
 A BOM is provided that simplifies selecting compatible versions of Fluxtion libraries. The Fluxtion BOM sets the scope of libraries as follows:
 
@@ -63,9 +63,32 @@ A BOM is provided that simplifies selecting compatible versions of Fluxtion libr
 | builder | provided |
 | generator | provided |
 
-api - compile builder - provided generator - provided
+Provided dependencies are not included as transitive maven dependencies, they can be accessed during compilation. To use in process building all libraries must be on the class path, we can achieve this in two ways leveraging maven functionality:
 
-Provided dependencies are not included as transitive maven dependencies. Provided classes can be accessed during compilation but will not distribute with the application, or required as a dependency. To use in process building all libraries must be on the class path, we can achieve this in two ways leveraging maven functionality:
+* **Generate in test scope** - test classes have access to provided artifacts, allowing programmatic generation.
+* **Override maven scope** - set all Fluxtion dependencies as compile scope. 
 
-TEST EXPICIT SCOPE
+#### Developer process
+
+The developer process is the same as that set out previously, except for a few small changes.
+
+#### setup
+
+* Create a[ maven project ](../tools/maven-plugin.md#fluxtion-dependencies)declaring Fluxtion libraries as dependencies.
+
+#### definition
+
+* Write application classes representing nodes and events to fulfill [event processing](https://fluxtion.gitbook.io/docs/overview/child-2) requirement.
+* Create meta-data describing the [construction of the execution graph](https://fluxtion.gitbook.io/docs/overview/graph-building-primitives).
+
+#### generation
+
+* Write programmtic definition in a test. 
+* Run a mvn [build](../tools/maven-plugin.md#run-build).
+
+#### integration
+
+* Integrate the generated SEP into the [application](../untitled.md#step-4-integrate-sep).
+
+
 
