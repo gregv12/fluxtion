@@ -18,7 +18,7 @@ Creating a Static Event processor involves three distinct phases for a developer
 
 ## Maven integration
 
-Fluxtion integrates with the standard maven workflow, we offer to maven integration methods:
+Fluxtion integrates with the standard maven workflow, we offer two maven integration methods:
 
 * Fluxtion maven plugin
 * Programmatic generation
@@ -83,7 +83,7 @@ The developer process is the same as that set out previously, except for a few s
 
 #### generation
 
-* Write programmtic definition in a test. 
+* Write [programmtic ](https://github.com/v12technology/fluxtion/blob/master/generator/src/test/java/com/fluxtion/compiler/InprocessSepCompilerTest.java)definition in a test, specifying the output directories.
 * Run a mvn [build](../tools/maven-plugin.md#run-build).
 
 #### integration
