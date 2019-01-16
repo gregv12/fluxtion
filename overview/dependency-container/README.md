@@ -13,7 +13,7 @@ The generated SEP acts as dependency injection container for managed nodes, this
   * Assigning scalar references between managed nodes.
   * Assigning vector references between managed nodes.
   * Reflection based reference assignment.
-  * All reference are set before SEP constructor exits.
+  * All reference are set before SEP init method exits.
 * Property Setting
   * Setting scalar properties on nodes.
   * Setting vector properties on nodes.
