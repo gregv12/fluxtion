@@ -25,7 +25,7 @@ Fluxtion integrates with the standard maven workflow, we offer to maven integrat
 
 ### Fluxtion maven plugin
 
-The steps a developer should follow to execute the Fluxtion event stream compiler via maven as part of the standard workflow are:
+The steps a developer should follow to execute the Fluxtion event stream compiler via a maven plugin as part of the standard workflow are:
 
 #### setup
 
@@ -44,4 +44,28 @@ The steps a developer should follow to execute the Fluxtion event stream compile
 #### integration
 
 * Integrate the generated SEP into the [application](../untitled.md#step-4-integrate-sep).
+
+### Programmatic generation
+
+{% hint style="warning" %}
+EXPERIMENTAL FEATURE, multiple classloaders are used by FLuxtion, testing is required
+{% endhint %}
+
+Building a SEP using the tools provided \(mvn plugin or cli\) maybe inconvenient as this requires more upfront development effort. Fluxtion provides a library for building a SEP [programmatically ](https://github.com/v12technology/fluxtion/blob/master/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java)in the current process. The library generates code and classes as the out of process solutions. The SEP artifacts generated in process are transient and will not persist between startups, unless the generated sources are copied into the source base and compiled.
+
+#### Maven classpaths
+
+A BOM is provided that simplifies selecting compatible versions of Fluxtion libraries. The Fluxtion BOM sets the scope of libraries as follows:
+
+| library | maven scope |
+| :--- | :--- |
+| api | compile |
+| builder | provided |
+| generator | provided |
+
+api - compile builder - provided generator - provided
+
+Provided dependencies are not included as transitive maven dependencies. Provided classes can be accessed during compilation but will not distribute with the application, or required as a dependency. To use in process building all libraries must be on the class path, we can achieve this in two ways leveraging maven functionality:
+
+TEST EXPICIT SCOPE
 
