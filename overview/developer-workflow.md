@@ -51,7 +51,7 @@ The steps a developer should follow to execute the Fluxtion event stream compile
 EXPERIMENTAL FEATURE, multiple classloaders are used by Fluxtion, testing is required
 {% endhint %}
 
-Building a SEP using the tools provided \(mvn plugin or cli\) maybe inconvenient as this requires more upfront development effort. Fluxtion provides a library for building a SEP [programmatically ](https://github.com/v12technology/fluxtion/blob/master/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java)in the current process. The library generates code and classes as the out of process solutions. The SEP artifacts generated in process are transient and will not persist between startups, unless the generated sources are copied into the source base and compiled.
+Building a SEP using the tools provided \(mvn plugin or cli\) maybe inconvenient as this requires more upfront development effort. Fluxtion provides a library for building a SEP [programmatically ](https://github.com/v12technology/fluxtion/blob/master/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java)in the current process. The library generates the same code and classes as the out of process solutions. The SEP artifacts generated in process are transient and will not persist between startups, unless the generated sources are copied into the source base and compiled.
 
 #### Maven classpath
 
