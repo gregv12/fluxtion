@@ -2,7 +2,7 @@
 description: Use injection annotations to create a graph
 ---
 
-# Injection
+# Dependency Injection
 
 ## Introduction
 

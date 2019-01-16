@@ -30,7 +30,7 @@ The primitives are used by the ESC to generate a rule based predictable dispatch
 
 ## Annotations
 
-Annotations provide a significant avenue for providing meta-data to the Fluxtion ESC, the relevant annotations covered in the this section are:
+Annotations provide a significant amount of meta-data to the Fluxtion ESC, the relevant annotations covered in the this section are:
 
 | Annotation | Comment |
 | :--- | :--- |
