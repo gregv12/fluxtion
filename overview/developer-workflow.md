@@ -66,7 +66,7 @@ A BOM is provided that simplifies selecting compatible versions of Fluxtion libr
 Provided dependencies are not included as transitive maven dependencies, they can be accessed during compilation. To use in process building all libraries must be on the class path, we can achieve this in two ways leveraging maven functionality:
 
 * **Generate in test scope** - test classes have access to provided artifacts, allowing programmatic generation.
-* **Override maven scope** - set all Fluxtion dependencies as compile scope. 
+* **Override maven scope** - set all Fluxtion dependencies as compile scope. Generate as part of the execution of the application.
 
 #### Developer process
 
