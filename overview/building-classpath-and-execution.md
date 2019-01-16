@@ -38,3 +38,7 @@ Some of the classes that Fluxtion libraries provide are only required at compile
 
 A user may choose to remove the builder classes from the deployment of an application and there should be no effect on the generated SEP. The api classes do not depend upon builder or generator. 
 
+## Execution
+
+Exectuing the SEP at runtime is the same as executing any java class, the required elements must be on the classpath. The only Fluxtion library required at runtime is the api library. 
+
