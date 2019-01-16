@@ -12,6 +12,7 @@ Fluxtion generator will inject vector properties into the SEP at runtime. The pr
 
 The supported types that can be injected into a SEP member are:
 
+* Managed node references
 * byte
 * char
 * short
