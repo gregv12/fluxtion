@@ -22,6 +22,8 @@ The compiler loads all classes during analysis, uses meta-data to instantiate no
 
 The generated SEP executes at run time processing the stream of application events. The generator and components used during build time are not required by the SEP. A SEP component can have a long term life time, persisting between machine restarts.
 
+Separating Fluxtion dependencies into run and build time allows a SEP to run on environments that do not support the requirements of the build time. For example the build time may require java 11 but the SEP requires a minimum version of java 7. This is useful where production environments are fixed or a SEP is deployed on a device that does not support dynamic compilation and class loading.
+
 ## Classpath
 
 To generate a solution Fluxtion must have access to the classpath that includes user classes, Fluxtion libraries and meta-data. 
@@ -34,5 +36,5 @@ Some of the classes that Fluxtion libraries provide are only required at compile
 | [builder](https://github.com/v12technology/fluxtion/tree/master/builder) | yes | - | classes used by client code in graph construction such as SEPConfig |
 | [generator](https://github.com/v12technology/fluxtion/tree/master/generator) | yes | - | The implementation of an event stream compiler, builder classes use the generator |
 
-A user may choose to remove the builder classes from the deployment of an application and there should be no effect on the generated SEP. Api classes do not depend upon builder or generator. 
+A user may choose to remove the builder classes from the deployment of an application and there should be no effect on the generated SEP. The api classes do not depend upon builder or generator. 
 

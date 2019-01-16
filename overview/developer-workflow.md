@@ -16,9 +16,16 @@ Creating a Static Event processor involves three distinct phases for a developer
 
       An example of the steps covered is in the [quick start](../untitled.md) example.
 
-## Maven based workflow
+## Maven integration
 
-The steps a developer should follow to execute the fluxtion event stream compiler via maven as part of the standard workflow are:
+Fluxtion integrates with the standard maven workflow, we offer to maven integration methods:
+
+* Fluxtion maven plugin
+* Programmatic generation
+
+### Fluxtion maven plugin
+
+The steps a developer should follow to execute the Fluxtion event stream compiler via maven as part of the standard workflow are:
 
 #### setup
 
