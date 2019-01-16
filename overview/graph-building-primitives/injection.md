@@ -6,7 +6,7 @@ description: Use injection annotations to create a graph
 
 ## Introduction
 
-The goal is to combine imperative and factories instance creation to produce a SEP. A SEPConfig class is written by the user, but in contrast to [imperative declaration](imperative.md) only one node needs to be added, all other nodes will be added to the graph using injection.
+The goal is to combine imperative and factories instance creation to generate a SEP. A SEPConfig class is written by the user, but in contrast to [imperative declaration](imperative.md) only one node needs to be imperatively added, all other nodes can be added to the graph using injection.
 
 ## Injecting
 
@@ -19,7 +19,7 @@ public <Type> injectedInstance;
 
 ### Properties
 
-It is also possible to set properties of the injected instance, the properties can be static or variable based as described below. The properties are passed to the injected factory in a map. If no factory is registered for the instance then the properties are injected directly into the member field.
+It is also possible to set properties of the injected instance, the properties can be static or variable based as described below. The properties are passed to the injected factory in a map. If no factory is registered for the instance then the properties are injected directly into a member field of the injected instance. All injected properties will be set in the generated SEP
 
 For field injection primitive types and Strings are supported.
 
@@ -122,7 +122,7 @@ java -jar fluxtion.jar -outDirectory d:\example\updated-reference-core/src/main/
 
 ### Generated SEP
 
-Note the injected instance, also has properties injected, and one of the these is used to control the filter value of the event handler method, `dataEvent(DataEvent event)`. On line 29 the value of of the injection config variable has been realized in the generated SEP.
+Note the injected instance also has properties injected, see line 11 where the limit field is set to 150. The filter field of FilteredDataHandler controls the filter value of the generated event handler method, `dataEvent(DataEvent event)`. On line 29 the value of of the injection config variable has been realized in the generated SEP, the original value is passed on line 5 of the [SEPConfig ](injection.md#sepconfig)above.
 
 ```java
 public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
