@@ -14,9 +14,7 @@ Fluxtion is a code generator that increases developer efficiency, reduces bugs a
 
 ## Build time 
 
-Fluxtion carries out an analysis on the application classes using meta-data the developer provides and generates a SEP solution. This process occurs at compile time, our metaprogramming approach shifts some of the work to compile time ahead of execution of the [SEP ](developer/static-event-processor/)solution. The Fluxtion compiler is analogous to the Java compiler and the JVM, without byte code the JVM cannot execute a program. 
-
-The compiler loads all classes during analysis, uses meta-data to instantiate nodes that are added to the graph. This buildtime graph is analysed and used to generate the SEP solution for runtime execution.
+Fluxtion analyses application classes using meta-data the developer provides and generates a SEP solution, at compile time. Our metaprogramming approach calculates optimisations at compile time, to create a more efficient [SEP ](developer/static-event-processor/)solution at run time. 
 
 ## Run time
 
@@ -40,5 +38,5 @@ A user may choose to remove the builder classes from the deployment of an applic
 
 ## Execution
 
-Exectuing the SEP at runtime is the same as executing any java class, the required elements must be on the classpath. The only Fluxtion library required at runtime is the api library. 
+Exectuing the SEP at runtime is the same as executing any java class, the required elements must be on the classpath. The only Fluxtion library required at runtime is the api library. The api jar has and generated SEP been designed to run a wide variety of java run time environments.
 
