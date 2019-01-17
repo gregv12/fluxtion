@@ -6,7 +6,7 @@ description: Describe Fluxtion's csv processing capabilities
 
 ## Introduction
 
-Fluxtion supports csv processing capabilities as part of the fu-text extension. The headline capabilities are:
+Fluxtion supports csv processing capabilities as part of the fu-text extension, headline capabilities:
 
 * automatic marshaller generation
 * zero gc marshalling
