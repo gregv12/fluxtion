@@ -51,4 +51,6 @@
 ## Extensions
 
 * [Introduction](extensions/introduction.md)
+* [Fu-text](extensions/fu-text/README.md)
+  * [CSV processing](extensions/fu-text/csv-processing.md)
 
