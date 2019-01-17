@@ -33,7 +33,9 @@ Fluxtion supports csv processing capabilities as part of the fu-text extension, 
 * event sink dispatch
 * multi-event input file with type key
 
+## Overview
 
+The goal of CSV processing within fluxtion is to convert a byte stream into a java instance, the instance being a managed node within the SEP. In Fluxtion terms a CSV parse definition creates a node that dependent nodes in the graph can process during an execution wave. The CSV marshaller node receives many char events but only indicates a change when a valid instance is parsed on receipt of the end of record delimiter. In this way dependent nodes only process the execution wave when a fully realised instance is available. The actual instance is encapsulated within a Wrapper node. The wrapper node allows access to the underlying marshalled instance.
 
 
 
