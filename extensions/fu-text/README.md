@@ -6,7 +6,19 @@ description: Text processing capabilities supported by Fluxtion
 
 ## Introduction
 
-Fluxtion supports the processing of text streams. The streams may be received from an external publisher like a news outlet or from a local document like a csv file. Each stream is deconstructed into a set of [CharEvent ](https://github.com/v12technology/fluxtion/blob/master/extensions/fu-text/api/src/main/java/com/fluxtion/ext/futext/api/event/CharEvent.java)and [EofEvent ](https://github.com/v12technology/fluxtion/blob/master/extensions/fu-text/api/src/main/java/com/fluxtion/ext/futext/api/event/EofEvent.java) events for processing within a SEP.
+Fluxtion supports processing of text streams. Text streams may be received from an external publisher like a news outlet or from a local document like a csv file. Each stream is deconstructed into a set of [CharEvent ](https://github.com/v12technology/fluxtion/blob/master/extensions/fu-text/api/src/main/java/com/fluxtion/ext/futext/api/event/CharEvent.java)and [EofEvent ](https://github.com/v12technology/fluxtion/blob/master/extensions/fu-text/api/src/main/java/com/fluxtion/ext/futext/api/event/EofEvent.java) events for processing within a SEP.
+
+Fu-text exposes text processing as higher order functions to define logical text processing. A declarative higher-order approach is used to simplify defining text processing within a SEP.  The function creates a node in the graph and can be used just as any other node in the graph.
+
+The example below generates a SEP that processes CSV input, maps all non-transient fields from a provided bean class and marshalls to a bean instance for well formed rows. The parser is zero gc and handles millions of records per second. An event sink is added as node so this SEP could be chained to child SEP's.
+
+```java
+EventHandler sep  = sepInstance((c) -> 
+                                csvMarshaller(WorldCityBeanTransient.class).build()
+                                , pckg, className);
+```
+
+
 
 ## Requirements
 
