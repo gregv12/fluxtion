@@ -15,7 +15,6 @@ Fluxtion plugins are available that extend the functionality of the base framewo
 |  | predicate | Declarative functional predicates operating on nodes |
 |  | filter | FIlters nodes using predicates. |
 |  | window | WIndow strategies and functions operating on numeric values. |
-|  |  |  |
 | fu-text |  | Functional operators for using with ascii text. Builds on the declarative framework supplied by declarative extension. All the builder functions use the declarative form. |
 |  | csv | Parse, transform, validate, event dispatch for CSV file inputs. |
 |  | ascii | Ascii pattern matches, extractors and primitive conversions. |
