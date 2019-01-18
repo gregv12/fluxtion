@@ -52,5 +52,9 @@
 
 * [Introduction](extensions/introduction.md)
 * [Fu-text](extensions/fu-text/README.md)
-  * [CSV processing](extensions/fu-text/csv-processing.md)
+  * [CSV processing](extensions/fu-text/csv-processing/README.md)
+    * [Building CSV marshaller](extensions/fu-text/csv-processing/building-csv-marshaller.md)
+    * [Validation](extensions/fu-text/csv-processing/validation.md)
+    * [Downstream processing](extensions/fu-text/csv-processing/downstream-processing.md)
+    * [Multi-type dispatch](extensions/fu-text/csv-processing/multi-type-dispatch.md)
 
