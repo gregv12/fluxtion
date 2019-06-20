@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Quick start](untitled.md)
+* [Quick start](quick-start.md)
 * [User documentation](overview/README.md)
   * [Developer workflow](overview/developer-workflow.md)
   * [Building, classpath and execution](overview/building-classpath-and-execution.md)

@@ -32,7 +32,7 @@ Fluxtion is unique among stream processors as there is no need for a Fluxtion se
 
 Other stream processors support marshalling, distributed processing, event distribution, gui's and a multitude of other features. Fluxtion presumes there is an event queue that will feed it, and concentrates solely on delivering correct and optimal execution of application logic. 
 
-In general we try to promote [zero cost abstractions](http://matthewfl.com/2114/programming/cost-of-abstractions) in Java using a [metaprogramming ](https://en.wikipedia.org/wiki/Metaprogramming)approach. Other languages such as C++ and Rust use zero cost abstraction as a means to achieving high performance. Fluxtion brings this paradigm to Java stream processing applications. We use static analysis to create a meta-model of the calculation dependencies that in turn drives our generated solutions.
+In general we try to promote [zero cost abstractions](http://matthewfl.com/2114/programming/cost-of-abstractions) in Java using a [metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming) approach. Other languages such as C++ and Rust use zero cost abstraction as a means to achieving high performance. Fluxtion brings this paradigm to Java stream processing applications. We use static analysis to create a meta-model of the calculation dependencies that in turn drives our generated solutions.
 
 Maintenance is the most expensive cost of any system, we believe by generating code, png's, graphML and injecting monitoring points maintenance costs are reduced. Our philosophy is to help a business reduce maintenance by offering visual and documentary insight into the actual business logic.
 

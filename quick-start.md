@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-This quick-start example demonstrates implementing a simple Unix wc like utility with Fluxtion. The user creates a set of application classes that perform the actual calculations, the application classes will be orchestrated by the generated Static Event Processor\(SEP\). Each byte will be read from a file and sent to the [SEP ](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/generated/WcProcessor.java)as a [CharEvent](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/CharEvent.java). At the end of the file the char, word and line counts will be printed to console.
+This quick-start example demonstrates implementing a simple Unix wc like utility with Fluxtion. The user creates a set of application classes that perform the actual calculations, the application classes will be orchestrated by the generated Static Event Processor\(SEP\). Each byte will be read from a file and sent to the [SEP ](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/generated/WcProcessor.java) as a [CharEvent](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/CharEvent.java). At the end of the file the char, word and line counts will be printed to console.
 
 The example will use maven as the build system, the full example is located on github [here](https://github.com/v12technology/fluxtion-quickstart). Clone the repository and then follow the example steps. 
 
@@ -16,7 +16,7 @@ The example will use maven as the build system, the full example is located on g
 greg@bg21:~/tmp/fluxtion-quickstart$ mvn install -P fluxtion
 ```
 
-![The steps to integrate fluxtion static event processor\(SEP\) into a system using the imperative form](.gitbook/assets/fluxtion_build.png)
+![The steps to integrate Fluxtion static event processor\(SEP\) into a system using the imperative form](.gitbook/assets/fluxtion_build.png)
 
 ## Overview
 
@@ -26,19 +26,19 @@ There is no need to code anything follow the steps against the cloned example.
 
 #### Step 1
 
-User writes classes representing incoming events and nodes containing business logic, annotations mark callback methods in the nodes. These classes will be used in your final application. [show me](untitled.md#step-1-1)
+User writes classes representing incoming events and nodes containing business logic, annotations mark callback methods in the nodes. These classes will be used in your final application. [show me](quick-start.md#step-1-1)
 
 #### Step 2
 
-Write a [SEPConfig](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java) that binds instances of nodes together into an object graph, this class will be used by Fluxtion generator at compile time. [show me](untitled.md#step-2-1)
+Write a [SEPConfig](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/builder/node/SEPConfig.java) that binds instances of nodes together into an object graph, this class will be used by Fluxtion generator at compile time. [show me](quick-start.md#step-2-1)
 
 #### Step 3
 
-In your pom use the fluxtion maven plugin, specifying SEPConfig class, output package and class name. The plugin will invoke the fluxtion generator as part of the build, generating a SEP. [show me](untitled.md#step-3-1)
+In your pom use the Fluxtion maven plugin, specifying SEPConfig class, output package and class name. The plugin will invoke the fluxtion generator as part of the build, generating a SEP. [show me](quick-start.md#step-3-1)
 
 #### Step 4
 
-Use the generated SEP in your code/tests by sending Event's to the `onEvent(Event e)` interface method of the SEP. [show me](untitled.md#step-4-1)
+Use the generated SEP in your code/tests by sending Event's to the `onEvent(Event e)` interface method of the SEP. [show me](quick-start.md#step-4-1)
 
 ## Detailed instructions
 
@@ -61,7 +61,7 @@ Create a standard maven pom file and add maven dependencies to Fluxtion runtime 
 
 Write event and business classes that the generated SEP will manage at runtime. The classes the user creates are CharEvent.java and WordCounter.java, you can see them in [github](https://github.com/v12technology/fluxtion-quickstart/tree/master/src/main/java/com/fluxtion/sample/wordcount).
 
-[**CharEvent:**](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/CharEvent.java) Extends [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/event/Event.java), the content of the CharEvent is the char value. An event is the entry point to a processing cycle in the SEP.
+[**CharEvent:**](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/CharEvent.java) Extends [Event](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/api/event/Event.java), the content of the CharEvent is the char value. An event is the entry point to a processing cycle in the SEP.
 
 ```java
 public class CharEvent extends Event{
@@ -146,7 +146,7 @@ Some of the methods are marked with a filter value `@EventHandler(filterId = '\t
 
 ### Step 2- build graph
 
-The Builder class extends the base class [SEPConfig ](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/api/node/SEPConfig.java)and provides meta-data to the Fluxtion generator.
+The Builder class extends the base class [SEPConfig](https://github.com/v12technology/fluxtion/blob/master/builder/src/main/java/com/fluxtion/builder/node/SEPConfig.java) and provides meta-data to the Fluxtion generator.
 
 ```java
 public static class Builder extends SEPConfig {
@@ -202,7 +202,7 @@ Explanation of the configuration parameters:
 * **outputDirectory**: Output directory for generated source used as compilation inputs.
 * **generateDescription**: controls generation of SEP descriptors, eg png. Single node SEP's have none, turn off.
 
-Running the Fluxtion maven plugin as part of the build will invoke the Fluxtion compiler. In our example the plugin is run as part of the fluxtion maven profile, so to invoke the Fluxtion use:
+Running the Fluxtion maven plugin as part of the build will invoke the Fluxtion compiler. In our example the plugin is run as part of the Fluxtion maven profile, so to invoke the Fluxtion use:
 
 ```bash
 mvn install -P fluxtion
@@ -293,7 +293,7 @@ There are two levels of filtering occuring in the solutions:
 
 ### Step 4 - integrate SEP
 
-The generated SEP is the same as using any java source file in your development process, just code as normal. The SEP implements the well know interface [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/EventHandler.java). The application instantiates the SEP \(WcProcessor\) and sends events for processing by invoking `EventHandler.onEvent(Event e)` with a new event.
+The generated SEP is the same as using any java source file in your development process, just code as normal. The SEP implements the well know interface [EventHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/api/lifecycle/EventHandler.java). The application instantiates the SEP \(WcProcessor\) and sends events for processing by invoking `EventHandler.onEvent(Event e)` with a new event.
 
 ```java
 public class Main {

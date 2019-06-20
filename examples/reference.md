@@ -6,9 +6,9 @@ description: Reference examples accompanying user documentation
 
 ## Introduction
 
-The set of examples that accompany the [documentation ](../overview/)are located in the main fluxtion code repo [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples).
+The set of examples that accompany the [documentation](../overview/) are located in the main fluxtion code repo [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples).
 
-to build the examples regenerating the fluxtion outputs use the following maven command:
+to build the examples regenerating the Fluxtion outputs use the following maven command:
 
 ```text
 cd examples/documentation-examples
@@ -29,7 +29,7 @@ The package structure of the example follows that of the documentation.
 
 ### Maven pom
 
-In the root of the project is the main maven[ pom file](https://github.com/v12technology/fluxtion/blob/develop/examples/documentation-examples/pom.xml). The pom builds all the examples generating a SEP for each example, a section of the pom file is shown below:
+In the root of the project is the main maven [pom file](https://github.com/v12technology/fluxtion/blob/develop/examples/documentation-examples/pom.xml). The pom builds all the examples generating a SEP for each example, a section of the pom file is shown below:
 
 ```markup
         <profile>
