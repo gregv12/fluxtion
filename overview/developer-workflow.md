@@ -43,7 +43,7 @@ The steps a developer should follow to execute the Fluxtion event stream compile
 
 #### integration
 
-* Integrate the generated SEP into the [application](../untitled.md#step-4-integrate-sep).
+* Integrate the generated SEP into the [application](../quick-start.md#step-4-integrate-sep).
 
 ### Programmatic generation
 
@@ -92,7 +92,7 @@ The developer process is the same as that set out previously, except for a few s
 
 #### integration
 
-* Integrate the generated SEP into the [application](../untitled.md#step-4-integrate-sep).
+* Integrate the generated SEP into the [application](../quick-start.md#step-4-integrate-sep).
 
 
 

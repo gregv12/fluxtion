@@ -15,12 +15,12 @@ Invoking Fluxtion as a standalone tool can have various difficulties attached to
 
 ## Executing Fluxtion in maven
 
-The tool steps a user should follow to execute the fluxtion event stream compiler via maven are :
+The tool steps a user should follow to execute the Fluxtion event stream compiler via maven are :
 
 * Create a maven project declaring Fluxtion libraries as dependencies.
 * Write application classes representing nodes and events to fulfill [event processing](https://fluxtion.gitbook.io/docs/overview/child-2) requirement.
 * Create meta-data describing the [construction of the execution graph](https://fluxtion.gitbook.io/docs/overview/graph-building-primitives).
-* Add the fluxtion maven plugin to the build plugins, setting configuration.
+* Add the Fluxtion maven plugin to the build plugins, setting configuration.
 * Run a mvn build.
 
 The maven plugin is released to maven central and should be available without setting repositories.
@@ -51,7 +51,7 @@ Application event processing and graph description are covered in the [event pro
 
 ### Add Build plugins
 
-Add the maven fluxtion plugin to the plugins section of the build. The plugin in by default binds to the compile phase of the maven build cycle.  Fluxtion will use if available the parameter meta-data supplied at compile time by javac, add the -parameters switch to the compiler plugin to add the meta-data.
+Add the maven Fluxtion plugin to the plugins section of the build. The plugin in by default binds to the compile phase of the maven build cycle.  Fluxtion will use if available the parameter meta-data supplied at compile time by javac, add the -parameters switch to the compiler plugin to add the meta-data.
 
 A sample section plugin declaration in a project using Fluxtion:
 
