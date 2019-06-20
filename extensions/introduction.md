@@ -18,7 +18,7 @@ Currently two extensions are developed and released with the core Fluxtion frame
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">declarative</td>
+      <td style="text-align:left">streaming</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">
         <p>Provides declarative functionality to define graph nodes.</p>
@@ -57,7 +57,7 @@ Currently two extensions are developed and released with the core Fluxtion frame
       <td style="text-align:left">WIndow strategies and functions operating on numeric values.</td>
     </tr>
     <tr>
-      <td style="text-align:left">fu-text</td>
+      <td style="text-align:left">text</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">Functional operators for processing ascii text. Builds on the declarative
         framework supplied by declarative extension. All the builder functions
