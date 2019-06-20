@@ -21,11 +21,11 @@ The primitives are used by the ESC to generate a rule based predictable dispatch
 | Event handler first | The entry point for an execution path is an event handler method. |
 | Event data passing | The event handler method will receive the event as an argument |
 | Node | A node is a no-arg instance method invoked by the event wave. |
-| Execution path members | Both event handlers and nodes are on the execution path |
-| Topological dispatch | Execution path members are executed in topological order |
-| Member sorting | The object reference determines the sorting priority. The source  of the reference is a lower priority than the target.  |
+| Execution path members                           | Both event handlers and nodes are on the execution path |
+| Topological dispatch                  | Execution path members are executed in topological order |
+| Member sorting | The object reference determines the sorting priority. The source of the reference is a lower priority than the target.  |
 | Sibling ordering | The execution path order of siblings is unspecified |
-| Multiplexing instances | A single class can hold multiple nodes. An instance can appear  multiple times on an execution path |
+| Multiplexing instances | A single class can hold multiple nodes. An instance can appear multiple times on an execution path |
 | Active execution path | Only one execution path is actively dispatching.  |
 
 ## Annotations

@@ -20,7 +20,7 @@ Fluxtion provides two annotations that configure batch processing:
 The generated SEP implements the [BatchHandler](https://github.com/v12technology/fluxtion/blob/master/api/src/main/java/com/fluxtion/runtime/lifecycle/BatchHandler.java) interface. Applications can call the BatchHandler methods and the SEP will handle all dispatch logic to nodes on the execution graph. Batch handlers are invoked in reverse topological order.
 
 {% hint style="info" %}
-Fluxtion event processors can be exceedingly fast, event waiting between network packets. Batch pause permits actions to happen if enough data has been received.
+Fluxtion event processors can be exceedingly fast, even waiting between network packets. Batch pause permits actions to execute if enough data has been received.
 {% endhint %}
 
 ## Example
