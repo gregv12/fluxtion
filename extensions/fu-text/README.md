@@ -2,7 +2,7 @@
 description: Text processing capabilities supported by Fluxtion
 ---
 
-# Fu-text
+# Text
 
 ## Introduction
 
