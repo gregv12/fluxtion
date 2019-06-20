@@ -77,7 +77,7 @@ Currently two extensions are developed and released with the core Fluxtion frame
     <tr>
       <td style="text-align:left"></td>
       <td style="text-align:left">event</td>
-      <td style="text-align:left">Event forwarding between SEP's</td>
+      <td style="text-align:left">Event forwarding between SEP&apos;s</td>
     </tr>
     <tr>
       <td style="text-align:left"></td>
