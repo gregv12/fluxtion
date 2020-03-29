@@ -10,15 +10,9 @@ Fluxtion is a  routing utility for use within a stream processing application, a
 
 When building an event streaming processing a developer has to answer three questions:
 
-* **WHAT**  requires processing? 
-* **HOW**    does the input need processing?
-* **WHEN** does the processing take place?
-
-Commonly answered with:
-
-| Question | Answer |  |
-| :--- | :--- | :--- |
-| **WHAT** | Event streams are the input source to the application  |  |
-| **HOW** | Custom written logic or re-used functions |  |
-| **WHEN** | Bespoke dispatch logic that connects events to streams |  |
+| Question | Answer |
+| :--- | :--- |
+| **WHAT**  requires processing? | Event streams are the input source to the application  |
+| **HOW**  does the input need processing? | Custom written logic or re-used functions |
+| **WHEN** does the processing take place? | Bespoke dispatch logic that connects events to streams |
 
