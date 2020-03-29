@@ -10,7 +10,7 @@ Fluxtion is a  routing utility for use within a stream processing application, a
 
 ### The what, how and when for stream processing
 
-When building an event streaming processing a developer has to answer three questions:
+When building an stream processing application the developer has to answer three questions:
 
 | Question | Answer |
 | :--- | :--- |
