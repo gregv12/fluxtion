@@ -6,7 +6,7 @@ description: A description of Fluxtion's place in the stream processing environm
 
 If you are interested in writing real-time or streaming applications we hope to persuade you to investigate Fluxtion further.
 
-Fluxtion is a  routing utility for use within a stream processing application. Incoming event streams are automatically connected to processing pipelines. The application is statically analysed by Fluxtion to create a bespoke dispatcher. Streaming applications can be built more quickly, with less bugs and are optimized to reduce running costs. 
+Fluxtion is a  routing utility for use within a stream processing application, automatically connecting event streams to processing pipelines. The application is statically analysed by Fluxtion to create an embedded bespoke router. This means complex real-time applications can be built more quickly, with less bugs and are optimized to reduce running costs. 
 
 When building an event streaming processing a developer has to answer three questions:
 
