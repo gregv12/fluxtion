@@ -16,3 +16,9 @@ When building an event streaming processing a developer has to answer three ques
 | **HOW**  does the input need processing? | Custom written logic or re-used functions |
 | **WHEN** does the processing take place? | Bespoke dispatch logic that connects events to streams |
 
+Fluxtion is the automatic generation of the **WHEN** logic in a streaming application, or the arrows a system drawing:
+
+![](.gitbook/assets/sampleprocessor%20%2810%29.png)
+
+Components are re-used for the other two questions, Fluxtion is the missing piece in the puzzle.
+
