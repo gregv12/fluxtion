@@ -10,7 +10,7 @@ description: >-
 
 This quick-start example demonstrates implementing a simple Unix wc like utility with Fluxtion. The user creates a set of application classes that perform the actual calculations, the application classes will be orchestrated by the generated Static Event Processor\(SEP\). Each byte will be read from a file and sent to the [SEP ](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/generated/WcProcessor.java) as a [CharEvent](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/sample/wordcount/CharEvent.java). At the end of the file the char, word and line counts will be printed to console.
 
-The example will use maven as the build system, the full example is located on github [here](https://github.com/v12technology/fluxtion-quickstart). Clone the repository and then follow the example steps. 
+The example will use maven as the build system, the full example is located on github [here](https://github.com/v12technology/fluxtion-quickstart). Clone the repository and then follow the example steps.
 
 ```bash
 greg@bg21:~/tmp/fluxtion-quickstart$ mvn install -P fluxtion
@@ -65,9 +65,9 @@ Write event and business classes that the generated SEP will manage at runtime. 
 
 ```java
 public class CharEvent extends Event{
-    
+
     public static final int ID = 1;
-    
+
     public CharEvent(char id) {
         super(ID, id);
         filterId = id;
@@ -89,7 +89,7 @@ public class CharEvent extends Event{
     public String toString() {
         return "CharEvent{" + getCharacter() + '}';
     }
-           
+
 }
 ```
 
@@ -366,7 +366,7 @@ Pulling results from the SEP. Pull functionality is available as we declared the
         System.out.println(processor.result.toString());
 ```
 
-Execute the jar that holds the application classes from the root of the quickstart example. 
+Execute the jar that holds the application classes from the root of the quickstart example.
 
 ```bash
 c:\tmp\fluxtion-quickstart>java -jar dist\wc.jar dist\sample\norvig.txt
@@ -376,6 +376,4 @@ c:\tmp\fluxtion-quickstart>java -jar dist\wc.jar dist\sample\norvig.txt
 
 time: 0.098 sec
 ```
-
-
 

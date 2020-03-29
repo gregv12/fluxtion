@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Introduction 2](introduction-2.md)
 * [Quick start](quick-start.md)
 * [User documentation](overview/README.md)
   * [Developer workflow](overview/developer-workflow.md)

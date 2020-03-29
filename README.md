@@ -12,7 +12,7 @@ Thanks for dropping by, hope we can persuade you to donate your time to investig
 
 Fluxtion is a code generator that automates the production of event stream processing logic. Our goal is to automate the development process, increasing both developer efficiency and code correctness for streaming applications. We make complex problems easy to solve. Creating and optimising complex processing graphs is the main goal of Fluxtion.
 
-The generated code is self-contained and designed to sit within an application, an application delivers events to the Fluxtion generated Static Event Processor for stream processing. 
+The generated code is self-contained and designed to sit within an application, an application delivers events to the Fluxtion generated Static Event Processor for stream processing.
 
 Low latency, easy maintenance, zero gc, complex graph processing, simplified development and the "wow you can do that!!" reaction are the principles that guide our project.
 
@@ -28,9 +28,9 @@ Want to upgrade your application logic without rewriting your infrastructure? Fl
 
 ## Unique approach
 
-Fluxtion is unique among stream processors as there is no need for a Fluxtion server at runtime. Our code generated solutions remove the unnecessary cost, complication and inefficiencies required to integrate a streaming server into your application. 
+Fluxtion is unique among stream processors as there is no need for a Fluxtion server at runtime. Our code generated solutions remove the unnecessary cost, complication and inefficiencies required to integrate a streaming server into your application.
 
-Other stream processors support marshalling, distributed processing, event distribution, gui's and a multitude of other features. Fluxtion presumes there is an event queue that will feed it, and concentrates solely on delivering correct and optimal execution of application logic. 
+Other stream processors support marshalling, distributed processing, event distribution, gui's and a multitude of other features. Fluxtion presumes there is an event queue that will feed it, and concentrates solely on delivering correct and optimal execution of application logic.
 
 In general we try to promote [zero cost abstractions](http://matthewfl.com/2114/programming/cost-of-abstractions) in Java using a [metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming) approach. Other languages such as C++ and Rust use zero cost abstraction as a means to achieving high performance. Fluxtion brings this paradigm to Java stream processing applications. We use static analysis to create a meta-model of the calculation dependencies that in turn drives our generated solutions.
 

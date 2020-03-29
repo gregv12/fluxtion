@@ -23,7 +23,7 @@ Fluxtion provides a graph visualiser as part of its tool suite. The goal of the 
 
 ## Executing visualiser
 
-The visualiser is distributed as an [executable jar](https://github.com/v12technology/fluxtion-visualiser/blob/master/dist/fluxtion-visualiser.jar) located in its dist directory and can be run by double clicking on the jar or with java -jar  from the command line. 
+The visualiser is distributed as an [executable jar](https://github.com/v12technology/fluxtion-visualiser/blob/master/dist/fluxtion-visualiser.jar) located in its dist directory and can be run by double clicking on the jar or with java -jar from the command line.
 
 ### Loading graphml
 
@@ -33,7 +33,7 @@ To load a graphml navigate to the generated graphml file and drop onto the main 
 
 ### Filtering
 
-Graphs can become complex and difficult to read, visualiser allows filtering based on connected nodes or via string match. 
+Graphs can become complex and difficult to read, visualiser allows filtering based on connected nodes or via string match.
 
 * For connected node filtering click a node this will blur any non-connected nodes
 * Type in text box, selects any node that matches text and removes any disconnected nodes for the selection.
@@ -44,7 +44,7 @@ Graphs can become complex and difficult to read, visualiser allows filtering bas
 
 #### Filter disconnected nodes
 
-To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/show only filtered. 
+To remove disconnected nodes, keyboard shortcut 'f' \(filter\) or menu: graph/show only filtered.
 
 ![](../.gitbook/assets/filtered_only.png)
 
@@ -83,5 +83,5 @@ Visualiser supports the following mouse actions on nodes
 | :--- | :--- |
 | mouse click | select connected nodes |
 | shift click | add to connected nodes |
-| double click  | show only directly connected parent or child nodes |
+| double click | show only directly connected parent or child nodes |
 

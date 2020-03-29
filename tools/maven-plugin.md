@@ -51,7 +51,7 @@ Application event processing and graph description are covered in the [event pro
 
 ### Add Build plugins
 
-Add the maven Fluxtion plugin to the plugins section of the build. The plugin in by default binds to the compile phase of the maven build cycle.  Fluxtion will use if available the parameter meta-data supplied at compile time by javac, add the -parameters switch to the compiler plugin to add the meta-data.
+Add the maven Fluxtion plugin to the plugins section of the build. The plugin in by default binds to the compile phase of the maven build cycle. Fluxtion will use if available the parameter meta-data supplied at compile time by javac, add the -parameters switch to the compiler plugin to add the meta-data.
 
 A sample section plugin declaration in a project using Fluxtion:
 
@@ -259,7 +259,6 @@ fluxtion:generate
 [INFO] Finished at: 2018-12-23T15:52:05Z
 [INFO] Final Memory: 11M/245M
 [INFO] ------------------------------------------------------------------------
-
 ```
 
 ### Run build
@@ -316,6 +315,4 @@ d:\dvh\updated-reference-core>mvn compile
 #### **Note**
 
 line 17 is the command needed to run the Flxutiion generator for this project configuration using the [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) directly without maven.
-
-
 

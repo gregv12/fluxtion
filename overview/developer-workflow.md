@@ -14,7 +14,9 @@ Creating a Static Event processor involves three distinct phases for a developer
 
 ![](../.gitbook/assets/fluxtion_workflow.png)
 
-      An example of the steps covered is in the [quick start](../untitled.md) example.
+```text
+  An example of the steps covered is in the [quick start](../untitled.md) example.
+```
 
 ## Maven integration
 
@@ -93,6 +95,4 @@ The developer process is the same as that set out previously, except for a few s
 #### integration
 
 * Integrate the generated SEP into the [application](../quick-start.md#step-4-integrate-sep).
-
-
 
