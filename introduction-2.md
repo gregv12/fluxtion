@@ -22,6 +22,8 @@ Fluxtion is the automatic generation of the **WHEN** logic in a streaming applic
 
 ![](.gitbook/assets/flow-processing-example.png)
 
+When a specific event is received only connected components are executed and  always in the [correct predictable order](https://www.geeksforgeeks.org/topological-sorting/). The generated dispatcher is a highly optimized graph processing engine for embedding in the host application.
+
 ### Why is this useful
 
 Projects and components exist that help developers answer the what and the how questions in a streaming application. Kafka for example supplies a reliable event stream, this is **what** we process. Many utilities exist for re-use to meet application calculation requirements, this is **how** we process. 
