@@ -22,7 +22,7 @@ Fluxtion is the automatic generation of the **WHEN** logic in a streaming applic
 
 ![](.gitbook/assets/flow-processing-example.png)
 
-When a specific event is received only connected components are executed and  always in the [correct predictable order](https://www.geeksforgeeks.org/topological-sorting/). The generated dispatcher is a highly optimized graph processing engine for embedding in the host application.
+When a specific event is received only connected components are executed and always in the [correct predictable order](https://www.geeksforgeeks.org/topological-sorting/). The generated dispatcher is a highly optimized graph processing engine for embedding in the host application.
 
 ### Why is this useful
 
