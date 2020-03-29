@@ -28,7 +28,7 @@ When a specific event is received only connected components are executed and  al
 
 Projects and components exist that help developers answer the what and the how questions in a streaming application. Kafka for example supplies a reliable event stream, this is **what** we process. Many utilities exist for re-use to meet application calculation requirements, this is **how** we process. 
 
-Fluxtion is the missing piece in the puzzle. As an application develops over time the way we connect components changes and evolves requiring constant re-working. The connections become more fragile and complex leading to many bugs and time consuming maintenance, Fluxtion static analysis algorithms remove this time and money drain from the development cycle, automatically determining **when** to connect components.  
+Fluxtion is the missing piece in the puzzle. As an application develops over time the way we connect components changes and evolves requiring constant re-working. Manually coded dispatch logic become more fragile and increasingly complex. This leads to many bugs and time consuming maintenance, Fluxtion static analysis algorithms remove these time and money drains from the development cycle. Dispatch logic or **when** to connect components is generated automatically.  
 
 ### Birdseye technical view
 
