@@ -16,15 +16,15 @@ When building an event streaming processing a developer has to answer three ques
 | **HOW**  does the input need processing? | Custom written logic or re-used functions |
 | **WHEN** does the processing take place? | Bespoke dispatch logic that connects events to streams |
 
-Fluxtion is the automatic generation of the **WHEN** logic in a streaming application. For the example below Fluxtion is the arrows in the diagram:
+Fluxtion is the automatic generation of the **WHEN** logic in a streaming application. For the example below Fluxtion acts as the arrows in the diagram:
 
 ![](.gitbook/assets/flow-processing-example.png)
 
 ### Why is this useful
 
-Project and components exist that answer the what and the how questions in a streaming application. Kafka for example supplies a reliable event stream answering what we process. Many utilities exist for re-use to meet application calculation requirements this is how we process. 
+Projects and components exist that help developers answer the what and the how questions in a streaming application. Kafka for example supplies a reliable event stream, this is **what** we process. Many utilities exist for re-use to meet application calculation requirements, this is **how** we process. 
 
-Fluxtion is the missing piece in the puzzle. As an application develops over time the way we connect components changes and evolves requiring constant re-working. The connections become more fragile and complex leading to many bugs and time consuming maintenance, Fluxtion static analysis algorithms remove this time and money drain from the development cycle.  
+Fluxtion is the missing piece in the puzzle. As an application develops over time the way we connect components changes and evolves requiring constant re-working. The connections become more fragile and complex leading to many bugs and time consuming maintenance, Fluxtion static analysis algorithms remove this time and money drain from the development cycle, automatically determining **when** to connect components.  
 
 ### Sample code
 
