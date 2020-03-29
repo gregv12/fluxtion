@@ -32,11 +32,11 @@ Fluxtion is the missing piece in the puzzle. As an application develops over tim
 
 ### Birdseye technical view
 
-Fluxtion is a java utility that generates complex dispatch logic. Conceptually Fluxtion operates like a hybrid of java streams, RX java and google guava event bus. Each incoming event requires a unique execution path, those paths may combine for different events and each path is reactive.  
+Fluxtion is a java utility that generates complex dispatch logic. Conceptually Fluxtion operates like a hybrid of java streams, RX java and google guava event bus. Each incoming event requires a unique execution path, those paths may combine for different events and each path is reactive.  The generated dispatcher is a bespoke graph processing engines specifically tailored for the application.
 
 ### 5 minute example
 
-The example below monitors a stadium for turnstyle in and out events and controls the stadium based on the number of people in the stadium.   
+The example below monitors a stadium for TurnstyleIn and TurnstyleOut events, controlling the entrances and exits based on the number of people in the stadium.   
 
 ```java
 public class StadiumMonitorBuilder {
@@ -45,6 +45,7 @@ public class StadiumMonitorBuilder {
     packageName = "com.fluxtion.blogs.turnstlye")
     public void build(SEPConfig cfg) {
         var stadiumController = new StadiumController(); 
+        //the id allows the count to be accessed by a well known name for logging
         var fanCount = subtract(count(TurnStyleIn.class), count(TurnStyleOut.class)).id("fanCount");
         // >50 slow entrance 
         //the notifyOnChnage stops log spamming - only notfies on a breach
