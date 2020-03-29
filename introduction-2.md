@@ -30,9 +30,11 @@ Projects and components exist that help developers answer the what and the how q
 
 Fluxtion is the missing piece in the puzzle. As an application develops over time the way we connect components changes and evolves requiring constant re-working. The connections become more fragile and complex leading to many bugs and time consuming maintenance, Fluxtion static analysis algorithms remove this time and money drain from the development cycle, automatically determining **when** to connect components.  
 
-### Sample code
+### Birdseye technical view
 
 Fluxtion is a java utility that generates complex dispatch logic. Conceptually Fluxtion operates like a hybrid of java streams, RX java and google guava event bus. Each incoming event requires a unique execution path, those paths may combine for different events and each path is reactive.  
+
+### 5 minute example
 
 The example below monitors a stadium for turnstyle in and out events and controls the stadium based on the number of people in the stadium.   
 
