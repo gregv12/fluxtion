@@ -34,16 +34,26 @@ Fluxtion is the missing piece in the puzzle. As an application develops over tim
 
 Fluxtion is a java utility that generates complex dispatch logic. Conceptually Fluxtion operates like a hybrid of java streams, RX java and google guava event bus. Each incoming event requires a unique execution path, those paths may combine for different events and each path is reactive.  
 
+The example below monitors a stadium for turnstyle in and out events and controls the stadium based on the number of people in the stadium.   
+
 ```java
 public class StadiumMonitorBuilder {
 
-    @SepBuilder(name = "TurnstyleProcessor", packageName = "com.fluxtion.blogs.turnstlye")
+    @SepBuilder(name = "TurnstyleProcessor", 
+    packageName = "com.fluxtion.blogs.turnstlye")
     public void build(SEPConfig cfg) {
         var stadiumController = new StadiumController(); 
         var fanCount = subtract(count(TurnStyleIn.class), count(TurnStyleOut.class)).id("fanCount");
-        fanCount.filter(gt(50)).notifyOnChange(true).push(stadiumController::slowEntry);
-        fanCount.filter(gt(60)).notifyOnChange(true).push(stadiumController::closeAllEntrances);
-        fanCount.filter(gt(70)).notifyOnChange(true).push(stadiumController::evacuate);
+        // >50 slow entrance 
+        //the notifyOnChnage stops log spamming - only notfies on a breach
+        fanCount.filter(gt(50)).notifyOnChange(true)
+            .push(stadiumController::slowEntry);
+        // >60 close entrances  
+        fanCount.filter(gt(60)).notifyOnChange(true)
+            .push(stadiumController::closeAllEntrances);
+        // >70 evacuate 
+        fanCount.filter(gt(70)).notifyOnChange(true)
+            .push(stadiumController::evacuate);
     }
 
     public static class TurnStyleIn {}
@@ -54,17 +64,29 @@ public class StadiumMonitorBuilder {
     public static class StadiumController {
 
         public void slowEntry(int count) {
-            System.out.println("SLOWING ENTRY by closing some entrances high capacity:"+ count);
+            System.out.println(
+            "SLOWING ENTRY by closing some entrances high capacity:"+ count);
         }
 
         public void closeAllEntrances(int count) {
-            System.out.println("CLOSING ALL ENTRANCES over safe capacity:" + count);
+            System.out.println(
+            "CLOSING ALL ENTRANCES over safe capacity:" + count);
         }
 
         public void evacuate(int count) {
-            System.out.println("EVACUATE NOW, stadium dangerous capacity:"+ count);
+            System.out.println(
+            "EVACUATE NOW, stadium dangerous capacity:"+ count);
         }
     }
 }
 ```
+
+The following logic is applied:
+
+* Estimate the number of fans in the stadium = count\(in\) - count\(out\) 
+* Control the stadium with an instance of StadiumController
+* if fan count &gt; 50 invoke StadiumController.slowEntry\(\)
+* if fan count &gt; 60 invoke StadiumController.closeAllEntrances\(\)
+* if fan count &gt; 70 invoke StadiumController.evacuate\(\)
+* Only call the methods on a breach to prevent log spamming
 
