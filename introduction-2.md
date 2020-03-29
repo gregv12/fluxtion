@@ -48,7 +48,7 @@ public class StadiumMonitorBuilder {
         //the id allows the count to be accessed by a well known name for logging
         var fanCount = subtract(count(TurnStyleIn.class), count(TurnStyleOut.class)).id("fanCount");
         // >50 slow entrance 
-        //the notifyOnChnage stops log spamming - only notfies on a breach
+        //the notifyOnChnage stops log spamming - only notfies on first breach
         fanCount.filter(gt(50)).notifyOnChange(true)
             .push(stadiumController::slowEntry);
         // >60 close entrances  
