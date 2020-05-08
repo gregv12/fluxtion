@@ -24,7 +24,7 @@ Events are dispatched in **topological order** on the execution path
 
 We define a predictable order on the execution path as the [topological order](https://en.wikipedia.org/wiki/Topological_sorting). Topological ordering is an intuitive concept, but we provide an example for illustration. The diagram below shows an execution graph with multiple execution paths.
 
-![Example execution graph with multiple execution paths](../../../../.gitbook/assets/execution_graph_paths.png)
+![Example execution graph with multiple execution paths](../../.gitbook/assets/execution_graph_paths.png)
 
 For the diagram above we can categorise the elements as follows:
 
@@ -57,7 +57,7 @@ There are several annotations Fluxtion defines to mark methods as being in the e
 * `@eventHandler` – marks a method as a candidate event handler.
 * `@onEvent` – marks a method as a candidate node in an execution graph.
 
-Event annotations and implied capabilities are covered in detail in the[ event processing primitives](../../../../examples/reference/child-2/) section. 
+Event annotations and implied capabilities are covered in detail in the[ event processing primitives](../../examples/reference/child-2/) section. 
 
 ## Event waves and data
 

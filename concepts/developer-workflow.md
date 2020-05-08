@@ -12,7 +12,7 @@ Creating a Static Event processor involves three distinct phases for a developer
 2. Generation - Fluxtion processes the configuration and applies processing inference to generate a static event processor \(SEP\).
 3. Integration – Integrate the generated SEP into a user application or library.
 
-![](../../.gitbook/assets/fluxtion_workflow.png)
+![](../.gitbook/assets/fluxtion_workflow.png)
 
 ```text
   An example of the steps covered is in the [quick start](../untitled.md) example.
@@ -31,8 +31,8 @@ The steps a developer should follow to execute the Fluxtion event stream compile
 
 #### setup
 
-* Create a[ maven project ](../../extensions/tools/maven-plugin.md#fluxtion-dependencies)declaring Fluxtion libraries as dependencies.
-* Add the [fluxtion maven plugin](../../extensions/tools/maven-plugin.md#add-build-plugins) to the build plugins, setting configuration.
+* Create a[ maven project ](../extensions/tools/maven-plugin.md#fluxtion-dependencies)declaring Fluxtion libraries as dependencies.
+* Add the [fluxtion maven plugin](../extensions/tools/maven-plugin.md#add-build-plugins) to the build plugins, setting configuration.
 
 #### definition
 
@@ -41,11 +41,11 @@ The steps a developer should follow to execute the Fluxtion event stream compile
 
 #### generation
 
-* Run a mvn [build](../../extensions/tools/maven-plugin.md#run-build).
+* Run a mvn [build](../extensions/tools/maven-plugin.md#run-build).
 
 #### integration
 
-* Integrate the generated SEP into the [application](../../first-program/quick-start.md#step-4-integrate-sep).
+* Integrate the generated SEP into the [application](../first-program/quick-start.md#step-4-integrate-sep).
 
 ### Programmatic generation
 
@@ -80,7 +80,7 @@ The developer process is the same as that set out previously, except for a few s
 
 #### setup
 
-* Create a[ maven project ](../../extensions/tools/maven-plugin.md#fluxtion-dependencies)declaring Fluxtion libraries as dependencies.
+* Create a[ maven project ](../extensions/tools/maven-plugin.md#fluxtion-dependencies)declaring Fluxtion libraries as dependencies.
 
 #### definition
 
@@ -90,9 +90,9 @@ The developer process is the same as that set out previously, except for a few s
 #### generation
 
 * Write [programmtic ](https://github.com/v12technology/fluxtion/blob/master/generator/src/test/java/com/fluxtion/compiler/InprocessSepCompilerTest.java)definition in a test, specifying the output directories.
-* Run a mvn [build](../../extensions/tools/maven-plugin.md#run-build).
+* Run a mvn [build](../extensions/tools/maven-plugin.md#run-build).
 
 #### integration
 
-* Integrate the generated SEP into the [application](../../first-program/quick-start.md#step-4-integrate-sep).
+* Integrate the generated SEP into the [application](../first-program/quick-start.md#step-4-integrate-sep).
 

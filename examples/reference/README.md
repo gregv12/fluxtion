@@ -6,7 +6,7 @@ description: Reference examples accompanying user documentation
 
 ## Introduction
 
-The set of examples that accompany the [documentation](../../concepts/overview/) are located in the main fluxtion code repo [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples).
+The set of examples that accompany the [documentation]() are located in the main fluxtion code repo [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples).
 
 to build the examples regenerating the Fluxtion outputs use the following maven command:
 
@@ -23,9 +23,9 @@ The package structure of the example follows that of the documentation.
 | :--- | :--- |
 | [Event processing](child-2/) | [com.fluxtion.example.core.events ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events) |
 | [Graph building](graph-building-primitives/) | [com.fluxtion.example.core.building](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/building) |
-| [Dependency injection](../../concepts/overview/dependency-container/) | [com.fluxtion.example.core.dependencyinjection](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection) |
-| [Auditing](../../concepts/overview/auditing.md) | [com.fluxtion.example.core.audit ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/audit) |
-| [Generation output control](../../concepts/overview/generation/) | [com.fluxtion.example.core.outstyle](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/outstyle) |
+| [Dependency injection](dependency-container/) | [com.fluxtion.example.core.dependencyinjection](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection) |
+| [Auditing](auditing.md) | [com.fluxtion.example.core.audit ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/audit) |
+| [Generation output control](generation/) | [com.fluxtion.example.core.outstyle](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/outstyle) |
 
 ### Maven pom
 

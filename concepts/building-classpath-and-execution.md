@@ -14,7 +14,7 @@ Fluxtion is a code generator that increases developer efficiency, reduces bugs a
 
 ## Build time
 
-Fluxtion analyses application classes using meta-data the developer provides and generates a SEP solution, at compile time. Our metaprogramming approach calculates optimisations at compile time, to create a more efficient [SEP](developer/static-event-processor/) solution at run time.
+Fluxtion analyses application classes using meta-data the developer provides and generates a SEP solution, at compile time. Our metaprogramming approach calculates optimisations at compile time, to create a more efficient [SEP](static-event-processor/) solution at run time.
 
 ## Run time
 

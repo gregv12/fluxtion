@@ -21,5 +21,5 @@ The generated SEP acts as dependency injection container for managed nodes, this
   * All values set before SEP constructor exits.
 * Invoking lifecycle methods on managed nodes in a predictable order.
 
-The managed node references is covered extensively in the [event processing](../../../examples/reference/child-2/) and [graph building](../../../examples/reference/graph-building-primitives/) sections. This section deals with property setting and lifecycle methods.
+The managed node references is covered extensively in the [event processing](../child-2/) and [graph building](../graph-building-primitives/) sections. This section deals with property setting and lifecycle methods.
 

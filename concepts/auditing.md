@@ -20,13 +20,13 @@ a markup description of the execution graph encoded in the SEP. The markup  deta
 * The variable name of the node generated in the code
 * The event types feeding into an event handler
 
-Fluxtion provides a [visual analyse](../../../extensions/tools/visual-analyser.md)r tool that can load the graphML and provide interactive analysis capabilities.
+Fluxtion provides a [visual analyse](../extensions/tools/visual-analyser.md)r tool that can load the graphML and provide interactive analysis capabilities.
 
 ### Png of static event processor
 
 An image is generated from the graphML that represents the execution graph the SEP implements.
 
-![A png image representing a word count SEP](../../../.gitbook/assets/wordfrequencyprocessor.png)
+![A png image representing a word count SEP](../.gitbook/assets/wordfrequencyprocessor.png)
 
 #### Key:
 
@@ -113,5 +113,5 @@ When the SEP is generated Fluxtion can inject integration points into the code. 
 * A performance monitor.
 * A dynamic property tracer.
 
-The capabilities of auditing are covered in the [auditing ](../auditing.md)section.
+The capabilities of auditing are covered in the [auditing ](../examples/reference/auditing.md)section.
 

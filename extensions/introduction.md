@@ -4,7 +4,7 @@ description: Extension give Fluxtion additional functionality
 
 # Introduction
 
-Fluxtion plugins are available that extend the functionality of the base framework. Each plugin will usually have an api and a builder jar, following the same classpath and naming convention described [here](../concepts/overview/building-classpath-and-execution.md#classpath). 
+Fluxtion plugins are available that extend the functionality of the base framework. Each plugin will usually have an api and a builder jar, following the same classpath and naming convention described [here](../concepts/building-classpath-and-execution.md#classpath). 
 
 Currently two extensions are developed and released with the core Fluxtion framework to ease developer integration. Eventually the extension versions will be decoupled from the core, the goal to have different release cadences of core and extensions using the maven BOM to declare a compatible version set. The extensions that are presently available for use are:
 
