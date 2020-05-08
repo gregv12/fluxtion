@@ -33,18 +33,7 @@ To get benefit out of this tutorial you should have:
 
 ## Running the application
 
-Clone the application and execute the sensorquickstart.jar in the dist directory. 
-
-```text
-git clone https://github.com/v12technology/fluxtion-quickstart.git
-cd fluxtion-quickstart
-java  -Dfluxtion.cacheDirectory=fluxtion -jar dist\sensorquickstart.jar
-
-```
-
-The application processes the file [temperatureData.csv](https://github.com/v12technology/fluxtion-quickstart/blob/1.0.0/temperatureData.csv) as an input in place of real sensor source. The last three records trigger an alert condition. No SMS endoint is registered so the controller is unable to send a message.
-
-After reading the csv file SensorReading events are programatically sent to the processor, to register an SMS number and create an alert condition. In this case the controller can now send an SMS message.
+Clone the application and execute the sensorquickstart.jar in the dist directory, as shown below:
 
 ```text
 git clone https://github.com/v12technology/fluxtion-quickstart.git
@@ -78,6 +67,10 @@ readings in window : [(living  max:99 average:63.666666666666664)]
 SMS:0800-1-HELP-ROOMTEMP investigate:[living]
 ```
 
+The application processes the file [temperatureData.csv](https://github.com/v12technology/fluxtion-quickstart/blob/1.0.0/temperatureData.csv) as an input in place of real sensor source. The last three records trigger an alert condition. No SMS endoint is registered so the controller is unable to send a message.
+
+After reading the csv file SensorReading events are programatically sent to the processor, to register an SMS number and create an alert condition. In this case the controller can now send an SMS message.
+
 ## Solution description
 
 ### Dependencies
@@ -100,7 +93,7 @@ implementation 'com.fluxtion.extension:fluxtion-text-builder:2.5.1'
 {% endtab %}
 {% endtabs %}
 
-### Building processor and send events
+### Build a processor and stream events
 
 The code below is from [SensorMonitor](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/quickstart/roomsensor/SensorMonitor.java) builds a streaming processing engine and sends events to it.
 
