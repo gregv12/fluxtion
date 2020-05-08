@@ -102,52 +102,51 @@ implementation 'com.fluxtion.extension:fluxtion-text-builder:2.5.1'
 
 ### Building the event processor
 
-The [SensorMonitor](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/quickstart/roomsensor/SensorMonitor.java) builds a streaming processing engine in the main method using the [reuseOrBuild](https://github.com/v12technology/fluxtion/blob/a15f9bc6e28ed7071be16795d6813724454b8f11/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java#L158) function. A method reference is passed to the builder to reduce code noise.
-
 ```java
-StaticEventProcessor processor = reuseOrBuild(
-   "RoomSensorSEP", "com.fluxtion.quickstart.roomsensor.generated", 
-   SensorMonitor::buildSensorProcessor
-);
+ public static void main(String[] args) throws Exception {
+     StaticEventProcessor processor = reuseOrBuild("RoomSensorSEP",
+             "com.fluxtion.quickstart.roomsensor.generated",
+             SensorMonitor::buildSensorProcessor);
+     CharStreamer.stream(new File("temperatureData.csv"), processor)
+             .sync().stream();
+     processor.onEvent("0800-1-HELP-ROOMTEMP");
+     processor.onEvent(new SensorReading("living", 36));
+     processor.onEvent(new SensorReading("living", 99));
+     processor.onEvent(new SensorReading("living", 56));
+ }
+
+ @SuppressWarnings({"unchecked", "varargs"})
+ public static void buildSensorProcessor(SEPConfig cfg) {
+     //merge csv marshller and SensorReading instance events
+     Wrapper<SensorReading> sensorData = merge(select(SensorReading.class),
+             csvMarshaller(SensorReading.class).build()).console(" -> \t");
+     //group by sensor and calculate max, average
+     GroupBy<SensorReadingDerived> sensors = groupBy(sensorData, 
+             SensorReading::getSensorName, SensorReadingDerived.class)
+             .init(SensorReading::getSensorName, SensorReadingDerived::setSensorName)
+             .max(SensorReading::getValue, SensorReadingDerived::setMax)
+             .avg(SensorReading::getValue, SensorReadingDerived::setAverage)
+             .build();
+     //tumble window (count=3), warning if avg > 60 && max > 90 in the window for a sensor
+     tumble(sensors, 3).console("readings in window : ", GroupBy::collection)
+             .map(SensorMonitor::warningSensors, GroupBy::collection)
+             .filter(c -> c.size() > 0)
+             .console("**** WARNING **** sensors to investigate:")
+             .push(new TempertureController()::investigateSensors);
+ }
 ```
 
-The two string parameters are used as the fully qualified name of the generated stream processing class. The call to reuseOrBuild checks the classpath for a class that matches the fully qualified name. If no class can be loaded for that fqn, then a new stream processor is generated.
+The [SensorMonitor](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/quickstart/roomsensor/SensorMonitor.java) builds a streaming processing engine in the main method using the [reuseOrBuild](https://github.com/v12technology/fluxtion/blob/a15f9bc6e28ed7071be16795d6813724454b8f11/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java#L158) function on line 2. A method reference is passed to the builder to reduce code noise, buildSensorProcessor. The two string parameters are used as the fully qualified name of the generated stream processing class. The call to reuseOrBuild checks the classpath for a class that matches the fully qualified name. If no class can be loaded for that fqn, then a new stream processor is generated.
 
-### Processing events
+#### Processing events
 
 Once built the application can send events to the generated [StaticEventProcessor ](https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java)using the onEvent method. An excerpt of sending events in the main method:
 
-```java
-processor.onEvent("0800-1-HELP-ROOMTEMP");
-processor.onEvent(new SensorReading("living", 36));
-```
-
 The processor will dispatch events within the execution graph to meet the processing requirements.
 
-### Defining the calculation
+#### Defining the calculation
 
 The builder method constructs the processor with the following definition:
-
-```java
-public static void buildSensorProcessor(SEPConfig cfg) {
-    //merge csv marshller and SensorReading instance events
-    Wrapper<SensorReading> sensorData = merge(select(SensorReading.class),
-            csvMarshaller(SensorReading.class).build()).console(" -> \t");
-    //group by sensor and calculate max, average
-    GroupBy<SensorReadingDerived> sensors = groupBy(sensorData, SensorReading::getSensorName, 
-             SensorReadingDerived.class)
-            .init(SensorReading::getSensorName, SensorReadingDerived::setSensorName)
-            .max(SensorReading::getValue, SensorReadingDerived::setMax)
-            .avg(SensorReading::getValue, SensorReadingDerived::setAverage)
-            .build();
-    //tumble window (count=3), warning if avg > 60 && max > 90 in the window for a sensor
-    tumble(sensors, 3).console("readings in window : ", GroupBy::collection)
-            .map(SensorMonitor::warningSensors, GroupBy::collection)
-            .filter(c -> c.size() > 0)
-            .console("**** WARNING **** sensors to investigate:")
-            .push(new TempertureController()::investigateSensors);
-}
-```
 
 ### Integrated user classes
 
