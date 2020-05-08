@@ -142,15 +142,15 @@ A method reference is passed to the  [reuseOrBuild](https://github.com/v12techno
 
 #### Processing events
 
-Once built the application can send events to the generated [StaticEventProcessor ](https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java)using the utility method streaming chars from a file as events or via the onEvent method on line 7. The processor will dispatch events within the execution graph to the correct instance.
+Once built the application can send CharEvent's from a file to the generated [StaticEventProcessor ](https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java)using the utility method CharStreamer,stream\(\) on line 5 or programmatically via the onEvent method on line 7. The processor will dispatch events within the execution graph to the correct instance.
 
 #### Defining the calculation
 
-The builder method constructs the processor with the following definition:
+The builder method constructs the processor on lines 14-31. Method references are used throughout to increase type safety, make refactoring easier and make ide's more productive in building event processors.
 
 ### Integrated user classes
 
-The builder refers to two helper instances that define the input and output datatypes:
+The builder refers to two helper instances that define the input and output datatypes. Lombok is used to reduce boilerplate code for getter/setters.
 
 ```java
 @Data
