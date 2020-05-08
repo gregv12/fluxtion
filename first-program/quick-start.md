@@ -71,7 +71,7 @@ The application processes the file [temperatureData.csv](https://github.com/v12t
 
 After reading the csv file SensorReading events are programatically sent to the processor, to register an SMS number and create an alert condition. In this case the controller can now send an SMS message.
 
-The environmental variable **fluxtion.cacheDIrectory** sets the cache directory for outputs of the fluxtion compiler.
+The environmental variable **fluxtion.cacheDIrectory** sets the cache directory for outputs of the fluxtion compiler. Executing a second time sees a significant reduction in processing time as the classes in the cache directory are used and no compilation of the stream processor is required. Deleting the cache directory will force the application to recompile at the next start.
 
 ## Solution description
 
