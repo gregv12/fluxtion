@@ -59,7 +59,7 @@ The following access patterns for property injection are supported:
       </td>
     </tr>
   </tbody>
-</table>Constructor/field matching will use the logic described [here](../graph-building-primitives/imperative.md#construction-rules).
+</table>Constructor/field matching will use the logic described [here](../../graph-building-primitives/imperative.md#construction-rules).
 
 {% hint style="warning" %}
 Derived final fields are not supported, the class must have a constructor referencing all the final fields.

@@ -2,7 +2,7 @@
 description: Instructions used by the developer to configure event processing
 ---
 
-# Event processing primitives
+# Integrating user classes
 
 ## Introduction
 

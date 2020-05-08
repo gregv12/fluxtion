@@ -23,9 +23,9 @@ The package structure of the example follows that of the documentation.
 | :--- | :--- |
 | [Event processing](child-2/) | [com.fluxtion.example.core.events ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/events) |
 | [Graph building](graph-building-primitives/) | [com.fluxtion.example.core.building](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/building) |
-| [Dependency injection](dependency-container/) | [com.fluxtion.example.core.dependencyinjection](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection) |
+| [Dependency injection](child-2/dependency-container/) | [com.fluxtion.example.core.dependencyinjection](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/dependencyinjection) |
 | [Auditing](auditing.md) | [com.fluxtion.example.core.audit ](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/audit) |
-| [Generation output control](generation/) | [com.fluxtion.example.core.outstyle](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/outstyle) |
+| [Generation output control](child-2/generation/) | [com.fluxtion.example.core.outstyle](https://github.com/v12technology/fluxtion/tree/develop/examples/documentation-examples/src/main/java/com/fluxtion/example/core/outstyle) |
 
 ### Maven pom
 

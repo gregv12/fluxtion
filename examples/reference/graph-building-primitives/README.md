@@ -2,7 +2,7 @@
 description: Explanation of the core design time components for graph building
 ---
 
-# Graph building primitives
+# Graph building
 
 ## Introduction
 
