@@ -210,7 +210,7 @@ public static class TempertureController {
 }
 ```
 
-### Cached compilation
+## Cached compilation
 
 The application generates a solution in a cache directory, set with system property fluxtion.cacheDirectory, example:
 
