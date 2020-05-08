@@ -1,5 +1,5 @@
 ---
-description: A developer's guide to Fluxtion
+description: A developer's guide to get started
 ---
 
 # Fluxtion
