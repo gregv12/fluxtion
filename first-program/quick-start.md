@@ -29,6 +29,8 @@ To get benefit out of this tutorial you should have:
 * Register an SMS endpoint with the controller by sending a String as an event into the processor
 * The SMS number can be updated in realtime
 
+![](../.gitbook/assets/quickstartoverview.png)
+
 ## Running the application
 
 Clone the application and execute the sensorquickstart.jar in the dist directory. 
