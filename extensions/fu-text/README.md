@@ -34,5 +34,5 @@ EventHandler sep  = sepInstance((c) ->
 |  |  | fluxtion-builder |
 |  |  | fluxtion-generator - non classpath |
 
-The Fluxtion generator is not required on the classpath at build time, but the tool used at build time must have access to the Fluxtion generator. An example would be the [maven plugin](../../tools/maven-plugin.md) that encapsulates the Fluxtion generator.
+The Fluxtion generator is not required on the classpath at build time, but the tool used at build time must have access to the Fluxtion generator. An example would be the [maven plugin](../tools/maven-plugin.md) that encapsulates the Fluxtion generator.
 

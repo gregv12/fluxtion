@@ -6,35 +6,39 @@ description: A developer's guide to Fluxtion
 
 ![](.gitbook/assets/flxution-1.jpg)
 
-## Overview
+## Lightweight event stream processor
+
+* Pure java in memory fast data processing 
+* Ultra quick sub micro second processing
+* Ahead of time compiler means fast startup and small footprint
+* Built to embed perfect for use in microservices 
+* Batch or streaming
+
+## Uses
+
+* Real-time analytics and processing
+* ETL
+* Rules engines
+* Low response time requirements
+* IoT processing
+
+## Introduction
 
 Thanks for dropping by, hope we can persuade you to donate your time to investigate Fluxtion further.
 
-Fluxtion is a code generator that automates the production of event stream processing logic. Our goal is to automate the development process, increasing both developer efficiency and code correctness for streaming applications. We make complex problems easy to solve. Creating and optimising complex processing graphs is the main goal of Fluxtion.
+Fluxtion is a fully featured java based event stream processor that brings real-time data processing inside your application. If you need to build applications that react to complex events and make fast decisions then Fluxtion is for you. We build stream processing logic free from any messaging layer, there is no lock-in with Fluxtion.
 
-The generated code is self-contained and designed to sit within an application, an application delivers events to the Fluxtion generated Static Event Processor for stream processing.
+Fluxtion is is easy to use and ultra fast, our sweet spot is either edge processing or single server applications. Whether you need to process tens of millions of events per second or write complex rule driven applications that make decisions in microseconds we can help. Retro fitting real-time calculations into an existing application without requiring wholesale changes to the infrastructure is a great fit. When you need to make decisions and not just calculate then you are in the right place.
 
-Low latency, easy maintenance, zero gc, complex graph processing, simplified development and the "wow you can do that!!" reaction are the principles that guide our project.
+Uniquely among stream processors Fluxtion employs ahead of time compilation to create a stream processing engine. Describe your processing and Fluxtion tailors a solution to your needs at build time. Ahead of time compilation offers several critical advantages over existing products,
 
-As a stretch goal we would like to be the [fastest single threaded java stream processor](https://github.com/v12technology/fluxtion-quickstart/blob/master/README.md#run) on the planet.
+* Ultra fast [sub-microsecond response times](http://fluxtion.com/solutions/high-performance-flight-analysis/)
+* No vendor lock-in, the engine can be used within any java application
+* Compiler optimized code gives higher performance, lower running costs and quicker response times
+* Faster startup times for your application
+* Integrates client logic as a first class citizen 
+* Source code is generated that makes debugging and maintenance easy
+* Meta-data such as images and graphml are created to visualise the process graph
 
-## What are we solving
 
-Fluxtion automates the process of developing event processing algorithms. Writing complex behavioural conditional logic is hard and error prone. Streaming applications that handle multiple events and require intricate execution logic soon overwhelm the developer with complexity. The burden of creating complicated calculation graphs is delegated to Fluxtion empowering developers to tackle high value projects without risk. We want to make business logic cheaper to deliver, more reliable and easier to maintain.
-
-Fluxtion is focused on optimising the implementation of stream processing graphs. A generated Fluxtion event processor is fed a stream of application events, processes them and delivers the desired results. Possible uses include: realtime market manipulation monitoring, optimised scoring ML model, CSV parser processing a byte stream, ETL, data-prep, Iot montioring with conditional execution.
-
-Want to upgrade your application logic without rewriting your infrastructure? Fluxtion is the perfect solution for you.
-
-## Unique approach
-
-Fluxtion is unique among stream processors as there is no need for a Fluxtion server at runtime. Our code generated solutions remove the unnecessary cost, complication and inefficiencies required to integrate a streaming server into your application.
-
-Other stream processors support marshalling, distributed processing, event distribution, gui's and a multitude of other features. Fluxtion presumes there is an event queue that will feed it, and concentrates solely on delivering correct and optimal execution of application logic.
-
-In general we try to promote [zero cost abstractions](http://matthewfl.com/2114/programming/cost-of-abstractions) in Java using a [metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming) approach. Other languages such as C++ and Rust use zero cost abstraction as a means to achieving high performance. Fluxtion brings this paradigm to Java stream processing applications. We use static analysis to create a meta-model of the calculation dependencies that in turn drives our generated solutions.
-
-Maintenance is the most expensive cost of any system, we believe by generating code, png's, graphML and injecting monitoring points maintenance costs are reduced. Our philosophy is to help a business reduce maintenance by offering visual and documentary insight into the actual business logic.
-
-Please check out our [vision](https://github.com/v12technology/fluxtion/blob/master/VISION.md) for more discussion about where we see Fluxtion's place in the world.
 
