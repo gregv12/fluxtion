@@ -64,7 +64,7 @@ public class SampleProcessor implements EventHandler, BatchHandler, Lifecycle {
 
 ### Graph builder
 
-The SEPConfig class that constructs the graph imperatively is shown below. Use of SEPConfig is described in [imperative graph building](../../graph-building-primitives/imperative.md). 
+The SEPConfig class that constructs the graph imperatively is shown below. Use of SEPConfig is described in [imperative graph building](../graph-building-primitives/imperative.md). 
 
 ```java
 public class Builder extends SEPConfig {
