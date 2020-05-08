@@ -31,7 +31,16 @@ To get benefit out of this tutorial you should have:
 
 ## Running the application
 
-Clone the application and execute the sensorquickstart.jar in the dist directory. The application processes the file [temperatureData.csv](https://github.com/v12technology/fluxtion-quickstart/blob/1.0.0/temperatureData.csv) as an input in place of real sensor source. The last three records trigger an alert condition. No SMS endoint is registered so the controller is unable to send a message.
+Clone the application and execute the sensorquickstart.jar in the dist directory. 
+
+```text
+git clone https://github.com/v12technology/fluxtion-quickstart.git
+cd fluxtion-quickstart
+java  -Dfluxtion.cacheDirectory=fluxtion -jar dist\sensorquickstart.jar
+
+```
+
+The application processes the file [temperatureData.csv](https://github.com/v12technology/fluxtion-quickstart/blob/1.0.0/temperatureData.csv) as an input in place of real sensor source. The last three records trigger an alert condition. No SMS endoint is registered so the controller is unable to send a message.
 
 After reading the csv file SensorReading events are programatically sent to the processor, to register an SMS number and create an alert condition. In this case the controller can now send an SMS message.
 
