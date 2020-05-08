@@ -12,8 +12,8 @@ At the heart of Fluxtion lies the Fluxtion generator. An [executable jar](https:
 
 The steps a user should follow to execute the fluxtion event stream compiler are:
 
-* Write application classes representing nodes and events to fulfill [event processing](../../concepts/overview/child-2/) requirement.
-* Create meta-data describing the[ construction of the execution graph](../../concepts/overview/graph-building-primitives/).
+* Write application classes representing nodes and events to fulfill [event processing](../../examples/reference/child-2/) requirement.
+* Create meta-data describing the[ construction of the execution graph](../../examples/reference/graph-building-primitives/).
 * Invoke the [fluxtion.jar](https://github.com/v12technology/fluxtion/blob/master/generator/dist/fluxtion.jar) on the command line with a set of parameters
 
 {% hint style="info" %}

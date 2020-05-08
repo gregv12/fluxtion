@@ -47,7 +47,7 @@ Fluxtion has two libraries the user needs to declare in the dependency section, 
 
 ### Develop SEP processor
 
-Application event processing and graph description are covered in the [event processing](../../concepts/overview/child-2/) and [graph building](../../concepts/overview/graph-building-primitives/) section.
+Application event processing and graph description are covered in the [event processing](../../examples/reference/child-2/) and [graph building](../../examples/reference/graph-building-primitives/) section.
 
 ### Add Build plugins
 

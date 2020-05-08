@@ -10,7 +10,7 @@ This section covers the primitives the developer can use in their code to guide 
 
 Each page will cover a single concept and possibly an accompanying annotation, where appropriate diagrams and pseudo code are employed to help illustrate the concept. An accompanying set of examples are located [here](https://github.com/v12technology/fluxtion/tree/master/examples/documentation-examples), the examples for events are in the package: `com.fluxtion.example.core.events`
 
-This section does not cover [graph construction](../graph-building-primitives/), invoking [Fluxtion generator](../../../extensions/tools/fluxtion-tool.md) or [auditing](../auditing.md) the SEP at runtime.
+This section does not cover [graph construction](../graph-building-primitives/), invoking [Fluxtion generator](../../../extensions/tools/fluxtion-tool.md) or [auditing](../../../concepts/overview/auditing.md) the SEP at runtime.
 
 ## Event dispatch rules
 
