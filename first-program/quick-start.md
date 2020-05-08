@@ -100,11 +100,13 @@ implementation 'com.fluxtion.extension:fluxtion-text-builder:2.5.1'
 
 ### Building the event processor
 
-The [SensorMonitor](src/main/java/com/fluxtion/quickstart/roomsensor/SensorMonitor.java) builds a streaming processing engine in the main method using the [reuseOrBuild](https://github.com/v12technology/fluxtion/blob/a15f9bc6e28ed7071be16795d6813724454b8f11/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java#L158) function. A method reference is passed to the builder to reduce code noise.
+The [SensorMonitor](https://github.com/v12technology/fluxtion-quickstart/blob/master/src/main/java/com/fluxtion/quickstart/roomsensor/SensorMonitor.java) builds a streaming processing engine in the main method using the [reuseOrBuild](https://github.com/v12technology/fluxtion/blob/a15f9bc6e28ed7071be16795d6813724454b8f11/generator/src/main/java/com/fluxtion/generator/compiler/InprocessSepCompiler.java#L158) function. A method reference is passed to the builder to reduce code noise.
 
 ```java
-StaticEventProcessor processor = reuseOrBuild("RoomSensorSEP", "com.fluxtion.quickstart.roomsensor.generated", 
-SensorMonitor::buildSensorProcessor);
+StaticEventProcessor processor = reuseOrBuild(
+   "RoomSensorSEP", "com.fluxtion.quickstart.roomsensor.generated", 
+   SensorMonitor::buildSensorProcessor
+);
 ```
 
 The two string parameters are used as the fully qualified name of the generated stream processing class. The call to reuseOrBuild checks the classpath for a class that matches the fully qualified name. If no class can be loaded for that fqn, then a new stream processor is generated.
@@ -114,8 +116,8 @@ The two string parameters are used as the fully qualified name of the generated 
 Once built the application can send events to the generated [StaticEventProcessor ](https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java)using the onEvent method. An excerpt of sending events in the main method:
 
 ```java
-        processor.onEvent("0800-1-HELP-ROOMTEMP");
-        processor.onEvent(new SensorReading("living", 36));
+processor.onEvent("0800-1-HELP-ROOMTEMP");
+processor.onEvent(new SensorReading("living", 36));
 ```
 
 The processor will dispatch events within the execution graph to meet the processing requirements.
