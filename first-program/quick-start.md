@@ -143,10 +143,6 @@ Once built the application can send CharEvent's from a file to the generated [St
 
 The builder method constructs the processor on lines 14-31. Method references are used throughout to increase type safety, make refactoring easier and make ide's more productive in building event processors.
 
-```java
-csvMarshaller(SensorReading.class).build()
-```
-
 ### Integrated user classes
 
 The builder refers to two helper instances that define the input and output datatypes. Lombok is used to reduce boilerplate code for getter/setters.
