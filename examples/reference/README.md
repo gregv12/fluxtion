@@ -2,7 +2,7 @@
 description: Reference examples accompanying user documentation
 ---
 
-# Reference
+# Core reference
 
 ## Introduction
 

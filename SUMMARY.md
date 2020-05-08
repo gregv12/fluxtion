@@ -14,7 +14,7 @@
   * [Building, classpath and execution](concepts/building-classpath-and-execution.md)
   * [Structured processing](concepts/auditing.md)
 * [Examples](examples/README.md)
-  * [Reference](examples/reference/README.md)
+  * [Core reference](examples/reference/README.md)
     * [Integrating user classes](examples/reference/child-2/README.md)
       * [Event handling](examples/reference/child-2/event-handling.md)
       * [Event filtering](examples/reference/child-2/event-filtering.md)
@@ -41,8 +41,6 @@
       * [Data driven](examples/reference/graph-building-primitives/data-driven.md)
       * [Dependency Injection](examples/reference/graph-building-primitives/injection.md)
     * [Auditing](examples/reference/auditing.md)
-  * [Use cases](examples/use-cases.md)
-  * [Tutorial](examples/tutorial.md)
 * [Stream programming](stream-programming.md)
 * [FAQ](faq.md)
 
