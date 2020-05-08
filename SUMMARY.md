@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Fluxtion](README.md)
 * [Getting started](first-program/README.md)
   * [Quick start](first-program/quick-start.md)
 * [Concepts](concepts/README.md)

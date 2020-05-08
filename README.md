@@ -2,7 +2,7 @@
 description: A developer's guide to Fluxtion
 ---
 
-# Introduction
+# Fluxtion
 
 ![](.gitbook/assets/flxution-1.jpg)
 
