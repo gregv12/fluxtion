@@ -12,7 +12,7 @@ description: >-
 
 To get benefit out of this tutorial you should have:
 
-* A passing understanding of \[stream processing\]\([https://dzone.com/articles/what-is-stream-processing-a-gentle-introduction](https://dzone.com/articles/what-is-stream-processing-a-gentle-introduction)\)
+* A passing understanding of[ stream processing](https://dzone.com/articles/what-is-stream-processing-a-gentle-introduction)
 * Intermediate Java coding skills combined with basic knowledge of git and maven
 
 ## Requirements
@@ -71,21 +71,23 @@ SMS:0800-1-HELP-ROOMTEMP investigate:[living]
 
 ### Dependencies
 
-Maven:
-
+{% tabs %}
+{% tab title="Maven" %}
 ```markup
-    <dependency>
-        <groupId>com.fluxtion.extension</groupId>
-        <artifactId>fluxtion-text-builder</artifactId>
-        <version>2.5.1</version>
-    </dependency>
+<dependency>
+  <groupId>com.fluxtion.extension</groupId>
+  <artifactId>fluxtion-text-builder</artifactId>
+  <version>2.5.1</version>
+</dependency>
 ```
+{% endtab %}
 
-Groovy:
-
+{% tab title="Gradle" %}
 ```groovy
 implementation 'com.fluxtion.extension:fluxtion-text-builder:2.5.1'
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Building the event processor
 
@@ -100,7 +102,7 @@ The two string parameters are used as the fully qualified name of the generated 
 
 ### Processing events
 
-Once built the application can send events to the generated \[StaticEventProcessor\]\([https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java](https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java)\) using the onEvent method. An excerpt of sending events in the main method:
+Once built the application can send events to the generated [StaticEventProcessor ](https://github.com/v12technology/fluxtion/blob/2.5.1/api/src/main/java/com/fluxtion/api/StaticEventProcessor.java)using the onEvent method. An excerpt of sending events in the main method:
 
 ```java
         processor.onEvent("0800-1-HELP-ROOMTEMP");
